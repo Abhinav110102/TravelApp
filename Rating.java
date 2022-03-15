@@ -6,7 +6,7 @@ public class Rating {
     ;
     // import star unicode and do for loop
   }
-  public HideName() {
+  public void HideName() {
   ;}
 }
 
