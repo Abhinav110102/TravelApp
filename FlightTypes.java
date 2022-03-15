@@ -1,3 +1,5 @@
-public class FlightTypes {
-    
+public enum FlightTypes {
+    TRANSFER,
+    ONEWAY,
+    ROUNDTRIP
 }
