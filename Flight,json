@@ -1,0 +1,29 @@
+[
+	{ 
+		“PlaneName”: “M876578”,
+        “Airline”: “Delta”,
+        “ArrivalAirport”: “Columbia Metropolitan Airport”,
+        “ArrivalAddress” : [“ 101 Park st”, “Columbia”, “SC”, “20222”, “United States”],
+        “DestinationAirport”: “John F. Kennedy International Airport”,
+        “DestinationAddress”: [“212 Queens ave”, “New York”, “New York”, “11430”, “United States”],
+        “PlaneCapacity”: 100, 
+        “DepatureDate”: “March 1, 2022”,
+        “Duration”: “3:45 hours”,
+        “FlightType”: “One Way”,
+        “UserID”: “bbbih53ugv23”
+        “FlightID”: “2i45b4b52ibj”,  
+    },{ 
+		“PlaneName”: “D7jggfk755”,
+        “Airline”: “United Airlines”,
+        “ArrivalAirport”: “John F. Kennedy International Airport”,
+        “ArrivalAddress”: [“212 Queens ave”, “New York”, “New York”, “11430”, “United States”],
+        “DestinationAirport”: “Leonardo da Vinci International Airport”,
+        “DestinationAddress”: [“Via dell'Aeroporto di Fiumicino”, “Fiumicino RM”, “N/A”, “00054”, “Italy”],
+        “PlaneCapacity”: 250, 
+        “DepatureDate”: “February 21 2022”, 
+        “Duration”: “9:00 hours”,
+        “FlightType”: “OneWay”,
+        “UserID”: “8bhbug34b7839”,
+        “FlightID”: “97huuc7vjk8”,  
+    }
+]

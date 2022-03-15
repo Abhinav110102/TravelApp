@@ -1,0 +1,25 @@
+[
+    {	
+        “UserID”: “bbbih53ugv23”,
+        “Hotel name”: “The Marriott Virginia”, 
+        “Hotel company”: “Marriott”,
+        “HotelAddress”: [“Oceanshore Street”, “Virginia”, “Virginia”, “23456”, “United States”],
+        “Room number”: 239,
+        “Daysbooked”: 3,
+        “Capacity”: 150,
+        “NumberOfBeds”: 2,
+        “ArrivalDate”: “February 26 2022”,  // Date when you’re scheduled to first occupy room
+        “DepartureDate”: “February 28 2022”  // Date of leaving hotel
+    },{	
+        “UserID”: “8bhbug34b7839”,
+        “Hotel name”: “Rome Marriott Grand Hotel Flora”, 
+        “Hotel company”: “Marriott”,
+        “HotelAddress”: [“Via Vittorio Veneto”, “Rome”, “Rome”, “00187”, “Italy”],
+        “Room number”: 78,
+        “Daysbooked”: 3,
+        “Capacity”: 150,
+        “NumberOfBeds”: 2,
+        “ArrivalDate”: “March 3 2022”,  // Date when you’re scheduled to first occupy room
+        “DepartureDate”: “March 6 2022”  // Date of leaving hotel
+    }
+]
