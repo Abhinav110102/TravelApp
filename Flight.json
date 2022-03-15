@@ -11,7 +11,7 @@
         “Duration”: “3:45 hours”,
         “FlightType”: “One Way”,
         “UserID”: “bbbih53ugv23”
-        “FlightID”: “2i45b4b52ibj”,  
+        “FlightID”: “2i45b4b52ibj”  
     },{ 
 		“PlaneName”: “D7jggfk755”,
         “Airline”: “United Airlines”,
@@ -24,6 +24,6 @@
         “Duration”: “9:00 hours”,
         “FlightType”: “OneWay”,
         “UserID”: “8bhbug34b7839”,
-        “FlightID”: “97huuc7vjk8”,  
+        “FlightID”: “97huuc7vjk8”  
     }
 ]
