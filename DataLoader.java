@@ -9,20 +9,20 @@ public class DataLoader extends DataConstants {
 		ArrayList<Flight> flights = new ArrayList<Flight>();
 		
 		try {
-			FileReader reader = new FileReader(PEOPLE_FILE_NAME);
+			FileReader reader = new FileReader(FLIGHT_FILE_NAME);
 			JSONParser parser = new JSONParser();
-			JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
+			JSONArray flightsJSON = (JSONArray)new JSONParser().parse(reader);
 			
-			for(int i=0; i < peopleJSON.size(); i++) {
-				JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-				String firstName = (String)personJSON.get(PEOPLE_FIRST_NAME);
-				String lastName = (String)personJSON.get(PEOPLE_LAST_NAME);
-				String phoneNumber = (String)personJSON.get(PEOPLE_PHONE_NUMBER);
+			for(int i=0; i < flightsJSON.size(); i++) {
+				JSONObject flightJSON = (JSONObject)flightsJSON.get(i);
+				String const1 = (String)flightJSON.get(CONST_NAME_1);
+				String const2 = (String)flightJSON.get(CONST_NAME_2);
+				String const3 = (String)flightJSON.get(CONST_NAME_3);
 				
-				people.add(new Person(firstName, lastName, phoneNumber));
+				flights.add(new Flight(const1, const2, const3));
 			}
 			
-			return people;
+			return flights;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -35,20 +35,20 @@ public class DataLoader extends DataConstants {
 		ArrayList<User> users = new ArrayList<User>();
 		
 		try {
-			FileReader reader = new FileReader(PEOPLE_FILE_NAME);
+			FileReader reader = new FileReader(USER_FILE_NAME);
 			JSONParser parser = new JSONParser();
-			JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
+			JSONArray usersJSON = (JSONArray)new JSONParser().parse(reader);
 			
-			for(int i=0; i < peopleJSON.size(); i++) {
-				JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-				String firstName = (String)personJSON.get(PEOPLE_FIRST_NAME);
-				String lastName = (String)personJSON.get(PEOPLE_LAST_NAME);
-				String phoneNumber = (String)personJSON.get(PEOPLE_PHONE_NUMBER);
+			for(int i=0; i < usersJSON.size(); i++) {
+				JSONObject userJSON = (JSONObject)usersJSON.get(i);
+				String const1 = (String)userJSON.get(CONST_NAME_1);
+				String const2 = (String)userJSON.get(CONST_NAME_2);
+				String const3 = (String)userJSON.get(CONST_NAME_3);
 				
-				people.add(new Person(firstName, lastName, phoneNumber));
+				users.add(new User(const1, const2, const3));
 			}
 			
-			return people;
+			return users;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -58,23 +58,23 @@ public class DataLoader extends DataConstants {
 	}
 
     public static ArrayList<Hotel> loadHotels() {
-		ArrayList<Hotel> people = new ArrayList<Hotel>();
+		ArrayList<Hotel> hotels = new ArrayList<Hotel>();
 		
 		try {
-			FileReader reader = new FileReader(PEOPLE_FILE_NAME);
+			FileReader reader = new FileReader(HOTEL_FILE_NAME);
 			JSONParser parser = new JSONParser();
-			JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
+			JSONArray hotelsJSON = (JSONArray)new JSONParser().parse(reader);
 			
-			for(int i=0; i < peopleJSON.size(); i++) {
-				JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-				String firstName = (String)personJSON.get(PEOPLE_FIRST_NAME);
-				String lastName = (String)personJSON.get(PEOPLE_LAST_NAME);
-				String phoneNumber = (String)personJSON.get(PEOPLE_PHONE_NUMBER);
+			for(int i=0; i < hotelsJSON.size(); i++) {
+				JSONObject hotelJSON = (JSONObject)hotelsJSON.get(i);
+				String const1 = (String)hotelJSON.get(CONST_NAME_1);
+				String const2 = (String)hotelJSON.get(CONST_NAME_2);
+				String const3 = (String)hotelJSON.get(CONST_NAME_3);
 				
-				people.add(new Person(firstName, lastName, phoneNumber));
+				hotels.add(new Hotel(const1, const2, const3));
 			}
 			
-			return people;
+			return hotels;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
