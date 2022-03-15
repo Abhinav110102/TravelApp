@@ -18,7 +18,7 @@ private ArrayList<Hotel> hotels;
 private ArrayList<User> friends;
 private ArrayList<Family> family;
 private boolean senior;
-
+private Location address;
 
 // - address: Location
 // - tickets: ArrayList<Ticket>
@@ -51,11 +51,11 @@ public void addFriend(User user){
 };
 public addRating(String Username, int rating, boolean isNameVisible){
 ;
-};
+}
 
 public int calCost(){
     ;
-};
+}
 
 // + addDeal(): Deal
 // + registerLuggage(): void
