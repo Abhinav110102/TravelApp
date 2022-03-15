@@ -1,35 +1,35 @@
 
 [
 	{
-		"Username”: “jamesmain@gmail.com”,
-		“FirstName”: “ James”,
-		“LastName”: “Main”,
-		“UserID”: “bbbih53ugv23”,  
-        “Phone”: 2316949931, 
-        “Email”: “JamesMain@gmail.com”, 
-        “UserAge”: 39, 
-        “PassportNumber”: 983973111, 
-        “Password”: “BookaPlane2022”, 
-        “Address”: [“76 Water St.”, “New Brunswick”, “New Jersey”, “08901”, “United States”],
-        “Friends” : [“i86987tn8g8b7gtg8g”, “gu8yg7g7g97g9”, “2529oyh78yg7g86fg”],
+		"Username": "jamesmain@gmail.com",
+		"FirstName": "James",
+		"LastName": "Main",
+		"UserID": "bbbih53ugv23",  
+        "Phone": 2316949931, 
+        "Email": "JamesMain@gmail.com", 
+        "UserAge": 39, 
+        "PassportNumber": 983973111, 
+        "Password": "BookaPlane2022", 
+        "Address": ["76 Water St.", "New Brunswick", "New Jersey", "08901", "United States"],
+        "Friends" : ["i86987tn8g8b7gtg8g", "gu8yg7g7g97g9", "2529oyh78yg7g86fg"],
         "Family" : [
 		[ "Jayson", "Main", "10" ],
-		[ "Maddison", "Main" , "6"]
-        [ "Skittles", “Main” , "2"]
+		[ "Maddison", "Main" , "6"],
+        [ "Skittles", "Main" , "2"]
 	      ],
         "senior": false
 	},{
-		“Username”: “johnsonvein@gmail.com”,
-		“FirstName”: “Johnson”,
-		“LastName”: “Vein”,
-		“UserID”: “8bhbug34b7839”,  
-        “Phone”: 2025550172, 
-        “Email”: “johnsonvein@gmail.com”, 
-        “UserAge”: 69, 
-        “PassportNumber”: 979880831, 
-        “Password”: “Whatisthis?2022”, 
-        “Address”: [“8 Pennington Rd.”, “Lincolnton”, “North Carolina”, “28092”, “United States”],
-        “Friends” : [“gvv77v7ed6b”, “id98yutr646dx”, “897867tcytd5”],
+		"Username": "johnsonvein@gmail.com",
+		"FirstName": "Johnson",
+		"LastName": "Vein",
+		"Address": "8bhbug34b7839",  
+        "Phone": 2025550172, 
+        "Email": "johnsonvein@gmail.com", 
+        "UserAge": 69, 
+        "PassportNumber": 979880831, 
+        "Password": "Whatisthis?2022", 
+        "Address": ["8 Pennington Rd.", "Lincolnton", "North Carolina", "28092", "United States"],
+        "Friends" : ["gvv77v7ed6b", "id98yutr646dx", "897867tcytd5"],
         "Family" : [
 		[ "Katy", "Vein", "68" ],
         [ "Kathy", "Vein", "72" ]
