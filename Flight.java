@@ -20,6 +20,7 @@ public class Flight {
     // + printTicket(): String
     // + addLuggage(): void
     public Flight(double duration, Location startLocation, Location endLocation) {
+        //Constructor shall generate an arrayList of seats - Mark V
         ;
     }
 
