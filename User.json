@@ -17,12 +17,12 @@
 		[ "Maddison", "Main" , "6"],
         [ "Skittles", "Main" , "2"]
 	      ],
-        "senior": false
+        "Senior": false
 	},{
 		"Username": "johnsonvein@gmail.com",
 		"FirstName": "Johnson",
 		"LastName": "Vein",
-		"Address": "8bhbug34b7839",  
+		"UserID": "8bhbug34b7839",  
         "Phone": 2025550172, 
         "Email": "johnsonvein@gmail.com", 
         "UserAge": 69, 
@@ -34,7 +34,7 @@
 		[ "Katy", "Vein", "68" ],
         [ "Kathy", "Vein", "72" ]
 	      ],
-        "senior": true
+        "Senior": true
 	}
 ]
 
