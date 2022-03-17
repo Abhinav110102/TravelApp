@@ -4,14 +4,22 @@ public class Location {
 // - State:  String
 // - zipcode: String
 // - country: String
-private String Street;
-private String City;
-private String State;
-private String zipcode;
-private String country;
+    private String street;
+    private String city;
+    private String state;
+    private String zipcode;
+    private String country;
 
-// + toString(): String
-public String toString(){
-    ;
-}
+    public Location(String street, String city, String state, String zipcode, String country) {
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zipcode = zipcode;
+        this.country = country;
+    }
+
+    // + toString(): String
+    public String toString(){
+        return "";
+    }
 }
