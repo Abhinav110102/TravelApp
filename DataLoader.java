@@ -15,11 +15,22 @@ public class DataLoader extends DataConstants {
 			
 			for(int i=0; i < flightsJSON.size(); i++) {
 				JSONObject flightJSON = (JSONObject)flightsJSON.get(i);
-				String const1 = (String)flightJSON.get(CONST_NAME_1);
-				String const2 = (String)flightJSON.get(CONST_NAME_2);
-				String const3 = (String)flightJSON.get(CONST_NAME_3);
+				String planeName = (String)flightJSON.get(FLIGHT_PLANE_NAME);
+				String airline = (String)flightJSON.get(FLIGHT_AIRLINE);
+				String arrivalAirport = (String)flightJSON.get(FLIGHT_ARRIVAL_AIRPORT);
+                String[] arrivalAddress = (String[])flightJSON.get(FLIGHT_ARRIVAL_ADDRESS);
+                String destinationAirport = (String)flightJSON.get(FLIGHT_DESTINATION_AIRPORT);
+                String[] destinationAddress = (String[])flightJSON.get(FLIGHT_DESTINATION_ADDRESS);
+                int planeCapacity = (int)flightJSON.get(FLIGHT_PLANE_CAPACITY);
+                String departureDate = (String)flightJSON.get(FLIGHT_DEPARTURE_DATE);
+                String duration = (String)flightJSON.get(FLIGHT_DURATION);
+                String flightType = (String)flightJSON.get(FLIGHT_TYPE);
+                String userID = (String)flightJSON.get(FLIGHT_USER_ID);
+                String flightID = (String)flightJSON.get(FLIGHT_ID);
 				
-				flights.add(new Flight(const1, const2, const3));
+				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress,
+                                        destinationAirport, destinationAddress, planeCapacity,
+                                        departureDate, duration, flightType, userID, flightID));
 			}
 			
 			return flights;
@@ -41,11 +52,22 @@ public class DataLoader extends DataConstants {
 			
 			for(int i=0; i < usersJSON.size(); i++) {
 				JSONObject userJSON = (JSONObject)usersJSON.get(i);
-				String const1 = (String)userJSON.get(CONST_NAME_1);
-				String const2 = (String)userJSON.get(CONST_NAME_2);
-				String const3 = (String)userJSON.get(CONST_NAME_3);
+				String username = (String)userJSON.get(USER_NAME);
+				String firstName = (String)userJSON.get(USER_FIRST_NAME);
+				String lastName = (String)userJSON.get(USER_LAST_NAME);
+                String userID = (String)userJSON.get(USER_ID);
+                int phone = (int)userJSON.get(USER_PHONE);
+                String email = (String)userJSON.get(USER_EMAIL);
+                int userAge = (int)userJSON.get(USER_AGE);
+                int passportNumber = (int)userJSON.get(USER_PASSPORT_NUMBER);
+                String password = (String)userJSON.get(USER_PASSWORD);
+                String[] address = (String[])userJSON.get(USER_ADDRESS);
+                String[] friends = (String[])userJSON.get(USER_FRIENDS);
+                String[][] family = (String[][])userJSON.get(USER_FAMILY);
+                boolean senior = (boolean)userJSON.get(USER_SENIOR);
 				
-				users.add(new User(const1, const2, const3));
+				users.add(new User(username, firstName, lastName, userID, phone, email, userAge,
+                                    passportNumber, password, address, friends, family, senior));
 			}
 			
 			return users;
@@ -67,11 +89,19 @@ public class DataLoader extends DataConstants {
 			
 			for(int i=0; i < hotelsJSON.size(); i++) {
 				JSONObject hotelJSON = (JSONObject)hotelsJSON.get(i);
-				String const1 = (String)hotelJSON.get(CONST_NAME_1);
-				String const2 = (String)hotelJSON.get(CONST_NAME_2);
-				String const3 = (String)hotelJSON.get(CONST_NAME_3);
+				String userID = (String)hotelJSON.get(HOTEL_USER_ID);
+				String hotelName = (String)hotelJSON.get(HOTEL_NAME);
+				String hotelCompany = (String)hotelJSON.get(HOTEL_COMPANY);
+                String[] hotelAddress = (String[])hotelJSON.get(HOTEL_ADDRESS);
+                int roomNumber = (int)hotelJSON.get(HOTEL_ROOM_NUMBER);
+                int daysBooked = (int)hotelJSON.get(HOTEL_DAYS_BOOKED);
+                int capacity = (int)hotelJSON.get(HOTEL_CAPACITY);
+                int numberOfBeds = (int)hotelJSON.get(HOTEL_NUMBER_OF_BEDS);
+                String arrivalDate = (String)hotelJSON.get(HOTEL_ARRIVAL_DATE);
+                String departureDate = (String)hotelJSON.get(HOTEL_DEPARTURE_DATE);
 				
-				hotels.add(new Hotel(const1, const2, const3));
+				hotels.add(new Hotel(userID, hotelName, hotelCompany, hotelAddress, roomNumber,
+                                        daysBooked, capacity, numberOfBeds, arrivalDate, departureDate));
 			}
 			
 			return hotels;
