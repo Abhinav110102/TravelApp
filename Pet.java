@@ -3,6 +3,7 @@
  * for the pet.
  * @author Mark Valentino
  * //Should I put Abi as stub creator?
+ * // MAKE INTERFACE
  */
 public class Pet {
 
