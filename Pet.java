@@ -1,14 +1,12 @@
 /**
  * Class for managing a Pet and determining if a ticket is needed
- * for the pet.
+ * for the pet. Child of Family class
  * @author Mark Valentino
- * //Should I put Abi as stub creator?
- * // MAKE INTERFACE
  */
-public class Pet {
+public class Pet extends Family {
 
   private int weight;
-  private String name; // ADD NAME TO UML
+  private String name;
 
   /**
    * Constructor
@@ -21,9 +19,9 @@ public class Pet {
   /**
    * Method to determine wether or not a ticket is needed
    * since pets above a certain weight need a ticket.
-   * @return true if wieght > 16
+   * @return true if weight >= 35
    */
-  public boolean ticketNeeded(){ // NEED EXACT WEIGHT
-    return weight >= 16;
+  public boolean ticketNeeded(){ 
+    return weight >= 35;
   }
 }
