@@ -26,8 +26,8 @@ public class Flight {
 
     //Flight constructor with constants passed in via DataLoader
     public Flight(String planeName, String airline, String arrivalAirport,
-                String[] arrivalAddress, String destinationAirport,
-                String[] destinationAddress, int planeCapacity,
+                ArrayList<String> arrivalAddress, String destinationAirport,
+                ArrayList<String> destinationAddress, int planeCapacity,
                 String departureDate, String duration, String flightType,
                 String userID, String flightID) {
         this.planeName = planeName;
@@ -38,7 +38,7 @@ public class Flight {
         this.destinationAddress = destinationAddress;
         this.planeCapacity = planeCapacity;
         this.departureDate = departureDate;
-        this.duration = duration;
+        this.duration = Double.parseDouble(duration);
         this.flightType = flightType;
         this.userID = userID;
         this.flightID = flightID;

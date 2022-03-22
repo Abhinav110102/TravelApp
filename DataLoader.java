@@ -18,9 +18,9 @@ public class DataLoader extends DataConstants {
 				String planeName = (String)flightJSON.get(FLIGHT_PLANE_NAME);
 				String airline = (String)flightJSON.get(FLIGHT_AIRLINE);
 				String arrivalAirport = (String)flightJSON.get(FLIGHT_ARRIVAL_AIRPORT);
-                String[] arrivalAddress = (String[])flightJSON.get(FLIGHT_ARRIVAL_ADDRESS);
+                ArrayList<String> arrivalAddress = (ArrayList<String>)flightJSON.get(FLIGHT_ARRIVAL_ADDRESS);
                 String destinationAirport = (String)flightJSON.get(FLIGHT_DESTINATION_AIRPORT);
-                String[] destinationAddress = (String[])flightJSON.get(FLIGHT_DESTINATION_ADDRESS);
+                ArrayList<String> destinationAddress = (ArrayList<String>)flightJSON.get(FLIGHT_DESTINATION_ADDRESS);
                 int planeCapacity = (int)flightJSON.get(FLIGHT_PLANE_CAPACITY);
                 String departureDate = (String)flightJSON.get(FLIGHT_DEPARTURE_DATE);
                 String duration = (String)flightJSON.get(FLIGHT_DURATION);
@@ -61,9 +61,9 @@ public class DataLoader extends DataConstants {
                 int userAge = (int)userJSON.get(USER_AGE);
                 int passportNumber = (int)userJSON.get(USER_PASSPORT_NUMBER);
                 String password = (String)userJSON.get(USER_PASSWORD);
-                String[] address = (String[])userJSON.get(USER_ADDRESS);
-                String[] friends = (String[])userJSON.get(USER_FRIENDS);
-                String[][] family = (String[][])userJSON.get(USER_FAMILY);
+                ArrayList<String> address = (ArrayList<String>)userJSON.get(USER_ADDRESS);
+                ArrayList<String> friends = (ArrayList<String>)userJSON.get(USER_FRIENDS);
+                ArrayList<ArrayList<String>> family = (ArrayList<ArrayList<String>>)userJSON.get(USER_FAMILY);
                 boolean senior = (boolean)userJSON.get(USER_SENIOR);
 				
 				users.add(new User(username, firstName, lastName, userID, phone, email, userAge,
@@ -92,7 +92,7 @@ public class DataLoader extends DataConstants {
 				String userID = (String)hotelJSON.get(HOTEL_USER_ID);
 				String hotelName = (String)hotelJSON.get(HOTEL_NAME);
 				String hotelCompany = (String)hotelJSON.get(HOTEL_COMPANY);
-                String[] hotelAddress = (String[])hotelJSON.get(HOTEL_ADDRESS);
+                ArrayList<String> hotelAddress = (ArrayList<String>)hotelJSON.get(HOTEL_ADDRESS);
                 int roomNumber = (int)hotelJSON.get(HOTEL_ROOM_NUMBER);
                 int daysBooked = (int)hotelJSON.get(HOTEL_DAYS_BOOKED);
                 int capacity = (int)hotelJSON.get(HOTEL_CAPACITY);

@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 public class Hotel extends Ticket{
-=======
 
 public class Hotel {
->>>>>>> a395aa97632f3db2fa650eeeb28bb1d50491d410
     //     - roomNumber: int
     // - dateArriving: Date
     // - dateLeaving: Date
@@ -17,7 +14,7 @@ public class Hotel {
     private int capacity;
     private int numOfBeds;
 
-    public Hotel(String userID, String hotelName, String hotelCompany, String[] hotelAddress,
+    public Hotel(String userID, String hotelName, String hotelCompany, ArrayList<String> hotelAddress,
                 int roomNumber, int daysBooked, int capacity, int numberOfBeds,
                 String arrivalDate, String departureDate) {
         this.userID = userID;

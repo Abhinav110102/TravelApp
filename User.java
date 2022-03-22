@@ -26,15 +26,15 @@ public class User {
     // - family: ArrayList<Family>
     public User (String username, String firstName, String lastName, String userID,
                 int phone, String email, int userAge, int passportNumber, String password,
-                String[] address, String[] friends, String[][] family, boolean senior) {
+                ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family, boolean senior) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.ID = userID;
-        this.phoneNumber = phone.toString();
+        this.phoneNumber = Integer.toString(phone);
         this.email = email;
         this.age = userAge;
-        this.passportNumber = passportNumber.toString;
+        this.passportNumber = Integer.toString(passportNumber);
         this.password = password;
         this.address = address;
         this.friends = friends;
