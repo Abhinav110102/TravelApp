@@ -112,4 +112,30 @@ public class DataLoader extends DataConstants {
 		
 		return null;
 	}
+
+	public static ArrayList<Luggage> loadLuggage() {
+		ArrayList<Luggage> luggages = new ArrayList<Luggage>();
+		
+		try {
+			FileReader reader = new FileReader(LUGGAGE_FILE_NAME);
+			JSONParser parser = new JSONParser();
+			JSONArray luggagesJSON = (JSONArray)new JSONParser().parse(reader);
+			
+			for(int i=0; i < luggagesJSON.size(); i++) {
+				JSONObject luggageJSON = (JSONObject)luggagesJSON.get(i);
+				String userID = (String)luggageJSON.get(LUGGAGE_USER_ID);
+				String flightID = (String)luggageJSON.get(LUGGAGE_FLIGHT_ID);
+				int weight = (int)luggageJSON.get(LUGGAGE_WEIGHT);
+				
+				luggages.add(new Luggage(userID, flightID, weight));
+			}
+			
+			return luggages;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 }
