@@ -24,9 +24,6 @@ public class Pet {
    * @return true if wieght > 16
    */
   public boolean ticketNeeded(){ // NEED EXACT WEIGHT
-    if (weight > 16) {
-      return true;
-    }
+    return weight >= 16;
   }
 }
-
