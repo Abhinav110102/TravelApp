@@ -10,7 +10,7 @@ public class User {
     private String passportNumber;
     private String phoneNumber;
     private int age;
-    private ArrayList<Ticket> tickets;
+    //private ArrayList<Ticket> tickets;
     private ArrayList<Flight> flights;
     private ArrayList<Hotel> hotels;
     private ArrayList<User> friends;
