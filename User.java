@@ -24,6 +24,23 @@ public class User {
     // - hotels: ArrayList<Hotel>
     // - friends: ArrayList<User>
     // - family: ArrayList<Family>
+    public User (String username, String firstName, String lastName, String userID,
+                int phone, String email, int userAge, int passportNumber, String password,
+                String[] address, String[] friends, String[][] family, boolean senior) {
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.ID = userID;
+        this.phoneNumber = phone.toString();
+        this.email = email;
+        this.age = userAge;
+        this.passportNumber = passportNumber.toString;
+        this.password = password;
+        this.address = address;
+        this.friends = friends;
+        this.family = family;
+        this.senior = senior;
+    }
 
     public void registerLuggage() {
         ;

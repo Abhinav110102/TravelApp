@@ -12,7 +12,7 @@ public class DataWriter extends DataConstants {
 		
 		//creating all the json objects
 		for(int i=0; i< flights.size(); i++) {
-			jsonFlights.add(getFlightJSON(flights.get(i)));
+			jsonFlights.add(getFlightsJSON(flights.get(i)));
 		}
 		
 		//Write JSON file
@@ -33,7 +33,7 @@ public class DataWriter extends DataConstants {
 		
 		//creating all the json objects
 		for(int i=0; i< users.size(); i++) {
-			jsonUsers.add(getUserJSON(users.get(i)));
+			jsonUsers.add(getUsersJSON(users.get(i)));
 		}
 		
 		//Write JSON file
@@ -54,7 +54,7 @@ public class DataWriter extends DataConstants {
 		
 		//creating all the json objects
 		for(int i=0; i< hotels.size(); i++) {
-			jsonHotels.add(getHotelJSON(hotels.get(i)));
+			jsonHotels.add(getHotelsJSON(hotels.get(i)));
 		}
 		
 		//Write JSON file
@@ -75,7 +75,7 @@ public class DataWriter extends DataConstants {
 		
 		//creating all the json objects
 		for(int i=0; i< luggages.size(); i++) {
-			jsonLuggages.add(getHotelJSON(luggages.get(i)));
+			jsonLuggages.add(getLuggagesJSON(luggages.get(i)));
 		}
 		
 		//Write JSON file
