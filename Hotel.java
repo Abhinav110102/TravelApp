@@ -1,3 +1,4 @@
+
 public class Hotel {
     //     - roomNumber: int
     // - dateArriving: Date
