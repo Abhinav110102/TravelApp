@@ -1,4 +1,4 @@
-public class Hotel {
+public class Hotel extends Ticket{
     //     - roomNumber: int
     // - dateArriving: Date
     // - dateLeaving: Date
