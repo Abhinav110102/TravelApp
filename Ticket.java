@@ -5,7 +5,7 @@ public class Ticket {
     private String Company;
     private String City;
     private String Country;
-    private ArrayList<Ratings> ratings;
+    private ArrayList<Rating> ratings;
 
     // + printTicket(): String
     // + displayAvailable(): String

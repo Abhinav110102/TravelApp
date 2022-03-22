@@ -3,7 +3,7 @@
  * @add stub creator as author?
  */
 public class Family {
-//     - firstName: String
+// - firstName: String
 // - lastName: String 
 // - age: int
 
@@ -13,7 +13,7 @@ public class Family {
 
 
 // (for those under the age of 18)
-// + Family(String name, int age)
+// + Family(String firstName, String lastName, int age)
 // + ticketNeeded(): bool
     public Family(String firstName, String lastName, int age) {
         this.firstName = firstName;
