@@ -42,4 +42,10 @@ public abstract class DataConstants {
     protected static final String HOTEL_NUMBER_OF_BEDS = "NumberOfBeds";
     protected static final String HOTEL_ARRIVAL_DATE = "ArrivalDate";
     protected static final String HOTEL_DEPARTURE_DATE = "DepartureDate";
+
+    protected static final String LUGGAGE_FILE_NAME = "luggage.json";
+	protected static final String LUGGAGE = "luggage";
+    protected static final String LUGGAGE_USER_ID = "UserID";
+	protected static final String LUGGAGE_FLIGHT_ID = "FlightID";
+	protected static final String LUGGAGE_WEIGHT = "Weight";
 }

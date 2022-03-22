@@ -1,25 +1,23 @@
 /**
+ * Class for managing data for a Family member and determing if a ticket is needed.
+ *  Pet is a child class.
  * @author Mark Valentino
- * @add stub creator as author?
  */
 public class Family {
-//     - firstName: String
-// - lastName: String 
-// - age: int
 
     private String firstName;
     private String lastName;
     private int age;
 
-
-// (for those under the age of 18)
-// + Family(String name, int age)
-// + ticketNeeded(): bool
+    /**
+     * Constructor
+     */
     public Family(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
     }
+
     /**
      * Method to determine wether a ticket is needed.
      * @return true if age >= 18
@@ -28,4 +26,3 @@ public class Family {
         return age >= 18;
     }
 }
-

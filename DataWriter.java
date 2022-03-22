@@ -68,6 +68,27 @@ public class DataWriter extends DataConstants {
         }
     }
 
+    public static void saveLuggages() {
+        Luggage luggage = Luggage.getInstance();
+		ArrayList<Luggage> luggages = luggage.getLuggages();
+		JSONArray jsonLuggages = new JSONArray();
+		
+		//creating all the json objects
+		for(int i=0; i< luggages.size(); i++) {
+			jsonLuggages.add(getHotelJSON(luggages.get(i)));
+		}
+		
+		//Write JSON file
+        try (FileWriter file = new FileWriter(LUGGAGE_FILE_NAME)) {
+ 
+            file.write(jsonLuggages.toJSONString());
+            file.flush();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static JSONObject getFlightsJSON (Flight flight) {
         JSONObject flightDetails = new JSONObject();
 		flightDetails.put(PEOPLE_FIRST_NAME, flight.getFirstName());
@@ -93,5 +114,14 @@ public class DataWriter extends DataConstants {
 		hotelDetails.put(PEOPLE_PHONE_NUMBER, hotel.getPhoneNumber());
         
         return hotelDetails;
+    }
+
+    public static JSONObject getLuggagesJSON (Luggage luggage) {
+        JSONObject luggageDetails = new JSONObject();
+		luggageDetails.put(LUGGAGE_USER_ID, luggage.getUserID());
+		luggageDetails.put(LUGGAGE_FLIGHT_ID, luggage.getFlightID());
+		luggageDetails.put(LUGGAGE_WEIGHT, luggage.getWeight());
+        
+        return luggageDetails;
     }
 }
