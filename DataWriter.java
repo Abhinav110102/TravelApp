@@ -121,7 +121,7 @@ public class DataWriter extends DataConstants {
         userDetails.put(USER_ADDRESS, user.getAddress());
         userDetails.put(USER_FRIENDS, user.getFriends());
         userDetails.put(USER_FAMILY, user.getFamily());
-        userDetails.put(USER_SENIOR, user.isOver50());
+        userDetails.put(USER_SENIOR, user.isOver65());
         
         return userDetails;
     }

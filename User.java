@@ -104,7 +104,7 @@ public class User {
         return family;
     }
 
-    public boolean isOver50() {
+    public boolean isOver65() {
         return senior;
     }
 
