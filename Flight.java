@@ -16,6 +16,20 @@ public class Flight {
     private boolean available;
     private String flightType ;
 
+    //Variables from JSON files;
+    private String planeName;
+    private String airline;
+    private String arrivalAirport;
+    private ArrayList<String> arrivalAddress;
+    private String destinationAirport;
+    private ArrayList<String> destinationAddress;
+    private int planeCapacity;
+    private String departureDate;
+    private String duration;
+    private String flightType;
+    private String userID;
+    private String flightID;
+
     // + Flight(double duration, Location startLocation, Location endLocation)
     // + printTicket(): String
     // + addLuggage(): void
@@ -42,6 +56,54 @@ public class Flight {
         this.flightType = flightType;
         this.userID = userID;
         this.flightID = flightID;
+    }
+
+    public String getPlaneName() {
+        return planeName;
+    }
+
+    public String getAirline() {
+        return airline;
+    }
+
+    public String getArrivalAirport() {
+        return arrivalAirport;
+    }
+
+    public ArrayList<String> getArrivalAddress() {
+        return arrivalAddress;
+    }
+
+    public String getDestinationAirport() {
+        return destinationAirport;
+    }
+
+    public ArrayList<String> getDestinationAddress() {
+        return destinationAddress;
+    }
+
+    public int getPlaneCapacity() {
+        return planeCapacity;
+    }
+
+    public String getFlightDepartureDate() {
+        return departureDate;
+    }
+
+    public String getFlightDuration() {
+        return duration;
+    }
+
+    public String getFlightType() {
+        return flightType;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public String getFlightID() {
+        return flightID;
     }
 
     public String printTicket() {

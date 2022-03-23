@@ -125,7 +125,7 @@ public class DataLoader extends DataConstants {
 				JSONObject luggageJSON = (JSONObject)luggagesJSON.get(i);
 				String userID = (String)luggageJSON.get(LUGGAGE_USER_ID);
 				String flightID = (String)luggageJSON.get(LUGGAGE_FLIGHT_ID);
-				int weight = (int)luggageJSON.get(LUGGAGE_WEIGHT);
+				double weight = (double)luggageJSON.get(LUGGAGE_WEIGHT);
 				
 				luggages.add(new Luggage(userID, flightID, weight));
 			}

@@ -14,6 +14,18 @@ public class Hotel {
     private int capacity;
     private int numOfBeds;
 
+    //Variables from JSON Files
+    private String userID;
+    private String hotelName;
+    private String hotelCompany;
+    private ArrayList<String> hotelAddress;
+    private int roomNumber;
+    private int daysBooked;
+    private int capacity;
+    private int numberOfBeds;
+    private String arrivalDate;
+    private String departureDate;
+
     public Hotel(String userID, String hotelName, String hotelCompany, ArrayList<String> hotelAddress,
                 int roomNumber, int daysBooked, int capacity, int numberOfBeds,
                 String arrivalDate, String departureDate) {
@@ -27,6 +39,46 @@ public class Hotel {
         this.numOfBeds = numberOfBeds;
         this.dateArriving = arrivalDate;
         this.dateLeaving = departureDate;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public String getHotelName() {
+        return hotelName;
+    }
+
+    public String getHotelCompany() {
+        return hotelCompany;
+    }
+
+    public ArrayList<String> getHotelAddress() {
+        return hotelAddress;
+    }
+
+    public int getRoomNumber() {
+        return roomNumberInt;
+    }
+
+    public int getDaysBooked() {
+        return daysBooked;
+    }
+
+    public int getHotelCapacity() {
+        return capacity;
+    }
+
+    public int getNumberOfBeds() {
+        return numberOfBeds;
+    }
+
+    public String getHotelArrivalDate() {
+        return arrivalDate;
+    }
+
+    public String getHotelDepartureDate() {
+        return departureDate;
     }
 
     //+ printTicket(): String

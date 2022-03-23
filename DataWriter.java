@@ -91,27 +91,53 @@ public class DataWriter extends DataConstants {
 
     public static JSONObject getFlightsJSON (Flight flight) {
         JSONObject flightDetails = new JSONObject();
-		flightDetails.put(PEOPLE_FIRST_NAME, flight.getFirstName());
-		flightDetails.put(PEOPLE_LAST_NAME, flight.getLastName());
-		flightDetails.put(PEOPLE_PHONE_NUMBER, flight.getPhoneNumber());
+		flightDetails.put(FLIGHT_PLANE_NAME, flight.getPlaneName());
+		flightDetails.put(FLIGHT_AIRLINE, flight.getAirline());
+		flightDetails.put(FLIGHT_ARRIVAL_AIRPORT, flight.getArrivalAirport());
+        flightDetails.put(FLIGHT_ARRIVAL_ADDRESS, flight.getArrivalAddress());
+        flightDetails.put(FLIGHT_DESTINATION_AIRPORT, flight.getDestinationAirport());
+        flightDetails.put(FLIGHT_DESTINATION_ADDRESS, flight.getDestinationAddress());
+        flightDetails.put(FLIGHT_PLANE_CAPACITY, flight.getPlaneCapacity());
+        flightDetails.put(FLIGHT_DEPARTURE_DATE, flight.getFlightDepartureDate());
+        flightDetails.put(FLIGHT_DURATION, flight.getFlightDuration());
+        flightDetails.put(FLIGHT_TYPE, flight.getFlightType());
+        flightDetails.put(FLIGHT_USER_ID, flight.getUserID());
+        flightDetails.put(FLIGHT_ID, flight.getFlightID());
         
         return flightDetails;
     }
 
     public static JSONObject getUsersJSON (User user) {
         JSONObject userDetails = new JSONObject();
-		userDetails.put(PEOPLE_FIRST_NAME, user.getFirstName());
-		userDetails.put(PEOPLE_LAST_NAME, user.getLastName());
-		userDetails.put(PEOPLE_PHONE_NUMBER, user.getPhoneNumber());
+		userDetails.put(USER_NAME, user.getUserName());
+		userDetails.put(USER_FIRST_NAME, user.getFirstName());
+		userDetails.put(USER_LAST_NAME, user.getLastName());
+        userDetails.put(USER_ID, user.getUserID());
+        userDetails.put(USER_PHONE, user.getPhoneNumber());
+        userDetails.put(USER_EMAIL, user.getEmail());
+        userDetails.put(USER_AGE, user.getUserAge());
+        userDetails.put(USER_PASSPORT_NUMBER, user.getPassportNumber());
+        userDetails.put(USER_PASSWORD, user.getPassword());
+        userDetails.put(USER_ADDRESS, user.getAddress());
+        userDetails.put(USER_FRIENDS, user.getFriends());
+        userDetails.put(USER_FAMILY, user.getFamily());
+        userDetails.put(USER_SENIOR, user.isOver50());
         
         return userDetails;
     }
 
     public static JSONObject getHotelsJSON (Hotel hotel) {
         JSONObject hotelDetails = new JSONObject();
-		hotelDetails.put(PEOPLE_FIRST_NAME, hotel.getFirstName());
-		hotelDetails.put(PEOPLE_LAST_NAME, hotel.getLastName());
-		hotelDetails.put(PEOPLE_PHONE_NUMBER, hotel.getPhoneNumber());
+		hotelDetails.put(HOTEL_USER_ID, hotel.getUserID());
+		hotelDetails.put(HOTEL_NAME, hotel.getHotelName());
+		hotelDetails.put(HOTEL_COMPANY, hotel.getHotelCompany());
+        hotelDetails.put(HOTEL_ADDRESS, hotel.getHotelAddress());
+        hotelDetails.put(HOTEL_ROOM_NUMBER, hotel.getRoomNumber());
+        hotelDetails.put(HOTEL_DAYS_BOOKED, hotel.getDaysBooked());
+        hotelDetails.put(HOTEL_CAPACITY, hotel.getHotelCapacity());
+        hotelDetails.put(HOTEL_NUMBER_OF_BEDS, hotel.getNumberOfBeds());
+        hotelDetails.put(HOTEL_ARRIVAL_DATE, hotel.getHotelArrivalDate());
+        hotelDetails.put(HOTEL_DEPARTURE_DATE, hotel.getHotelDepartureDate());
         
         return hotelDetails;
     }
