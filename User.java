@@ -17,6 +17,20 @@ public class User {
     private ArrayList<Family> family;
     private boolean senior;
 
+    //Variables from JSON Files
+    private String username;
+    private String firstName;
+    private String lastName;
+    private String userID;
+    private int phone;
+    private String email;
+    private int userAge;
+    private int passportNumber;
+    private String password;
+    private ArrayList<String> address;
+    private ArrayList<String> friends;
+    private ArrayList<ArrayList<String>> family;
+    private boolean senior;
 
     // - address: Location
     // - tickets: ArrayList<Ticket>
@@ -40,6 +54,58 @@ public class User {
         this.friends = friends;
         this.family = family;
         this.senior = senior;
+    }
+
+    public String getUserName() {
+        return username;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public int getPhoneNumber() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getUserAge() {
+        return userAge;
+    }
+
+    public int getPassportNumber() {
+        return passportNumber;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public ArrayList<String> getAddress() {
+        return address;
+    }
+
+    public ArrayList<String> getFriends() {
+        return friends;
+    }
+
+    public ArrayList<ArrayList<String>> getFamily() {
+        return family;
+    }
+
+    public boolean isOver65() {
+        return senior;
     }
 
     public void registerLuggage() {
