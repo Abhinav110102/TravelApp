@@ -6,13 +6,13 @@ import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants {
     public static void saveFlights() {
-        Flight flight = AllFlights.getInstance();
-		ArrayList<Flight> flights = flight.getFlights();
+        AllFlights flights = AllFlights.getInstance();
+		ArrayList<Flight> flightsarrlist = flights.getFlights();
 		JSONArray jsonFlights = new JSONArray();
 		
 		//creating all the json objects
-		for(int i=0; i< flights.size(); i++) {
-			jsonFlights.add(getFlightsJSON(flights.get(i)));
+		for(int i=0; i< flightsarrlist.size(); i++) {
+			jsonFlights.add(getFlightsJSON(flightsarrlist.get(i)));
 		}
 		
 		//Write JSON file
@@ -27,13 +27,13 @@ public class DataWriter extends DataConstants {
     }
 
     public static void saveUsers() {
-        User user = AllUsers.getInstance();
-		ArrayList<User> users = user.getUsers();
+        AllUsers users = AllUsers.getInstance();
+		ArrayList<User> usersarrlist = users.getUsers();
 		JSONArray jsonUsers = new JSONArray();
 		
 		//creating all the json objects
-		for(int i=0; i< users.size(); i++) {
-			jsonUsers.add(getUsersJSON(users.get(i)));
+		for(int i=0; i< usersarrlist.size(); i++) {
+			jsonUsers.add(getUsersJSON(usersarrlist.get(i)));
 		}
 		
 		//Write JSON file
@@ -48,13 +48,13 @@ public class DataWriter extends DataConstants {
     }
 
     public static void saveHotels() {
-        Hotel hotel = AllHotels.getInstance();
-		ArrayList<Hotel> hotels = hotel.getHotels();
+        AllHotels hotels = AllHotels.getInstance();
+		ArrayList<Hotel> hotelsarrlist = hotels.getHotels();
 		JSONArray jsonHotels = new JSONArray();
 		
 		//creating all the json objects
-		for(int i=0; i< hotels.size(); i++) {
-			jsonHotels.add(getHotelsJSON(hotels.get(i)));
+		for(int i=0; i< hotelsarrlist.size(); i++) {
+			jsonHotels.add(getHotelsJSON(hotelsarrlist.get(i)));
 		}
 		
 		//Write JSON file
@@ -69,13 +69,13 @@ public class DataWriter extends DataConstants {
     }
 
     public static void saveLuggages() {
-        Luggage luggage = AllLuggages.getInstance();
-		ArrayList<Luggage> luggages = luggage.getLuggages();
+        AllLuggages luggages = AllLuggages.getInstance();
+		ArrayList<Luggage> luggagesarrlist = luggages.getLuggages();
 		JSONArray jsonLuggages = new JSONArray();
 		
 		//creating all the json objects
-		for(int i=0; i< luggages.size(); i++) {
-			jsonLuggages.add(getLuggagesJSON(luggages.get(i)));
+		for(int i=0; i< luggagesarrlist.size(); i++) {
+			jsonLuggages.add(getLuggagesJSON(luggagesarrlist.get(i)));
 		}
 		
 		//Write JSON file
