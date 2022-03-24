@@ -8,8 +8,6 @@ public class Flight {
     // - seating: ArrayList<Seat> 
     // - available: boolean
     // -  flightType: String
-    private Location startLocation;
-    private Location endLocation;
     private ArrayList<Luggage> luggage;
     private ArrayList<Seat> seating ;
     private boolean available;
@@ -18,15 +16,15 @@ public class Flight {
     private String planeName;
     private String airline;
     private String arrivalAirport;
-    private ArrayList<String> arrivalAddress;
     private String destinationAirport;
-    private ArrayList<String> destinationAddress;
     private int planeCapacity;
     private String departureDate;
     private String duration;
     private String flightType;
     private String userID;
     private String flightID;
+    private Location startLocation;
+    private Location endLocation;
 
     // + Flight(double duration, Location startLocation, Location endLocation)
     // + printTicket(): String
@@ -45,15 +43,18 @@ public class Flight {
         this.planeName = planeName;
         this.airline = airline;
         this.arrivalAirport = arrivalAirport;
-        this.arrivalAddress = arrivalAddress;
         this.destinationAirport = destinationAirport;
-        this.destinationAddress = destinationAddress;
         this.planeCapacity = planeCapacity;
         this.departureDate = departureDate;
         this.duration = duration;
         this.flightType = flightType;
         this.userID = userID;
         this.flightID = flightID;
+
+        startLocation = new Location(arrivalAddress.get(0), arrivalAddress.get(1), arrivalAddress.get(2),
+                                    arrivalAddress.get(3), arrivalAddress.get(4));
+        endLocation = new Location(destinationAddress.get(0), destinationAddress.get(1), destinationAddress.get(2),
+                                    destinationAddress.get(3), destinationAddress.get(4));
     }
 
     public String getPlaneName() {
@@ -68,16 +69,8 @@ public class Flight {
         return arrivalAirport;
     }
 
-    public ArrayList<String> getArrivalAddress() {
-        return arrivalAddress;
-    }
-
     public String getDestinationAirport() {
         return destinationAirport;
-    }
-
-    public ArrayList<String> getDestinationAddress() {
-        return destinationAddress;
     }
 
     public int getPlaneCapacity() {
@@ -102,6 +95,34 @@ public class Flight {
 
     public String getFlightID() {
         return flightID;
+    }
+
+    public Location getStartLocation() {
+        return startLocation;
+    }
+
+    public ArrayList<String> getArrivalAddress() {
+        ArrayList<String> addressvals = new ArrayList<>();
+        addressvals.add(startLocation.getStreet());
+        addressvals.add(startLocation.getCity());
+        addressvals.add(startLocation.getState());
+        addressvals.add(startLocation.getZipcode());
+        addressvals.add(startLocation.getCountry());
+        return addressvals;
+    }
+
+    public Location getEndLocation() {
+        return endLocation;
+    }
+
+    public ArrayList<String> getDestinationAddress() {
+        ArrayList<String> addressvals = new ArrayList<>();
+        addressvals.add(endLocation.getStreet());
+        addressvals.add(endLocation.getCity());
+        addressvals.add(endLocation.getState());
+        addressvals.add(endLocation.getZipcode());
+        addressvals.add(endLocation.getCountry());
+        return addressvals;
     }
 
     public String printTicket() {

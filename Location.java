@@ -18,6 +18,26 @@ public class Location {
         this.country = country;
     }
 
+    public String getStreet() {
+        return street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
     // + toString(): String
     public String toString(){
         return this.street + "\n" + this.city + ", " + this.state + " " + this.zipcode + "\n" + this.country;
