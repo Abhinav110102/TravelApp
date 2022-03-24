@@ -10,11 +10,13 @@ private ArrayList<Flight> flights;
 // +  getInstance(): AllFlights
 // + addFlight(): void
 // +logout: void
-private AllFlights(){ // is this  correct?
+private AllFlights(){}
 
-}; 
 public AllFlights getInstance(){
-    ;
+    if (AllFlights == null) {
+        allFlights = new AllFlights();
+    }
+    return allHotels;
 }
 public void addFlight(){
     ;

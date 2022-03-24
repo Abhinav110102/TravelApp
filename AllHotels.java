@@ -11,11 +11,13 @@ private ArrayList<Hotel> hotels;
 // +  getInstance(): AllHotels
 // + addHotel(): void
 // + logout: void
-private AllHotels(){ // is this  correct?
+private AllHotels(){}
 
-}; 
 public AllHotels getInstance(){
-    ;
+    if (AllHotels == null) {
+        allHotels = new AllHotels();
+    }
+    return allHotels;
 }
 public void addHotel(){
     ;
