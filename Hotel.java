@@ -1,19 +1,7 @@
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 public class Hotel extends Ticket{
-    //     - roomNumber: int
-    // - dateArriving: Date
-    // - dateLeaving: Date
-    // - roomNumber: String
-    // - capacity: int
-    // - numOfBeds
-    private int roomNumberInt;
-    private Date dateArriving;
-    private Date dateLeaving;
-    private String roomNumberString;
-    private int capacity;
-    private int numOfBeds;
-
     //Variables from JSON Files
     private String userID;
     private String hotelName;
@@ -23,8 +11,8 @@ public class Hotel extends Ticket{
     private int daysBooked;
     private int capacity;
     private int numberOfBeds;
-    private String arrivalDate;
-    private String departureDate;
+    private Date dateArriving;
+    private Date dateLeaving;
 
     public Hotel(String userID, String hotelName, String hotelCompany, ArrayList<String> hotelAddress,
                 int roomNumber, int daysBooked, int capacity, int numberOfBeds,
@@ -33,12 +21,18 @@ public class Hotel extends Ticket{
         this.hotelName = hotelName;
         this.hotelCompany = hotelCompany;
         this.hotelAddress = hotelAddress;
-        this.roomNumberInt = roomNumber;
+        this.roomNumber = roomNumber;
         this.daysBooked = daysBooked;
         this.capacity = capacity;
-        this.numOfBeds = numberOfBeds;
-        this.dateArriving = arrivalDate;
-        this.dateLeaving = departureDate;
+        this.numberOfBeds = numberOfBeds;
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            this.dateArriving = sdf.parse(arrivalDate);
+            this.dateLeaving = sdf.parse(departureDate);
+        } catch (Exception e) {
+            System.out.println("Error parsing dates");
+        }
     }
 
     public String getUserID() {
@@ -58,7 +52,7 @@ public class Hotel extends Ticket{
     }
 
     public int getRoomNumber() {
-        return roomNumberInt;
+        return roomNumber;
     }
 
     public int getDaysBooked() {
@@ -73,12 +67,12 @@ public class Hotel extends Ticket{
         return numberOfBeds;
     }
 
-    public String getHotelArrivalDate() {
-        return arrivalDate;
+    public Date getHotelArrivalDate() {
+        return dateArriving;
     }
 
-    public String getHotelDepartureDate() {
-        return departureDate;
+    public Date getHotelDepartureDate() {
+        return dateLeaving;
     }
 
     //+ printTicket(): String

@@ -52,7 +52,7 @@ public class Flight {
         this.destinationAddress = destinationAddress;
         this.planeCapacity = planeCapacity;
         this.departureDate = departureDate;
-        this.duration = Double.parseDouble(duration);
+        this.duration = duration;
         this.flightType = flightType;
         this.userID = userID;
         this.flightID = flightID;
