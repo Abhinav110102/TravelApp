@@ -12,8 +12,6 @@ public abstract class UserTicket {
     // + getAvgRatings(): int
 
     public abstract String printTicket();
-    
-    public abstract String displayAvailable();
 
     public void addRating() {
         ;

@@ -20,6 +20,6 @@ public class Location {
 
     // + toString(): String
     public String toString(){
-        return "";
+        return this.street + "\n" + this.city + ", " + this.state + " " + this.zipcode + "\n" + this.country;
     }
 }

@@ -16,9 +16,10 @@ public class Room {
 
     public void addUnavailableDate(Date arrivalDate, Date departureDate) {
         this.unavailableDates.add(arrivalDate);
+        int addDay = 1000*60*60*24;
         while (arrivalDate != departureDate) {
-            arrivalDate = new Date(arrivalDate.getTime() + (1000*60*60*24));
-            this.unavailableDates.add();
+            arrivalDate = new Date(arrivalDate.getTime() + addDay);
+            this.unavailableDates.add(arrivalDate);
         }
     }
 

@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Date;
 public class Hotel extends Ticket{
     //     - roomNumber: int
     // - dateArriving: Date
