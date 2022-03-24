@@ -24,7 +24,12 @@ public class Room {
     }
 
     public void removeUnavailableDates(Date arrivalDate, Date departureDate) {
-
+        this.unavailableDates.remove(arrivalDate);
+        int addDay = 1000*60*60*24;
+        while (arrivalDate != departureDate) {
+            arrivalDate = new Date(arrivalDate.getTime() + addDay);
+            this.unavailableDates.remove(arrivalDate);
+        }
     }
 
     public boolean isAvailable(Date date) {
