@@ -8,11 +8,10 @@ public class Flight {
     // - seating: ArrayList<Seat> 
     // - available: boolean
     // -  flightType: String
-    private ArrayList<Luggage> luggage;
-    private ArrayList<Seat> seating ;
+    private ArrayList<Seat> seating;
     private boolean available;
 
-    //Variables from JSON files;
+    //Variables from JSON files & others;
     private String planeName;
     private String airline;
     private String arrivalAirport;
@@ -25,6 +24,7 @@ public class Flight {
     private String flightID;
     private Location startLocation;
     private Location endLocation;
+    private ArrayList<Luggage> luggage;
 
     // + Flight(double duration, Location startLocation, Location endLocation)
     // + printTicket(): String
@@ -126,11 +126,11 @@ public class Flight {
     }
 
     public String printTicket() {
-        FlightTicket flightTicket = new FlightTicket(duration, startLocation, endLocation));
+        FlightTicket flightTicket = new FlightTicket(duration, startLocation, endLocation);
         return flightTicket.printTicket();
     }
 
-    public void addLuggage() {
-        ;
+    public void addLuggage(double weight) {
+        luggage.add(new Luggage(getUserID(), getFlightID(), weight));
     }
 }
