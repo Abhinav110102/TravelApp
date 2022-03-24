@@ -15,7 +15,7 @@ public class TravelApplicationUI {
         int option = 0;
         System.out.println("Welcome to our Booking App!");
         while (true) {
-            printOptions()
+            printOptions();
             System.out.println("What would you like to do?:");
             option = scanner.nextInt();
 
@@ -40,7 +40,6 @@ public class TravelApplicationUI {
         
 
         
-    }
     public void printOptions(){
         System.out.println("************ Main Menu ************");
         System.out.println("1. Login");
@@ -48,11 +47,12 @@ public class TravelApplicationUI {
         System.out.println("3. Book a Flight");
         System.out.println("4. Book a Hotel");
         System.out.println("5. Quit app");
-
+        
     }
 
     public static void main(String[] args) {
-        run();
+        TravelApplicationUI travelApplicationUI = new TravelApplicationUI();
+        travelApplicationUI.run();
 
     }
 
