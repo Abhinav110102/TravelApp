@@ -19,8 +19,10 @@ public class FlightTicket extends UserTicket{
     // + Flight(double duration, Location startLocation, Location endLocation)
     // + printTicket(): String
     // + addLuggage(): void
-    public FlightTIcket(double duration, Location startLocation, Location endLocation) {
-
+    public FlightTicket(double duration, Location startLocation, Location endLocation) {
+        this.duration = duration;
+        this.startLocation = startLocation;
+        this.endLocation = endLocation;
     }
 
     public String printTicket() {
