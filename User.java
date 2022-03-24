@@ -1,21 +1,11 @@
 import java.util.ArrayList;
 
 public class User {
-    private String ID;
-    private String username;
-    private String email;
-    private String password;
-    private String firstName;
-    private String lastName;
-    private String passportNumber;
-    private String phoneNumber;
-    private int age;
     //private ArrayList<Ticket> tickets;
     private ArrayList<Flight> flights;
     private ArrayList<Hotel> hotels;
     private ArrayList<User> friends;
     private ArrayList<Family> family;
-    private boolean senior;
 
     //Variables from JSON Files
     private String username;
@@ -44,11 +34,11 @@ public class User {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.ID = userID;
-        this.phoneNumber = Integer.toString(phone);
+        this.userID = userID;
+        this.phone = phone;
         this.email = email;
-        this.age = userAge;
-        this.passportNumber = Integer.toString(passportNumber);
+        this.userAge = userAge;
+        this.passportNumber = passportNumber;
         this.password = password;
         this.address = address;
         this.friends = friends;

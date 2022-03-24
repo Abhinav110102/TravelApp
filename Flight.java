@@ -8,13 +8,11 @@ public class Flight {
     // - seating: ArrayList<Seat> 
     // - available: boolean
     // -  flightType: String
-    private double duration;
     private Location startLocation;
     private Location endLocation;
     private ArrayList<Luggage> luggage;
     private ArrayList<Seat> seating ;
     private boolean available;
-    private String flightType ;
 
     //Variables from JSON files;
     private String planeName;
