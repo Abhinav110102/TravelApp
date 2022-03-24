@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class AllHotels {
 // - allHotels: AllHotels
 // - hotels: ArrayList<Hotel>
-private AllHotels allHotels;
-private ArrayList<Hotel> hotels;
+private static AllHotels allHotels = null;
+private static ArrayList<Hotel> hotels = new ArrayList<>();
 
 
 // - AllHotels()
@@ -13,11 +13,15 @@ private ArrayList<Hotel> hotels;
 // + logout: void
 private AllHotels(){}
 
-public AllHotels getInstance(){
+public static AllHotels getInstance(){
     if (allHotels == null) {
         allHotels = new AllHotels();
     }
     return allHotels;
+}
+
+public ArrayList<Hotel> getHotels() {
+    return hotels;
 }
 
 public void addHotel(String userID, String hotelName, String hotelCompany, ArrayList<String> hotelAddress,

@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class AllFlights {
 // -allFlights: AllFlights
 // -flights: ArrayList<Flight
-private AllFlights allFlights;
-private ArrayList<Flight> flights;
+private static AllFlights allFlights = null;
+private static ArrayList<Flight> flights = new ArrayList<>();
 
 // -AllFlights()
 // +  getInstance(): AllFlights
@@ -12,11 +12,15 @@ private ArrayList<Flight> flights;
 // +logout: void
 private AllFlights(){}
 
-public AllFlights getInstance(){
+public static AllFlights getInstance(){
     if (allFlights == null) {
         allFlights = new AllFlights();
     }
     return allFlights;
+}
+
+public ArrayList<Flight> getFlights() {
+    return flights;
 }
 
 public void addFlight(String planeName, String airline, String arrivalAirport,

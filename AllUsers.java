@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class AllUsers {
 
-    private AllUsers allUsers;
-    private ArrayList <User> users;
+    private static AllUsers allUsers = null;
+    private static ArrayList <User> users = new ArrayList<>();
 
     // + logout: void
     private AllUsers() {}
@@ -12,11 +12,15 @@ public class AllUsers {
      * Method to return an instance of itself.
      * @return allUsers the object to be returned.
      */
-    public AllUsers getInstance() {
+    public static AllUsers getInstance() {
         if (allUsers == null) {
 			allUsers = new AllUsers();
 		}
 		return allUsers;
+    }
+
+    public ArrayList<User> getUsers() {
+        return users;
     }
 
     /**
