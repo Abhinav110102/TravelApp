@@ -1,4 +1,3 @@
-import java.util.Date;
 
 public class HotelTicket extends UserTicket {
     private int roomNumberInt;
@@ -15,6 +14,9 @@ public class HotelTicket extends UserTicket {
     }
         
     public String printTicket() {
-        return "";
+        return "Room Number: " + roomNumberInt
+                + "\nArrival Date: " + dateArriving
+                + "\nDeparture Date: " + dateLeaving
+                + "\nNumber of Beds: " + numOfBeds;
     }
 }

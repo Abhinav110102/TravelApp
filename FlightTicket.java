@@ -8,7 +8,7 @@ public class FlightTicket extends UserTicket{
     // - seating: ArrayList<Seat> 
     // - available: boolean
     // -  flightType: String
-    private double duration;
+    private String duration;
     private Location startLocation;
     private Location endLocation;
     private ArrayList<Luggage> luggage;
@@ -19,7 +19,7 @@ public class FlightTicket extends UserTicket{
     // + Flight(double duration, Location startLocation, Location endLocation)
     // + printTicket(): String
     // + addLuggage(): void
-    public FlightTicket(double duration, Location startLocation, Location endLocation) {
+    public FlightTicket(String duration, Location startLocation, Location endLocation) {
         this.duration = duration;
         this.startLocation = startLocation;
         this.endLocation = endLocation;

@@ -2,10 +2,9 @@ import java.util.ArrayList;
 
 public class User {
     //private ArrayList<Ticket> tickets;
+    private ArrayList<User> friendList;
     private ArrayList<Flight> flights;
     private ArrayList<Hotel> hotels;
-    private ArrayList<User> friends;
-    private ArrayList<Family> family;
 
     //Variables from JSON Files
     private String username;
@@ -20,6 +19,7 @@ public class User {
     private ArrayList<String> address;
     private ArrayList<String> friends;
     private ArrayList<ArrayList<String>> family;
+    private ArrayList<Family> familyList;
     private boolean senior;
 
     // - address: Location
@@ -44,6 +44,8 @@ public class User {
         this.friends = friends;
         this.family = family;
         this.senior = senior;
+
+        familyList = new ArrayList<Family>();
     }
 
     public String getUserName() {
@@ -90,8 +92,18 @@ public class User {
         return friends;
     }
 
+    public ArrayList<Family> getFamilyList() {
+        return familyList;
+    }
+
     public ArrayList<ArrayList<String>> getFamily() {
-        return family;
+        ArrayList<ArrayList<String>> familyVals = new ArrayList<ArrayList<String>>();
+        for (int i = 0; i < familyList.size(); i++) {
+            familyVals.get(i).set(0, familyList.get(i).getFirstName());
+            familyVals.get(i).set(1, familyList.get(i).getLastName());
+            familyVals.get(i).set(2, Integer.toString(familyList.get(i).getAge()));
+        }
+        return familyVals;
     }
 
     public boolean isOver65() {

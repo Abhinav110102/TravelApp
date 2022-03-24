@@ -126,7 +126,8 @@ public class Flight {
     }
 
     public String printTicket() {
-        ;
+        FlightTicket flightTicket = new FlightTicket(duration, startLocation, endLocation));
+        return flightTicket.printTicket();
     }
 
     public void addLuggage() {

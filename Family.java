@@ -18,6 +18,18 @@ public class Family {
         this.age = age;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     /**
      * Method to determine wether a ticket is needed.
      * @return true if age >= 18
