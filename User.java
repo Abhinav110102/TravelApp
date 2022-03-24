@@ -104,10 +104,6 @@ public class User {
         return family;
     }
 
-    public static User getInstance() {
-        ;
-    }
-
     public boolean isOver65() {
         return senior;
     }

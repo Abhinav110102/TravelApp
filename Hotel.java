@@ -81,10 +81,6 @@ public class Hotel {
         return departureDate;
     }
 
-    public static Hotel getInstance() {
-        ;
-    }
-
     //+ printTicket(): String
     public String printTicket() {
         ;

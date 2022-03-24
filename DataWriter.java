@@ -6,7 +6,7 @@ import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants {
     public static void saveFlights() {
-        Flight flight = Flight.getInstance();
+        Flight flight = AllFlights.getInstance();
 		ArrayList<Flight> flights = flight.getFlights();
 		JSONArray jsonFlights = new JSONArray();
 		
@@ -27,7 +27,7 @@ public class DataWriter extends DataConstants {
     }
 
     public static void saveUsers() {
-        User user = User.getInstance();
+        User user = AllUsers.getInstance();
 		ArrayList<User> users = user.getUsers();
 		JSONArray jsonUsers = new JSONArray();
 		
@@ -48,7 +48,7 @@ public class DataWriter extends DataConstants {
     }
 
     public static void saveHotels() {
-        Hotel hotel = Hotel.getInstance();
+        Hotel hotel = AllHotels.getInstance();
 		ArrayList<Hotel> hotels = hotel.getHotels();
 		JSONArray jsonHotels = new JSONArray();
 		
@@ -69,7 +69,7 @@ public class DataWriter extends DataConstants {
     }
 
     public static void saveLuggages() {
-        Luggage luggage = Luggage.getInstance();
+        Luggage luggage = AllLuggages.getInstance();
 		ArrayList<Luggage> luggages = luggage.getLuggages();
 		JSONArray jsonLuggages = new JSONArray();
 		
