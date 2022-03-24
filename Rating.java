@@ -25,5 +25,9 @@ public class Rating {
   public void HideName() {
     isNameVisible = false;
   }
+
+  public int getRating() {
+    return this.rating;
+  }
 }
 
