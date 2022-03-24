@@ -1,6 +1,6 @@
-public class Hotel extends Ticket{
+import java.util.ArrayList;
 
-public class Hotel {
+public class Hotel extends Ticket{
     //     - roomNumber: int
     // - dateArriving: Date
     // - dateLeaving: Date
@@ -85,5 +85,4 @@ public class Hotel {
     public String printTicket() {
         ;
     }
-}
 }
