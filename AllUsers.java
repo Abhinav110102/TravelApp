@@ -13,7 +13,7 @@ public class AllUsers {
      * @return allUsers the object to be returned.
      */
     public AllUsers getInstance() {
-        if (AllUsers == null) {
+        if (allUsers == null) {
 			allUsers = new AllUsers();
 		}
 		return allUsers;
@@ -22,13 +22,16 @@ public class AllUsers {
     /**
      * Constructor
      */
-    public void addUser(String firstName, String lastName, String phoneNumber, String ID) {
-        User user = new User(firstName, lastName, phoneNumber, ID);
+    public void addUser(String username, String firstName, String lastName, String userID,
+    int phone, String email, int userAge, int passportNumber, String password,
+    ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family, boolean senior) {
+        User user = new User(username, firstName, lastName, userID, phone, email, userAge, passportNumber, password,
+        address, friends, family, senior);
         users.add(user);
     }
 
     public void logout() {
-    ;
+        DataWriter.saveUsers();;
     }
 
 }

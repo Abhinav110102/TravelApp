@@ -13,15 +13,16 @@ private ArrayList<Luggage> luggages;
 private AllLuggages(){}
 
 public AllLuggages getInstance(){
-    if (AllLuggages == null) {
+    if (allLuggages == null) {
         allLuggages = new AllLuggages();
     }
     return allLuggages;
 }
-public void addLuggage(){
-    ;
+public void addLuggage(String userID, String flightID, double weight){
+    Luggage luggage = new Luggage(userID, flightID, weight);
+    luggages.add(luggage);
 }
 public void logout(){
-    ;
+    DataWriter.saveLuggages();
 }
 }

@@ -14,15 +14,21 @@ private ArrayList<Hotel> hotels;
 private AllHotels(){}
 
 public AllHotels getInstance(){
-    if (AllHotels == null) {
+    if (allHotels == null) {
         allHotels = new AllHotels();
     }
     return allHotels;
 }
-public void addHotel(){
-    ;
+
+public void addHotel(String userID, String hotelName, String hotelCompany, ArrayList<String> hotelAddress,
+                    int roomNumber, int daysBooked, int capacity, int numberOfBeds,
+                    String arrivalDate, String departureDate){
+    Hotel hotel = new Hotel(userID, hotelName, hotelCompany, hotelAddress, roomNumber, daysBooked,
+                            capacity, numberOfBeds, arrivalDate, departureDate);
+    hotels.add(hotel);
 }
+
 public void logout(){
-    ;
+    DataWriter.saveHotels();;
 }
 }
