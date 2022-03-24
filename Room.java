@@ -8,7 +8,7 @@ public class Room {
     int numOfBeds;
     ArrayList<Date> unavailableDates;
 
-    public Room(int roomNumber, int numOfBeds, ArrayList<Date> unavailableDates) 
+    public Room(int roomNumber, int numOfBeds, ArrayList<Date> unavailableDates) { 
         this.roomNumber = roomNumber;
         this.numOfBeds = numOfBeds;
         this.unavailableDates = unavailableDates;
