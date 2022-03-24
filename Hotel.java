@@ -13,6 +13,7 @@ public class Hotel extends Ticket{
     private int numberOfBeds;
     private Date dateArriving;
     private Date dateLeaving;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     public Hotel(String userID, String hotelName, String hotelCompany, ArrayList<String> hotelAddress,
                 int roomNumber, int daysBooked, int capacity, int numberOfBeds,
@@ -26,7 +27,6 @@ public class Hotel extends Ticket{
         this.capacity = capacity;
         this.numberOfBeds = numberOfBeds;
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
             this.dateArriving = sdf.parse(arrivalDate);
             this.dateLeaving = sdf.parse(departureDate);
@@ -77,6 +77,7 @@ public class Hotel extends Ticket{
 
     //+ printTicket(): String
     public String printTicket() {
-        ;
+        HotelTicket hotelTicket = new HotelTicket (roomNumber, sdf.format(dateArriving), sdf.format(dateLeaving), numberOfBeds);
+        return hotelTicket.printTicket();
     }
 }
