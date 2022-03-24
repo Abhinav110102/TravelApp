@@ -105,6 +105,10 @@ public class Flight {
     public String getFlightID() {
         return flightID;
     }
+    
+    public static Flight getInstance() {
+        ;
+    }
 
     public String printTicket() {
         ;

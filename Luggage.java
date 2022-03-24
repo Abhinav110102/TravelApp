@@ -27,6 +27,10 @@ public String getFlightID() {
   return flightID;
 }
 
+public static Luggage getInstance() {
+  ;
+}
+
 public double getWeight(){
     return LuggageWeight;
 }
