@@ -20,7 +20,7 @@ public abstract class UserTicket {
         this.ratings = ratings;
     }
 
-    public abstract String printTicket(); // to String
+    public abstract String toString(); // to String
 
     //public void addRating() {
     //    ;

@@ -18,7 +18,8 @@ public class HotelTicket extends UserTicket {
     }
         
     public String printTicket() {
-        return "Address: " + location.toString()
+        return "Hotel: " + company
+                + "\nAddress: " + location.toString()
                 + "\nRoom Number: " + roomNumberInt
                 + "\nArrival Date: " + dateArriving
                 + "\nDeparture Date: " + dateLeaving

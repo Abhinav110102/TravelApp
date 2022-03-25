@@ -29,7 +29,7 @@ public class FlightTicket extends UserTicket{
         this.date = date;
     }
 
-    public String printTicket() {
+    public String toString() {
         return "Airline: " + company
                 + "\nStart Address: " + startLocation.toString()
                 + "\nEnd Address: " + endLocation
