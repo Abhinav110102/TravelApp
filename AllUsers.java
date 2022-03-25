@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class AllUsers {
 
@@ -26,9 +27,10 @@ public class AllUsers {
     /**
      * Constructor
      */
-    public void addUser(String username, String firstName, String lastName, String userID,
+    public void addUser(String username, String firstName, String lastName,
     int phone, String email, int userAge, int passportNumber, String password,
     ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family, boolean senior) {
+        String userID = UUID.randomUUID().toString();
         User user = new User(username, firstName, lastName, userID, phone, email, userAge, passportNumber, password,
         address, friends, family, senior);
         users.add(user);
