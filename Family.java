@@ -30,6 +30,9 @@ public class Family {
         return age;
     }
 
+    public String toString() {
+        return firstName + " " + lastName + "\nAge: " + age; 
+    }
     /**
      * Method to determine wether a ticket is needed.
      * @return true if age >= 18

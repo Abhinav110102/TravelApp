@@ -3,10 +3,10 @@ import java.util.ArrayList;
 import javax.naming.directory.InitialDirContext;
 
 public abstract class UserTicket {
-    private String ID;
-    private String company;
-    private Location location;
-    private ArrayList<Rating> ratings;
+    protected String ID;
+    protected String company;
+    //private Location location;
+    protected ArrayList<Rating> ratings;
 
     // + printTicket(): String
     // + displayAvailable(): String
@@ -16,11 +16,11 @@ public abstract class UserTicket {
     public UserTicket(String ID, String company, ArrayList<Rating> ratings) {
         this.ID = ID;
         this.company = company;
-        this.location = location;
+        //this.location = location;
         this.ratings = ratings;
     }
 
-    public abstract String printTicket(); // display to terminal
+    public abstract String printTicket(); // to String
 
     //public void addRating() {
     //    ;

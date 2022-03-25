@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.lang.Math;
 
 public abstract class Ticket {
-    private String ID;
-    private String Company;
-    private Location location;
-    private ArrayList<Rating> ratings;
+    protected String ID;
+    protected String Company;
+    protected Location location;
+    protected ArrayList<Rating> ratings;
 
     // + printTicket(): String
     // + displayAvailable(): String

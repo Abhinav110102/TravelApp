@@ -11,7 +11,8 @@ public class Pet extends Family {
   /**
    * Constructor
    */
-  public Pet(String name, int weight){
+  public Pet(String name, int weight, int age){
+    super(name, "", age);
     this.name = name;
     this.weight = weight;
   }

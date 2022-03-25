@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class FlightTicket extends UserTicket{
        // - duration: double
@@ -9,25 +10,31 @@ public class FlightTicket extends UserTicket{
     // - available: boolean
     // -  flightType: String
     private String duration;
-    //private Location startLocation; Location start in user ticket
+    private Location startLocation; //Location start in user ticket? 
     private Location endLocation;
     private ArrayList<Luggage> luggage;
     private ArrayList<Seat> seating ;
     private boolean available;
     private String flightType;
+    private Date date;
 
     // + Flight(double duration, Location startLocation, Location endLocation)
     // + printTicket(): String
     // + addLuggage(): void
-    public FlightTicket(String ID, String company, Location location, ArrayList<Rating> ratings, String duration, Location startLocation, Location endLocation) {
-        super(ID, company, location, ratings);
+    public FlightTicket(String ID, String company, ArrayList<Rating> ratings, String duration, Location startLocation, Location endLocation, Date date) {
+        super(ID, company, ratings);
         this.duration = duration;
         this.startLocation = startLocation;
         this.endLocation = endLocation;
+        this.date = date;
     }
 
     public String printTicket() {
-        return "";
+        return "Airline: " + company
+                + "\nStart Address: " + startLocation.toString()
+                + "\nEnd Address: " + endLocation
+                + "\nFlight Date: " + date
+                + "\nSeat Number " + seat.toString();
     }
 
     public void addLuggage() {
