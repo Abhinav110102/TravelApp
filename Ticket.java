@@ -14,9 +14,7 @@ public abstract class Ticket {
 
     public abstract String printTicket(); // Print to txt
     
-    public abstract void displayTicket(); // print to terminal
-    
-    public abstract String displayAvailable();
+    //public abstract String displayAvailable();
 
     public void addRating(String username, int rating, boolean isNameVisible) {
         Rating rat = new Rating(username, rating, isNameVisible);
