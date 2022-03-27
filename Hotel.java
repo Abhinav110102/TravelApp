@@ -86,6 +86,6 @@ public class Hotel extends Ticket {
         HotelTicket hotelTicket = new HotelTicket (userID, hotelCompany, location, ratings, roomNumber,
                                                     sdf.format(dateArriving), sdf.format(dateLeaving),
                                                     numberOfBeds);
-        return hotelTicket.printTicket();
+        return hotelTicket.toString();
     }
 }
