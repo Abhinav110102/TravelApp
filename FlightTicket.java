@@ -13,7 +13,7 @@ public class FlightTicket extends UserTicket{
     private Location startLocation; //Location start in user ticket? 
     private Location endLocation;
     private ArrayList<Luggage> luggage;
-    private ArrayList<Seat> seating ;
+    private ArrayList<Seat> seating;
     private boolean available;
     private String flightType;
     private Date date;
@@ -34,7 +34,7 @@ public class FlightTicket extends UserTicket{
                 + "\nStart Address: " + startLocation.toString()
                 + "\nEnd Address: " + endLocation
                 + "\nFlight Date: " + date
-                + "\nSeat Number " + seat.toString();
+                + "\nSeat Number " + seating.toString();
     }
 
     public void addLuggage() {

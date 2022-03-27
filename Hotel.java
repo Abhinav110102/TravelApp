@@ -1,6 +1,7 @@
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
 public class Hotel extends Ticket {
     //Variables from JSON Files
     private String userID;
