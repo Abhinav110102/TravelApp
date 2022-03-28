@@ -45,7 +45,7 @@ public class User {
         this.family = family;
         this.senior = senior;
 
-        familyList = new ArrayList<Family>();
+        familyList = new ArrayList<Family>(); //???
     }
 
     public String getUserName() {
@@ -143,7 +143,7 @@ public class User {
     }
 
     public int calCost() {
-        ;
+        return 0;
     }
 
     // + addDeal(): Deal
