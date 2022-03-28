@@ -21,6 +21,9 @@ public class User {
     private boolean senior;
     private ArrayList<Hotel> hotels;
     private ArrayList<Flight> flights;
+    private ArrayList<Rating> ratings;
+    private ArrayList<Ticket> tickets;
+    private ArrayList<Luggage> luggages;
 
     // - address: Location
     // - tickets: ArrayList<Ticket>
@@ -110,22 +113,24 @@ public class User {
         return senior;
     }
 
-    public void registerLuggage() {
-        ;
+    public void registerLuggage(Luggage luggage) {
+        luggages.add(luggage);
     }
 
-    public void addTicket() {
-        ;
+    public void addTicket(Ticket ticket) {
+        tickets.add(ticket);
     }
 
-    public void requestRefund() {
-        ;
+    public void requestRefund(Ticket ticket) {
+        tickets.remove(ticket);
     }
 
     public void printAllTickets() {
-        ;
+        for (int i = 0; i < tickets.size(); i++) {
+            System.out.println(tickets.get(i).printTicket());
+        }
     }
-    
+
     public void printFlights() {
         for (int i = 0; i < flights.size(); i++) {
             System.out.println(flights.get(i).toString());
@@ -139,15 +144,19 @@ public class User {
     }
 
     public void addFriend(User user) {
-        ;
+        friendList.add(user);
     }
 
     public void addRating(String Username, int rating, boolean isNameVisible) {
-        ;
+        ratings.add(new Rating(Username, rating, isNameVisible));
     }
 
-    public int calCost() {
-        ;
+    public double calCost() {
+        double cost = 10;
+        if (isOver65()) {
+            cost = 0.75 * cost;
+        }
+        return cost;
     }
 
     // + addDeal(): Deal
