@@ -3,8 +3,6 @@ import java.util.ArrayList;
 public class User {
     //private ArrayList<Ticket> tickets;
     private ArrayList<User> friendList;
-    private ArrayList<Flight> flights;
-    private ArrayList<Hotel> hotels;
 
     //Variables from JSON Files
     private String username;
@@ -21,6 +19,8 @@ public class User {
     private ArrayList<ArrayList<String>> family;
     private ArrayList<Family> familyList;
     private boolean senior;
+    private ArrayList<Hotel> hotels;
+    private ArrayList<Flight> flights;
 
     // - address: Location
     // - tickets: ArrayList<Ticket>
@@ -127,11 +127,15 @@ public class User {
     }
     
     public void printFlights() {
-        ;
+        for (int i = 0; i < flights.size(); i++) {
+            System.out.println(flights.get(i).toString());
+        }
     }
 
     public void printHotels() {
-        ;
+        for (int i = 0; i < hotels.size(); i++) {
+            System.out.println(hotels.get(i).toString());
+        }
     }
 
     public void addFriend(User user) {

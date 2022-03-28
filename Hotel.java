@@ -1,6 +1,7 @@
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
 public class Hotel extends Ticket {
     //Variables from JSON Files
     private String userID;
@@ -22,6 +23,11 @@ public class Hotel extends Ticket {
         this.hotelName = hotelName;
         this.hotelCompany = hotelCompany;
         this.hotelAddress = hotelAddress;
+
+        Location location = new Location (hotelAddress.get(0), hotelAddress.get(1),
+                                            hotelAddress.get(2), hotelAddress.get(3),
+                                            hotelAddress.get(4));
+
         this.roomNumber = roomNumber;
         this.daysBooked = daysBooked;
         this.capacity = capacity;
@@ -77,7 +83,9 @@ public class Hotel extends Ticket {
 
     //+ printTicket(): String
     public String printTicket() {
-        HotelTicket hotelTicket = new HotelTicket (roomNumber, sdf.format(dateArriving), sdf.format(dateLeaving), numberOfBeds);
-        return hotelTicket.printTicket();
+        HotelTicket hotelTicket = new HotelTicket (userID, hotelCompany, location, ratings, roomNumber,
+                                                    sdf.format(dateArriving), sdf.format(dateLeaving),
+                                                    numberOfBeds);
+        return hotelTicket.toString();
     }
 }

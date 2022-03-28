@@ -17,7 +17,7 @@ public class HotelTicket extends UserTicket {
         this.numOfBeds = numOfBeds;
     }
         
-    public String printTicket() {
+    public String toString() {
         return "Hotel: " + company
                 + "\nAddress: " + location.toString()
                 + "\nRoom Number: " + roomNumberInt

@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
-public class Flight {
+public class Flight extends Ticket {
     // - duration: double
     // - startLocation: Location
     // - endLocation: Location
@@ -25,6 +27,8 @@ public class Flight {
     private Location startLocation;
     private Location endLocation;
     private ArrayList<Luggage> luggage;
+    private Date depart;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     // + Flight(double duration, Location startLocation, Location endLocation)
     // + printTicket(): String
@@ -55,6 +59,12 @@ public class Flight {
                                     arrivalAddress.get(3), arrivalAddress.get(4));
         endLocation = new Location(destinationAddress.get(0), destinationAddress.get(1), destinationAddress.get(2),
                                     destinationAddress.get(3), destinationAddress.get(4));
+
+        try {
+            this.depart = sdf.parse(departureDate);
+        } catch (Exception e) {
+            System.out.println("Error parsing dates");
+        }
     }
 
     public String getPlaneName() {
@@ -126,8 +136,8 @@ public class Flight {
     }
 
     public String printTicket() {
-        FlightTicket flightTicket = new FlightTicket(duration, startLocation, endLocation);
-        return flightTicket.printTicket();
+        FlightTicket flightTicket = new FlightTicket(flightID, airline, ratings, duration, startLocation, endLocation, depart);
+        return flightTicket.toString();
     }
 
     public void addLuggage(double weight) {
