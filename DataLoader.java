@@ -10,7 +10,7 @@ public class DataLoader extends DataConstants {
 		
 		try {
 			FileReader reader = new FileReader(FLIGHT_FILE_NAME);
-			JSONParser parser = new JSONParser();
+			//JSONParser parser = new JSONParser();
 			JSONArray flightsJSON = (JSONArray)new JSONParser().parse(reader);
 			
 			for(int i=0; i < flightsJSON.size(); i++) {
@@ -47,7 +47,7 @@ public class DataLoader extends DataConstants {
 		
 		try {
 			FileReader reader = new FileReader(USER_FILE_NAME);
-			JSONParser parser = new JSONParser();
+			//JSONParser parser = new JSONParser();
 			JSONArray usersJSON = (JSONArray)new JSONParser().parse(reader);
 			
 			for(int i=0; i < usersJSON.size(); i++) {
@@ -84,7 +84,7 @@ public class DataLoader extends DataConstants {
 		
 		try {
 			FileReader reader = new FileReader(HOTEL_FILE_NAME);
-			JSONParser parser = new JSONParser();
+			//JSONParser parser = new JSONParser();
 			JSONArray hotelsJSON = (JSONArray)new JSONParser().parse(reader);
 			
 			for(int i=0; i < hotelsJSON.size(); i++) {
@@ -118,7 +118,7 @@ public class DataLoader extends DataConstants {
 		
 		try {
 			FileReader reader = new FileReader(LUGGAGE_FILE_NAME);
-			JSONParser parser = new JSONParser();
+			//JSONParser parser = new JSONParser();
 			JSONArray luggagesJSON = (JSONArray)new JSONParser().parse(reader);
 			
 			for(int i=0; i < luggagesJSON.size(); i++) {

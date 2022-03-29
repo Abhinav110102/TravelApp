@@ -1,10 +1,7 @@
 import java.util.ArrayList;
 
 public class User {
-    //private ArrayList<Ticket> tickets;
-    private ArrayList<User> friendList;
-
-    //Variables from JSON Files
+    //Variables
     private String username;
     private String firstName;
     private String lastName;
@@ -16,11 +13,15 @@ public class User {
     private String password;
     private ArrayList<String> address;
     private ArrayList<String> friends;
-    private ArrayList<ArrayList<String>> family;
+    //private ArrayList<ArrayList<String>> family;
     private ArrayList<Family> familyList;
     private boolean senior;
     private ArrayList<Hotel> hotels;
     private ArrayList<Flight> flights;
+    private ArrayList<Rating> ratings;
+    private ArrayList<Ticket> tickets;
+    private ArrayList<Luggage> luggages;
+    private ArrayList<User> friendList;
 
     // - address: Location
     // - tickets: ArrayList<Ticket>
@@ -42,10 +43,17 @@ public class User {
         this.password = password;
         this.address = address;
         this.friends = friends;
-        this.family = family;
+        //this.family = family;
         this.senior = senior;
 
+<<<<<<< HEAD
         familyList = new ArrayList<Family>(); //???
+=======
+        familyList = new ArrayList<Family>();
+        for (int i = 0; i < family.size(); i++) {
+            familyList.add(new Family(family.get(i).get(0), family.get(i).get(1), Integer.parseInt(family.get(i).get(2))));
+        }
+>>>>>>> aacef40224c8393b9f8b821d0872d8a59de8d628
     }
 
     public String getUserName() {
@@ -110,22 +118,24 @@ public class User {
         return senior;
     }
 
-    public void registerLuggage() {
-        ;
+    public void registerLuggage(Luggage luggage) {
+        luggages.add(luggage);
     }
 
-    public void addTicket() {
-        ;
+    public void addTicket(Ticket ticket) {
+        tickets.add(ticket);
     }
 
-    public void requestRefund() {
-        ;
+    public void requestRefund(Ticket ticket) {
+        tickets.remove(ticket);
     }
 
     public void printAllTickets() {
-        ;
+        for (int i = 0; i < tickets.size(); i++) {
+            System.out.println(tickets.get(i).printTicket());
+        }
     }
-    
+
     public void printFlights() {
         for (int i = 0; i < flights.size(); i++) {
             System.out.println(flights.get(i).toString());
@@ -139,15 +149,24 @@ public class User {
     }
 
     public void addFriend(User user) {
-        ;
+        friendList.add(user);
     }
 
     public void addRating(String Username, int rating, boolean isNameVisible) {
-        ;
+        ratings.add(new Rating(Username, rating, isNameVisible));
     }
 
+<<<<<<< HEAD
     public int calCost() {
         return 0;
+=======
+    public double calCost() {
+        double cost = 10;
+        if (isOver65()) {
+            cost = 0.75 * cost;
+        }
+        return cost;
+>>>>>>> aacef40224c8393b9f8b821d0872d8a59de8d628
     }
 
     // + addDeal(): Deal
