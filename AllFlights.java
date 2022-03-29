@@ -23,7 +23,7 @@ public static ArrayList<Flight> getFlights() {
     return flights;
 }
 
-public void addFlight(String planeName, String airline, String arrivalAirport,
+public static void addFlight(String planeName, String airline, String arrivalAirport,
                         ArrayList<String> arrivalAddress, String destinationAirport,
                         ArrayList<String> destinationAddress, int planeCapacity,
                         String departureDate, String duration, String flightType,
