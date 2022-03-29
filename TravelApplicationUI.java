@@ -1,4 +1,4 @@
-import java.util.Scanner;
+ import java.util.Scanner;
 
 /**
  * Class for implenting a user interface for the TravelApplication.
@@ -48,13 +48,15 @@ public class TravelApplicationUI {
                     //travelApplication.signUp(usernameInput, passwordInput);
                     break;
                 case 3:
-                    System.out.println("Where would you like to fly to?");
+                    System.out.println("Where would you like to fly to or from?");
                     searchInput = scanner.nextLine();
-                    //travelApplication.Search(searchInput);
+                    System.out.println(travelApplication.Search(searchInput));
+                    System.out.println("Which flight would you like to book?");
                     break;
                 case 4:
                     System.out.println("Where would you like to book a hotel?");
                     searchInput = scanner.nextLine();
+                    // Search() method only works for flights for now.
                     //travelApplication.Search(searchInput);
                     break;
                 case 5:
