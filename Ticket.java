@@ -13,7 +13,7 @@ public abstract class Ticket {
     // + getAvgRatings(): int
 
     public abstract String printTicket(); // Print to txt
-    
+    public abstract Ticket bookTicket();
     //public abstract String displayAvailable();
 
     public void addRating(String username, int rating, boolean isNameVisible) {

@@ -46,14 +46,10 @@ public class User {
         //this.family = family;
         this.senior = senior;
 
-<<<<<<< HEAD
-        familyList = new ArrayList<Family>(); //???
-=======
         familyList = new ArrayList<Family>();
         for (int i = 0; i < family.size(); i++) {
             familyList.add(new Family(family.get(i).get(0), family.get(i).get(1), Integer.parseInt(family.get(i).get(2))));
         }
->>>>>>> aacef40224c8393b9f8b821d0872d8a59de8d628
     }
 
     public String getUserName() {
@@ -156,17 +152,12 @@ public class User {
         ratings.add(new Rating(Username, rating, isNameVisible));
     }
 
-<<<<<<< HEAD
-    public int calCost() {
-        return 0;
-=======
     public double calCost() {
         double cost = 10;
         if (isOver65()) {
             cost = 0.75 * cost;
         }
         return cost;
->>>>>>> aacef40224c8393b9f8b821d0872d8a59de8d628
     }
 
     // + addDeal(): Deal
