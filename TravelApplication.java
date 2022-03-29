@@ -47,8 +47,18 @@ private String Logout(){
 public void addUser(String age){
     ;
 }
-public Ticket Search(String input){
-    ;
+public String Search(String input){
+    String results = "";
+    ArrayList<Flight> flightsToSearch = flights.getFlights();
+    for (int i = 0; i < flightsToSearch.size(); i++) {
+        if (flightsToSearch.get(i).destinationAirport.equals("input")) {
+            results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+        } else if (flightsToSearch.get(i).arrivalAirport.equals("input")) {
+            results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+        }
+
+    }
+    return results;
 }
 public void Booking(Ticket){
     ;
