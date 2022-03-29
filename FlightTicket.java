@@ -37,7 +37,7 @@ public class FlightTicket extends UserTicket{
                 + "\nSeat Number " + seating.toString();
     }
 
-    public void addLuggage() {
-        ;
+    public void addLuggage(Luggage luggageInst) {
+        luggage.add(luggageInst);
     }
 }

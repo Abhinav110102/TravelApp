@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-import javax.naming.directory.InitialDirContext;
+//import javax.naming.directory.InitialDirContext;
 
 public abstract class UserTicket {
     protected String ID;

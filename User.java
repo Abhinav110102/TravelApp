@@ -1,10 +1,7 @@
 import java.util.ArrayList;
 
 public class User {
-    //private ArrayList<Ticket> tickets;
-    private ArrayList<User> friendList;
-
-    //Variables from JSON Files
+    //Variables
     private String username;
     private String firstName;
     private String lastName;
@@ -16,7 +13,7 @@ public class User {
     private String password;
     private ArrayList<String> address;
     private ArrayList<String> friends;
-    private ArrayList<ArrayList<String>> family;
+    //private ArrayList<ArrayList<String>> family;
     private ArrayList<Family> familyList;
     private boolean senior;
     private ArrayList<Hotel> hotels;
@@ -24,6 +21,7 @@ public class User {
     private ArrayList<Rating> ratings;
     private ArrayList<Ticket> tickets;
     private ArrayList<Luggage> luggages;
+    private ArrayList<User> friendList;
 
     // - address: Location
     // - tickets: ArrayList<Ticket>
@@ -45,10 +43,13 @@ public class User {
         this.password = password;
         this.address = address;
         this.friends = friends;
-        this.family = family;
+        //this.family = family;
         this.senior = senior;
 
         familyList = new ArrayList<Family>();
+        for (int i = 0; i < family.size(); i++) {
+            familyList.add(new Family(family.get(i).get(0), family.get(i).get(1), Integer.parseInt(family.get(i).get(2))));
+        }
     }
 
     public String getUserName() {
