@@ -50,17 +50,20 @@ public void addUser(String age){
     ;
 }
 public String Search(String input){
-    String results = "";
+    //String results = "";
     ArrayList<Flight> flightsToSearch = flights.getFlights();
+    ArrayList<Flight> flightResults;
     for (int i = 0; i < flightsToSearch.size(); i++) {
-        if (flightsToSearch.get(i).getDestinationAirport().equals("input")) {
-            results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
-        } else if (flightsToSearch.get(i).getArrivalAirport().equals("input")) {
-            results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+        if (flightsToSearch.get(i).destinationAirport.equals("input")) {
+            flightResults.add(flightsToSearch.get(i));
+            //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+        } else if (flightsToSearch.get(i).arrivalAirport.equals("input")) {
+            flightResults.add(flightsToSearch.get(i));
+            //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
         }
 
     }
-    return results;
+    return flightResults;
 }
 public void Booking(Ticket){
     ;
