@@ -1,14 +1,24 @@
 import java.util.Scanner;
 
+/**
+ * Class for implenting a user interface for the TravelApplication.
+ * @author Mark Valentino
+ */
 public class TravelApplicationUI {
     private Scanner scanner = new Scanner(System.in);
     private TravelApplication travelApplication; // NOT IN UML
     
+    /**
+     * Constructor
+     */
     public TravelApplicationUI(){
         Scanner scanner = new Scanner(System.in);
         TravelApplication travelApplication = new TravelApplication();
     }
 
+    /**
+     * Method to run the UI. Calls printOptions() method.
+     */
     public void run() {
         int option = 0;
         String usernameInput;
@@ -46,7 +56,8 @@ public class TravelApplicationUI {
                     travelApplication.Search(searchInput);
                     break;
                 case 5:
-                    // insert code to save to json and a system.exit(0)
+                    // insert code to save to json?
+                    travelApplication.logout();
                     break;
                 default:
                     System.out.println("Sorry! That's not an option, please try again: ");
@@ -54,24 +65,24 @@ public class TravelApplicationUI {
         }
     }
 
-        
-
-        
+    /**
+     * Method to print options of input in UI.
+     */
     public void printOptions(){
         System.out.println("************ Main Menu ************");
         System.out.println("1. Login");
         System.out.println("2. Sign up");
         System.out.println("3. Book a Flight");
         System.out.println("4. Book a Hotel");
-        System.out.println("5. Quit app");
-        
+        System.out.println("5. Quit app"); 
     }
 
+    /**
+     * Method main for running the entire Application.
+     */
     public static void main(String[] args) {
         TravelApplicationUI travelApplicationUI = new TravelApplicationUI();
         travelApplicationUI.run();
-
     }
-
 
 }
