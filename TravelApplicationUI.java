@@ -45,7 +45,7 @@ public class TravelApplicationUI {
                     usernameInput = scanner.nextLine();
                     System.out.println("Enter a password:");
                     passwordInput = scanner.nextLine();
-                    //travelApplication.singup(usernameInput, passwordInput);
+                    //travelApplication.signUp(usernameInput, passwordInput);
                     break;
                 case 3:
                     System.out.println("Where would you like to fly to?");
@@ -59,7 +59,7 @@ public class TravelApplicationUI {
                     break;
                 case 5:
                     // insert code to save to json?
-                    //travelApplication.logout();
+                    //travelApplication.Logout();
                     break;
                 default:
                     System.out.println("Sorry! That's not an option, please try again: ");
