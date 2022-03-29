@@ -1,4 +1,4 @@
- import java.util.Scanner;
+  import java.util.Scanner;
 
 /**
  * Class for implenting a user interface for the TravelApplication.
@@ -6,14 +6,13 @@
  */
 public class TravelApplicationUI {
     private Scanner scanner = new Scanner(System.in);
-    private TravelApplication travelApplication; // NOT IN UML
+    //private TravelApplication travelApplication; // NOT IN UML
     
     /**
      * Constructor
      */
     public TravelApplicationUI(){
         Scanner scanner = new Scanner(System.in);
-        travelApplication = TravelApplication.getInstance();
         //TravelApplication travelApplication = new TravelApplication();
     }
 
@@ -22,6 +21,7 @@ public class TravelApplicationUI {
      */
     public void run() {
         int option = 0;
+        int bookingOption;
         String usernameInput;
         String passwordInput;
         String searchInput;
@@ -33,17 +33,12 @@ public class TravelApplicationUI {
 
             switch(option) {
                 case 1:
-                    //login
-                    while (true) {
-                        System.out.println("Enter your username:");
-                        scanner.nextLine();
-                        usernameInput = scanner.nextLine();
-                        travelApplication.
-                        System.out.println("Enter your password:");
-                        passwordInput = scanner.nextLine();
+                    System.out.println("Enter your username:");
+                    scanner.nextLine();
+                    usernameInput = scanner.nextLine();
+                    System.out.println("Enter your password:");
+                    passwordInput = scanner.nextLine();
                     //travelApplication.login(usernameInput, passwordInput);
-                        break;
-                    }
                     break;
                 case 2:
                     System.out.println("Enter a username:");
@@ -56,8 +51,13 @@ public class TravelApplicationUI {
                 case 3:
                     System.out.println("Where would you like to fly to or from?");
                     searchInput = scanner.nextLine();
-                    System.out.println(travelApplication.Search(searchInput));
+                    ArrayList<Flight> flightResults = travelApplication.Search(searchInput);
+                    for (int i = 0 ; i < flightResults.size(); i++){
+                        System.out.println(i + ". " + flightResults.get(i).getStartLocation() + " " + flightResults.get(i).getEndtLocation());
+                    }
                     System.out.println("Which flight would you like to book?");
+                    bookingOption = scanner.nextInt();
+                    travelApplication.book(flightResults.get(bookingOption));
                     break;
                 case 4:
                     System.out.println("Where would you like to book a hotel?");
