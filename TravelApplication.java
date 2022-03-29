@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class TravelApplication {
 //     - users: AllUsers
 // - flights: AllFlights
@@ -77,8 +79,21 @@ private void Logout(){
 public void addUser(String age){
     ;
 }
-public Ticket Search(String input){
-    ;
+public String Search(String input){
+    //String results = "";
+    ArrayList<Flight> flightsToSearch = flights.getFlights();
+    ArrayList<Flight> flightResults;
+    for (int i = 0; i < flightsToSearch.size(); i++) {
+        if (flightsToSearch.get(i).destinationAirport.equals("input")) {
+            flightResults.add(flightsToSearch.get(i));
+            //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+        } else if (flightsToSearch.get(i).arrivalAirport.equals("input")) {
+            flightResults.add(flightsToSearch.get(i));
+            //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+        }
+
+    }
+    return flightResults;
 }
 public void Booking(Ticket ticket){
     ;
