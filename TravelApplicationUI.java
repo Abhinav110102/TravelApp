@@ -6,14 +6,14 @@ import java.util.Scanner;
  */
 public class TravelApplicationUI {
     private Scanner scanner = new Scanner(System.in);
-    private TravelApplication travelApplication; // NOT IN UML
+    //private TravelApplication travelApplication; // NOT IN UML
     
     /**
      * Constructor
      */
     public TravelApplicationUI(){
         Scanner scanner = new Scanner(System.in);
-        TravelApplication travelApplication = new TravelApplication();
+        //TravelApplication travelApplication = new TravelApplication();
     }
 
     /**
@@ -33,31 +33,33 @@ public class TravelApplicationUI {
             switch(option) {
                 case 1:
                     System.out.println("Enter your username:");
+                    scanner.nextLine();
                     usernameInput = scanner.nextLine();
                     System.out.println("Enter your password:");
                     passwordInput = scanner.nextLine();
-                    travelApplication.login(usernameInput, passwordInput);
+                    //travelApplication.login(usernameInput, passwordInput);
                     break;
                 case 2:
                     System.out.println("Enter a username:");
+                    scanner.nextLine();
                     usernameInput = scanner.nextLine();
                     System.out.println("Enter a password:");
                     passwordInput = scanner.nextLine();
-                    travelApplication.singup(usernameInput, passwordInput);
+                    //travelApplication.singup(usernameInput, passwordInput);
                     break;
                 case 3:
                     System.out.println("Where would you like to fly to?");
                     searchInput = scanner.nextLine();
-                    travelApplication.Search(searchInput);
+                    //travelApplication.Search(searchInput);
                     break;
                 case 4:
                     System.out.println("Where would you like to book a hotel?");
                     searchInput = scanner.nextLine();
-                    travelApplication.Search(searchInput);
+                    //travelApplication.Search(searchInput);
                     break;
                 case 5:
                     // insert code to save to json?
-                    travelApplication.logout();
+                    //travelApplication.logout();
                     break;
                 default:
                     System.out.println("Sorry! That's not an option, please try again: ");
