@@ -6,13 +6,14 @@
  */
 public class TravelApplicationUI {
     private Scanner scanner = new Scanner(System.in);
-    //private TravelApplication travelApplication; // NOT IN UML
+    private TravelApplication travelApplication; // NOT IN UML
     
     /**
      * Constructor
      */
     public TravelApplicationUI(){
         Scanner scanner = new Scanner(System.in);
+        travelApplication = TravelApplication.getInstance();
         //TravelApplication travelApplication = new TravelApplication();
     }
 
@@ -32,12 +33,17 @@ public class TravelApplicationUI {
 
             switch(option) {
                 case 1:
-                    System.out.println("Enter your username:");
-                    scanner.nextLine();
-                    usernameInput = scanner.nextLine();
-                    System.out.println("Enter your password:");
-                    passwordInput = scanner.nextLine();
+                    //login
+                    while (true) {
+                        System.out.println("Enter your username:");
+                        scanner.nextLine();
+                        usernameInput = scanner.nextLine();
+                        travelApplication.
+                        System.out.println("Enter your password:");
+                        passwordInput = scanner.nextLine();
                     //travelApplication.login(usernameInput, passwordInput);
+                        break;
+                    }
                     break;
                 case 2:
                     System.out.println("Enter a username:");

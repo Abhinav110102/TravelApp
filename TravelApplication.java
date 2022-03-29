@@ -10,8 +10,8 @@ private AllUsers users;
 private AllFlights flights;
 private AllHotels hotels;
 private User currentUser;
-private Database database;
-
+//private Database database;
+private static TravelApplication travelApplication;
 
 // - TravelApplication()
 // + getInstance(): TravelApplication()
@@ -30,20 +30,50 @@ private Database database;
 // + displayAvailableMonth(int month): void
 // + displayUserID(): String
 
-//private TravelApplication();
+private TravelApplication() {
+  users = AllUsers.getInstance();
+  flights = AllFlights.getInstance();
+  hotels = AllHotels.getInstance();
+  this.currentUser = null;
+}
 public static TravelApplication getInstance(){
+    if (travelApplication == null) {
+        travelApplication = new TravelApplication();
+    }
+    return travelApplication;
+}
+
+
+// Login methods / / / / / / / / / / / / / / / / / / / / / / / / / / /
+private boolean checkUsername(String username) {
+    for (User user : users.getUsers()) {
+        if(user.getUserName().equals(username)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+private boolean login(String username, String password) {
+    for (User user : users.getUsers()) {
+        if(user.getUserName().equals(username)) {
+            if (user.getPassword().equals(password)) {
+                return true;
+            }
+            return false; // password is wrong
+        }
+    }
+    return false; // password or username is wrong
+}
+
+
+// Sign up methods / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / 
+private boolean signUp(String username,String password){
     ;
 }
-private String login(){
-    ;
-}
-private String login(String username,String password) {
-    ;
-}
-private String signUp(String username,String password){
-    ;
-}
-private String Logout(){
+
+// / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+private void Logout(){
     ;
 }
 public void addUser(String age){
@@ -65,10 +95,10 @@ public String Search(String input){
     }
     return flightResults;
 }
-public void Booking(Ticket){
+public void Booking(Ticket ticket){
     ;
 }
-private void addTicketToUser(Ticket){
+private void addTicketToUser(Ticket ticket){
     ;
 }
 private void updateTicket(Flight){
