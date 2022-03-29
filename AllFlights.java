@@ -19,7 +19,7 @@ public static AllFlights getInstance(){
     return allFlights;
 }
 
-public ArrayList<Flight> getFlights() {
+public static ArrayList<Flight> getFlights() {
     return flights;
 }
 
