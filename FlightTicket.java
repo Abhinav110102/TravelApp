@@ -13,7 +13,7 @@ public class FlightTicket extends UserTicket{
     private Location startLocation; //Location start in user ticket? 
     private Location endLocation;
     private ArrayList<Luggage> luggage;
-    private ArrayList<Seat> seating;
+    private Seat seat;
     private boolean available;
     private String flightType;
     private Date date;
@@ -21,12 +21,13 @@ public class FlightTicket extends UserTicket{
     // + Flight(double duration, Location startLocation, Location endLocation)
     // + printTicket(): String
     // + addLuggage(): void
-    public FlightTicket(String ID, String company, ArrayList<Rating> ratings, String duration, Location startLocation, Location endLocation, Date date) {
+    public FlightTicket(String ID, String company, ArrayList<Rating> ratings, String duration, Location startLocation, Location endLocation, Date date, Seat seat) {
         super(ID, company, ratings);
         this.duration = duration;
         this.startLocation = startLocation;
         this.endLocation = endLocation;
         this.date = date;
+        this.seat = seat;
     }
 
     public String toString() {
