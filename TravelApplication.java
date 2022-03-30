@@ -68,7 +68,7 @@ private boolean login(String username, String password) {
 
 
 // Sign up methods / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / 
-private void signUp(String username,String password, String firstName, String lastName, String userID,
+private boolean signUp(String username,String password, String firstName, String lastName, String userID,
                         int phone, String email, int userAge, int passportNumber,
                         ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family){
     boolean senior = false;  // Senior set to false by default, will be set to true if needed when passed through addUser
