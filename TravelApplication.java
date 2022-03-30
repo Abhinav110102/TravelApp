@@ -45,7 +45,7 @@ public static TravelApplication getInstance(){
 
 
 // Login methods / / / / / / / / / / / / / / / / / / / / / / / / / / /
-private boolean checkUsername(String username) {
+public boolean checkUsername(String username) {
     for (User user : users.getUsers()) {
         if(user.getUserName().equals(username)) {
             return true;
@@ -54,7 +54,7 @@ private boolean checkUsername(String username) {
     return false;
 }
 
-private boolean login(String username, String password) {
+public boolean login(String username, String password) {
     for (User user : users.getUsers()) {
         if(user.getUserName().equals(username)) {
             if (user.getPassword().equals(password)) {
@@ -68,6 +68,13 @@ private boolean login(String username, String password) {
 
 
 // Sign up methods / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / 
+<<<<<<< HEAD
+private void signUp(String usernameInput, String passwordInput, String firstName, String lastName, String phone, String email, 
+                        String passportNum, String street, String city, String state, String zipcode, String country, int age) {
+    users.addUser(usernameInput, passwordInput, firstName, lastName, phone, email, passportNum, street, city, state, zipcode, country, age);
+    
+    
+=======
 private boolean signUp(String username,String password, String firstName, String lastName, String userID,
                         int phone, String email, int userAge, int passportNumber,
                         ArrayList<String> address){
@@ -77,6 +84,7 @@ private boolean signUp(String username,String password, String firstName, String
     User user = new User(username, firstName, lastName, userID, phone, email, userAge, passportNumber, password,
                         address, friends, family, senior);
     addUser(user.getUserName(), Integer.toString(userAge));
+>>>>>>> ffc7947718157dbcf593cad14ca6b8f9cb519517
 }
 
 // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -104,7 +112,11 @@ public void addUser(String username, String age){
         }
     }
 }
+<<<<<<< HEAD
+public ArrayList<Flight> Search(String input){
+=======
 public ArrayList<Flight> SearchFlights(String input){
+>>>>>>> ffc7947718157dbcf593cad14ca6b8f9cb519517
     //String results = "";
     ArrayList<Flight> flightsToSearch = flights.getFlights();
     ArrayList<Flight> flightResults = new ArrayList<Flight>();
