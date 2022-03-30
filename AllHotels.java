@@ -26,9 +26,9 @@ public ArrayList<Hotel> getHotels() {
 
 public void addHotel(String userID, String hotelName, String hotelCompany, ArrayList<String> hotelAddress,
                     int roomNumber, int daysBooked, int capacity, int numberOfBeds,
-                    String arrivalDate, String departureDate){
+                    String arrivalDate, String departureDate, boolean pool){
     Hotel hotel = new Hotel(userID, hotelName, hotelCompany, hotelAddress, roomNumber, daysBooked,
-                            capacity, numberOfBeds, arrivalDate, departureDate);
+                            capacity, numberOfBeds, arrivalDate, departureDate , pool);
     hotels.add(hotel);
 }
 
