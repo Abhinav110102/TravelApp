@@ -58,6 +58,7 @@ public boolean login(String username, String password) {
     for (User user : users.getUsers()) {
         if(user.getUserName().equals(username)) {
             if (user.getPassword().equals(password)) {
+                this.currentUser = user;
                 return true;
             }
             return false; // password is wrong
@@ -67,7 +68,21 @@ public boolean login(String username, String password) {
 }
 
 
+
 // Sign up methods / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / 
+public void signUp(String username, String password, String firstName, String lastName, String phone, String email, 
+                        String passportNum, String street, String city, String state, String zipcode, String country, int age) {
+    boolean senior = false;
+    if (age >= 65) {senior = true;}
+    Location address = new Location(street, city, state, zipcode, country);
+    User newUser = new User(username, password, firstName, lastName, phone, email, passportNum, address, age, senior);
+    users.addUser(newUser);
+    currentUser = newUser;
+    
+}
+
+/**
+ 
 private boolean signUp(String username,String password, String firstName, String lastName, String userID,
                         String phone, String email, String passportNumber, String street, String city,
                         String state, String zipcode, String country, int userAge){
@@ -77,14 +92,14 @@ private boolean signUp(String username,String password, String firstName, String
     ArrayList<String> friends = new ArrayList<String>();
     ArrayList<ArrayList<String>> family = new ArrayList<ArrayList<String>>();
     boolean senior = false;  // Senior set to false by default, will be set to true if needed when passed through addUser
-    User user = new User(username, password, firstName, lastName, phone, email, passportNumber,
-                        new Location(street, city, state, zipcode, country), userAge, senior);
+    User user = new User(username, firstName, lastName, userID, phone, email, userAge, passportNumber, password,
+                        address, friends, family, senior);
     addUser(user.getUserName(), Integer.toString(userAge));
     return true;
 }
-
+*/
 // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-private void Logout(){
+private void quit(){
     AllFlights.logout();
     AllHotels.logout();
     AllLuggages.logout();

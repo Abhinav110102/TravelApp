@@ -24,15 +24,6 @@ public class TravelApplicationUI {
     public void run() {
         int option = 0;
         int bookingOption;
-        String usernameInput;
-        String passwordInput;
-        String firstNameInput;
-        String lastNameInput;
-        String userIDInput;
-        int phoneInput;
-        String emailInput;
-        int userAgeInput;
-        int passportNumberInput;
         ArrayList<String> addressInput = new ArrayList<String>();
         String searchInput;
         System.out.println("Welcome to our Booking App!");
@@ -53,8 +44,8 @@ public class TravelApplicationUI {
                     break;
                 case 2:
                         if (signUp()) {
-                        System.out.println("Sign Up Successful");
-                        System.out.println("Welcome " + travelApplication.getCurrentUser().getFirstName() + "!");
+                            System.out.println("Sign Up Successful");
+                            System.out.println("Welcome " + travelApplication.getCurrentUser().getFirstName() + "!");
                         } else {
                             System.out.println("Sign Up Unsuccessful");
                         }
@@ -99,6 +90,20 @@ public class TravelApplicationUI {
         }
     }
 
+    /**
+     * Method to print options of input in UI.
+     */
+    public void printOptions(){
+        System.out.println("************ Main Menu ************");
+        System.out.println("1. Login");
+        System.out.println("2. Sign up");
+        System.out.println("3. Book a Flight");
+        System.out.println("4. Book a Hotel");
+        System.out.println("5. Quit app"); 
+    }
+
+
+    
     /**
      * Method to print options of input in UI.
      */
@@ -225,5 +230,4 @@ public class TravelApplicationUI {
         TravelApplicationUI travelApplicationUI = new TravelApplicationUI();
         travelApplicationUI.run();
     }
-
 }
