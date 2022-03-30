@@ -28,11 +28,13 @@ public class AllUsers {
      * Constructor
      */
     public void addUser(String username, String firstName, String lastName,
-    int phone, String email, int userAge, int passportNumber, String password,
+    String phone, String email, int userAge, String passportNumber, String password,
     ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family, boolean senior) {
         String userID = UUID.randomUUID().toString();
-        User user = new User(username, firstName, lastName, userID, phone, email, userAge, passportNumber, password,
-        address, friends, family, senior);
+        User user = new User(username, password, firstName, lastName, phone, email,
+                            passportNumber, new Location(address.get(0), address.get(1),
+                            address.get(2), address.get(3), address.get(4)), userAge,
+                            senior);
         users.add(user);
     }
 

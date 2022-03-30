@@ -56,18 +56,20 @@ public class DataLoader extends DataConstants {
 				String firstName = (String)userJSON.get(USER_FIRST_NAME);
 				String lastName = (String)userJSON.get(USER_LAST_NAME);
                 String userID = (String)userJSON.get(USER_ID);
-                int phone = (int)userJSON.get(USER_PHONE);
+                String phone = (String)userJSON.get(USER_PHONE);
                 String email = (String)userJSON.get(USER_EMAIL);
                 int userAge = (int)userJSON.get(USER_AGE);
-                int passportNumber = (int)userJSON.get(USER_PASSPORT_NUMBER);
+                String passportNumber = (String)userJSON.get(USER_PASSPORT_NUMBER);
                 String password = (String)userJSON.get(USER_PASSWORD);
                 ArrayList<String> address = (ArrayList<String>)userJSON.get(USER_ADDRESS);
                 ArrayList<String> friends = (ArrayList<String>)userJSON.get(USER_FRIENDS);
                 ArrayList<ArrayList<String>> family = (ArrayList<ArrayList<String>>)userJSON.get(USER_FAMILY);
                 boolean senior = (boolean)userJSON.get(USER_SENIOR);
 				
-				users.add(new User(username, firstName, lastName, userID, phone, email, userAge,
-                                    passportNumber, password, address, friends, family, senior));
+				users.add(new User(username, password, firstName, lastName, phone, email,
+                                    passportNumber, new Location(address.get(0), address.get(1),
+									address.get(2), address.get(3), address.get(4)), userAge,
+									senior));
 			}
 			
 			return users;
@@ -99,9 +101,10 @@ public class DataLoader extends DataConstants {
                 int numberOfBeds = (int)hotelJSON.get(HOTEL_NUMBER_OF_BEDS);
                 String arrivalDate = (String)hotelJSON.get(HOTEL_ARRIVAL_DATE);
                 String departureDate = (String)hotelJSON.get(HOTEL_DEPARTURE_DATE);
+				boolean pool = (boolean)hotelJSON.get(HOTEL_POOL);
 				
 				hotels.add(new Hotel(userID, hotelName, hotelCompany, hotelAddress, roomNumber,
-                                        daysBooked, capacity, numberOfBeds, arrivalDate, departureDate));
+                                        daysBooked, capacity, numberOfBeds, arrivalDate, departureDate, pool));
 			}
 			
 			return hotels;
