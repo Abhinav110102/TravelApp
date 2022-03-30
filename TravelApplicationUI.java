@@ -25,6 +25,14 @@ public class TravelApplicationUI {
         int bookingOption;
         String usernameInput;
         String passwordInput;
+        String firstNameInput;
+        String lastNameInput;
+        String userIDInput;
+        int phoneInput;
+        String emailInput;
+        int userAgeInput;
+        int passportNumberInput;
+        ArrayList<String> addressInput = new ArrayList<String>();
         String searchInput;
         System.out.println("Welcome to our Booking App!");
         while (true) {
@@ -49,7 +57,37 @@ public class TravelApplicationUI {
                     usernameInput = scanner.nextLine();
                     System.out.println("Enter a password:");
                     passwordInput = scanner.nextLine();
-                    if (travelApplication.signUp(usernameInput, passwordInput) == true) {
+                    System.out.println("Enter your first name:");
+                    firstNameInput = scanner.nextLine();
+                    System.out.println("Enter your last name:");
+                    lastNameInput = scanner.nextLine();
+                    System.out.println("Enter your user ID:");
+                    userIDInput = scanner.nextLine();
+                    System.out.println("Enter your phone number:");
+                    phoneInput = scanner.nextInt();
+                    System.out.println("Enter your email:");
+                    emailInput = scanner.nextLine();
+                    System.out.println("Enter your age:");
+                    userAgeInput = scanner.nextInt();
+                    System.out.println("Enter your passport number:");
+                    passportNumberInput = scanner.nextInt();
+                    System.out.println("Enter your street of residence:");
+                    String street = scanner.nextLine();
+                    addressInput.add(street);
+                    System.out.println("Enter your city of residence:");
+                    String city = scanner.nextLine();
+                    addressInput.add(city);
+                    System.out.println("Enter your state of residence:");
+                    String state = scanner.nextLine();
+                    addressInput.add(state);
+                    System.out.println("Enter your ZIP code:");
+                    String ZIP = scanner.nextLine();
+                    addressInput.add(ZIP);
+                    System.out.println("Enter your country of residence:");
+                    String country = scanner.nextLine();
+                    addressInput.add(country);
+                    if (travelApplication.signUp(usernameInput, passwordInput, firstNameInput, lastNameInput, userIDInput,
+                                                phoneInput, emailInput, userAgeInput, passportNumberInput, addressInput) == true) {
                     	System.out.println("Signed up.");
                     }
                     break;
