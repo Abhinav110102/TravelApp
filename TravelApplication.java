@@ -68,6 +68,7 @@ public boolean login(String username, String password) {
 
 
 // Sign up methods / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / 
+<<<<<<< HEAD
 public void signUp(String username, String password, String firstName, String lastName, String phone, String email, 
                         String passportNum, String street, String city, String state, String zipcode, String country, int age) {
     boolean senior = false;
@@ -81,16 +82,21 @@ public void signUp(String username, String password, String firstName, String la
 
 /**
  
+=======
+>>>>>>> 52454ac11bda914ed22f26ab4d0165740cbde25a
 private boolean signUp(String username,String password, String firstName, String lastName, String userID,
                         int phone, String email, int userAge, int passportNumber,
                         ArrayList<String> address){
+    if (userAge < 18) {
+        return false;
+    }
     ArrayList<String> friends = new ArrayList<String>();
     ArrayList<ArrayList<String>> family = new ArrayList<ArrayList<String>>();
     boolean senior = false;  // Senior set to false by default, will be set to true if needed when passed through addUser
     User user = new User(username, firstName, lastName, userID, phone, email, userAge, passportNumber, password,
                         address, friends, family, senior);
     addUser(user.getUserName(), Integer.toString(userAge));
->>>>>>> ffc7947718157dbcf593cad14ca6b8f9cb519517
+    return true;
 }
 */
 // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -105,7 +111,7 @@ private void Logout(){
 public void addUser(String username, String age){
     boolean senior = false;
     if (Integer.parseInt(age) <= 18) {
-        return;
+        return;  // double checks that age is greater than 18, exits method if it is
     } else if (Integer.parseInt(age) >= 65) {
         senior = true;
     }
@@ -114,13 +120,14 @@ public void addUser(String username, String age){
             users.addUser(username, user.getFirstName(), user.getLastName(),
                         user.getPhoneNumber(), user.getEmail(), user.getUserAge(),
                         user.getPassportNumber(), user.getPassword(), user.getAddress(),
-                        user.getFriends(), user.getFamily(), user.isOver65());
+                        user.getFriends(), user.getFamily(), senior);
         }
     }
 public void addUser(String age){
     ;
 }
 public ArrayList<Flight> SearchFlights(String input){
+<<<<<<< HEAD
 
         //String results = "";
         ArrayList<Flight> flightsToSearch = flights.getFlights();
@@ -133,6 +140,18 @@ public ArrayList<Flight> SearchFlights(String input){
                 flightResults.add(flightsToSearch.get(i));
                 //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
             }
+=======
+    //String results = "";
+    ArrayList<Flight> flightsToSearch = flights.getFlights();
+    ArrayList<Flight> flightResults = new ArrayList<Flight>();
+    for (int i = 0; i < flightsToSearch.size(); i++) {
+        if (flightsToSearch.get(i).getDestinationAirport().equals(input)) {
+            flightResults.add(flightsToSearch.get(i));
+            //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+        } else if (flightsToSearch.get(i).getArrivalAirport().equals(input)) {
+            flightResults.add(flightsToSearch.get(i));
+            //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+>>>>>>> 52454ac11bda914ed22f26ab4d0165740cbde25a
         }
         return flightResults;
     }    
