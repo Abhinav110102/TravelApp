@@ -227,19 +227,19 @@ public class TravelApplicationUI {
         System.out.println("Enter your passport number:");
         passportNum = scanner.nextLine();
 
-        System.out.println("Enter your street address (first line of address):");
+        System.out.println("Enter your street of residence:");
         street = scanner.nextLine();
 
-        System.out.println("Enter your city:");
+        System.out.println("Enter your city of residence:");
         city = scanner.nextLine();
 
-        System.out.println("Enter your state:");
+        System.out.println("Enter your state of residence:");
         state = scanner.nextLine();
         
-        System.out.println("Enter your zipcode :");
+        System.out.println("Enter your zipcode of residence:");
         zipcode = scanner.nextLine();
 
-        System.out.println("Enter your country:");
+        System.out.println("Enter your country of residence:");
         country = scanner.nextLine();
 
         travelApplication.signUp(username, password, firstName, lastName, phone, email, passportNum, street, city, state, zipcode, country, age);
