@@ -79,7 +79,12 @@ private boolean signUp(String username,String password, String firstName, String
 
 // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
 private void Logout(){
-    System.exit(0);
+    AllFlights.logout();
+    AllHotels.logout();
+    AllLuggages.logout();
+    AllUsers.logout();
+    TravelApplicationUI ui = new TravelApplicationUI();
+    ui.run();
 }
 public void addUser(String username, String age){
     boolean senior = false;

@@ -94,3 +94,4 @@ public class Hotel extends Ticket {
       // TODO Auto-generated method stub
       return null;
     }
+}
