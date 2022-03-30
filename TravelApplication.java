@@ -71,12 +71,16 @@ private boolean login(String username, String password) {
 private boolean signUp(String username,String password, String firstName, String lastName, String userID,
                         int phone, String email, int userAge, int passportNumber,
                         ArrayList<String> address){
+    if (userAge < 18) {
+        return false;
+    }
     ArrayList<String> friends = new ArrayList<String>();
     ArrayList<ArrayList<String>> family = new ArrayList<ArrayList<String>>();
     boolean senior = false;  // Senior set to false by default, will be set to true if needed when passed through addUser
     User user = new User(username, firstName, lastName, userID, phone, email, userAge, passportNumber, password,
                         address, friends, family, senior);
     addUser(user.getUserName(), Integer.toString(userAge));
+    return true;
 }
 
 // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -91,7 +95,7 @@ private void Logout(){
 public void addUser(String username, String age){
     boolean senior = false;
     if (Integer.parseInt(age) <= 18) {
-        return;
+        return;  // double checks that age is greater than 18, exits method if it is
     } else if (Integer.parseInt(age) >= 65) {
         senior = true;
     }
