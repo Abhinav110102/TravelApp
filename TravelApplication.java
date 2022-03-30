@@ -104,7 +104,7 @@ public void addUser(String username, String age){
         }
     }
 }
-public ArrayList<Flight> Search(String input){
+public ArrayList<Flight> SearchFlights(String input){
     //String results = "";
     ArrayList<Flight> flightsToSearch = flights.getFlights();
     ArrayList<Flight> flightResults = new ArrayList<Flight>();
@@ -119,6 +119,23 @@ public ArrayList<Flight> Search(String input){
     }
     return flightResults;
 }
+
+public ArrayList<Hotel> SearchHotels(String input){
+    //String results = "";
+    ArrayList<Hotel> hotelsToSearch = hotels.getHotels();
+    ArrayList<Hotel> hotelResults = new ArrayList<Hotel>();
+    for (int i = 0; i < hotelsToSearch.size(); i++) {
+        if (hotelsToSearch.get(i).getHotelName().equals(input)) {
+            hotelResults.add(hotelsToSearch.get(i));
+            //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+        } else if (hotelsToSearch.get(i).getHotelCompany().equals(input)) {
+            hotelResults.add(hotelsToSearch.get(i));
+            //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+        }
+    }
+    return hotelResults;
+}
+
 public void Booking(Ticket ticket){
     ;
 }
