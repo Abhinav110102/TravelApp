@@ -32,7 +32,7 @@ public void addHotel(String userID, String hotelName, String hotelCompany, Array
     hotels.add(hotel);
 }
 
-public void logout(){
+public static void logout(){
     DataWriter.saveHotels();;
 }
 }

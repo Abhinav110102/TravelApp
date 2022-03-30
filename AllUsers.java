@@ -36,7 +36,7 @@ public class AllUsers {
         users.add(user);
     }
 
-    public void logout() {
+    public static void logout() {
         DataWriter.saveUsers();;
     }
 

@@ -34,7 +34,7 @@ public static void addFlight(String planeName, String airline, String arrivalAir
     flights.add(flight);
 }
 
-public void logout() {
+public static void logout() {
     DataWriter.saveFlights();
 }
 
