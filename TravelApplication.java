@@ -123,8 +123,8 @@ public ArrayList<Flight> SearchFlights(String input){
             flightResults.add(flightsToSearch.get(i));
             //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
         }
-        return flightResults;
-    }    
+    }
+    return flightResults;
 }
 
 public ArrayList<Hotel> SearchHotels(String input){
