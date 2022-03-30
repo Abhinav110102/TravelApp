@@ -94,6 +94,10 @@ public class Hotel extends Ticket {
                                                     numberOfBeds);
         return hotelTicket.toString();
     }
+    public String toString(){
+        return "UserID :" + userID +"\n"+ "HotelName: " + hotelName +"\n"+ "HotelCompany: "+ hotelCompany + "\n"+ "HotelAddress: "+  hotelAddress +"\n"+ "RoomNumber: " +roomNumber +"\n"+ "DaysBooked: " +  daysBooked +"\n"+ "Capacity: " + capacity +"\n"+ "NumberOfBeds: " + numberOfBeds +"\n"+ "DateArriving: " + dateArriving +"\n"+ "DateLeaving: " +dateLeaving + "\n"+ "Pool: " + pool +"\n";
+    }
+
 
     @Override
     public Ticket bookTicket() {
