@@ -1,4 +1,5 @@
-  import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Class for implenting a user interface for the TravelApplication.
@@ -6,14 +7,14 @@
  */
 public class TravelApplicationUI {
     private Scanner scanner = new Scanner(System.in);
-    //private TravelApplication travelApplication; // NOT IN UML
+    private TravelApplication travelApplication; // NOT IN UML
     
     /**
      * Constructor
      */
     public TravelApplicationUI(){
         Scanner scanner = new Scanner(System.in);
-        //TravelApplication travelApplication = new TravelApplication();
+        TravelApplication travelApplication = new TravelApplication();
     }
 
     /**
@@ -38,7 +39,9 @@ public class TravelApplicationUI {
                     usernameInput = scanner.nextLine();
                     System.out.println("Enter your password:");
                     passwordInput = scanner.nextLine();
-                    //travelApplication.login(usernameInput, passwordInput);
+                    if (travelApplication.login(usernameInput, passwordInput) == true) {
+                    	System.out.println("Logged in.");
+                    }
                     break;
                 case 2:
                     System.out.println("Enter a username:");
@@ -46,18 +49,20 @@ public class TravelApplicationUI {
                     usernameInput = scanner.nextLine();
                     System.out.println("Enter a password:");
                     passwordInput = scanner.nextLine();
-                    //travelApplication.signUp(usernameInput, passwordInput);
+                    if (travelApplication.signUp(usernameInput, passwordInput) == true) {
+                    	System.out.println("Signed up.");
+                    }
                     break;
                 case 3:
                     System.out.println("Where would you like to fly to or from?");
                     searchInput = scanner.nextLine();
                     ArrayList<Flight> flightResults = travelApplication.Search(searchInput);
                     for (int i = 0 ; i < flightResults.size(); i++){
-                        System.out.println(i + ". " + flightResults.get(i).getStartLocation() + " " + flightResults.get(i).getEndtLocation());
+                        System.out.println(i + ". " + flightResults.get(i).getStartLocation() + " " + flightResults.get(i).getEndLocation());
                     }
                     System.out.println("Which flight would you like to book?");
                     bookingOption = scanner.nextInt();
-                    travelApplication.book(flightResults.get(bookingOption));
+                    travelApplication.Booking(flightResults.get(bookingOption));
                     break;
                 case 4:
                     System.out.println("Where would you like to book a hotel?");
