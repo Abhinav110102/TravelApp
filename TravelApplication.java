@@ -45,7 +45,7 @@ public static TravelApplication getInstance(){
 
 
 // Login methods / / / / / / / / / / / / / / / / / / / / / / / / / / /
-private boolean checkUsername(String username) {
+public boolean checkUsername(String username) {
     for (User user : users.getUsers()) {
         if(user.getUserName().equals(username)) {
             return true;
@@ -54,7 +54,7 @@ private boolean checkUsername(String username) {
     return false;
 }
 
-private boolean login(String username, String password) {
+public boolean login(String username, String password) {
     for (User user : users.getUsers()) {
         if(user.getUserName().equals(username)) {
             if (user.getPassword().equals(password)) {
@@ -68,8 +68,11 @@ private boolean login(String username, String password) {
 
 
 // Sign up methods / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / 
-private boolean signUp(String username,String password){
-    ;
+private void signUp(String usernameInput, String passwordInput, String firstName, String lastName, String phone, String email, 
+                        String passportNum, String street, String city, String state, String zipcode, String country, int age) {
+    users.addUser(usernameInput, passwordInput, firstName, lastName, phone, email, passportNum, street, city, state, zipcode, country, age);
+    
+    
 }
 
 // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -79,7 +82,7 @@ private void Logout(){
 public void addUser(String age){
     ;
 }
-public String Search(String input){
+public ArrayList<Flight> Search(String input){
     //String results = "";
     ArrayList<Flight> flightsToSearch = flights.getFlights();
     ArrayList<Flight> flightResults;
