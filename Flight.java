@@ -154,4 +154,9 @@ public class Flight extends Ticket {
     public void addLuggage(double weight) {
         luggage.add(new Luggage(getUserID(), getFlightID(), weight));
     }
-}
+
+    @Override
+    public Ticket bookTicket() {
+      // TODO Auto-generated method stub
+      return null;
+    }
