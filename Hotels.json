@@ -21,5 +21,53 @@
         "NumberOfBeds": 2,
         "ArrivalDate": "March 3 2022",
         "DepartureDate": "March 6 2022"
+    },{	
+        "UserID": "8bhbug34b7839",
+        "HotelName": "Hilton Los Angeles Airport", 
+        "HotelNompany": "Hilton",
+        "HotelAddress": ["5711 W Century Blvd", "Los Angeles", "California", "90045", "United States"],
+        "RoomNumber": 78,
+        "DaysBooked": 3,
+        "Capacity": 150,
+        "NumberOfBeds": 2,
+        "ArrivalDate": "March 3 2022",
+        "DepartureDate": "March 6 2022",
+        "Pool": "Yes"
+    },{	
+        "UserID": "8bhbug34b7839",
+        "HotelName": "Los Angeles Airport Marriott", 
+        "HotelNompany": "Marriott",
+        "HotelAddress": ["5855 W Century Blvd", "Los Angeles", "California", "90045", "United States"],
+        "RoomNumber": 101,
+        "DaysBooked": 3,
+        "Capacity": 150,
+        "NumberOfBeds": 2,
+        "ArrivalDate": "March 3 2022",
+        "DepartureDate": "March 6 2022",
+        "Pool": "Yes"
+    },{	
+        "UserID": "8bhbug34b7839",
+        "HotelName": "DoubleTree Hilton Hotel", 
+        "HotelNompany": "Hilton",
+        "HotelAddress": ["1985 E Grand Ave", "El Segundo", "California", "90245", "United States"],
+        "RoomNumber": 65,
+        "DaysBooked": 3,
+        "Capacity": 150,
+        "NumberOfBeds": 2,
+        "ArrivalDate": "March 3 2022",
+        "DepartureDate": "March 6 2022",
+        "Pool":"No"
+    },{	
+        "UserID": "8bhbug34b7839",
+        "HotelName": "Hyatt Regency Los Angeles International Airport", 
+        "HotelNompany": "Hyatt Regency",
+        "HotelAddress": ["6225 W Century Blvd", "Los Angeles ", "California", "90045", "United States"],
+        "RoomNumber": 47,
+        "DaysBooked": 3,
+        "Capacity": 150,
+        "NumberOfBeds": 2,
+        "ArrivalDate": "March 3 2022",
+        "DepartureDate": "March 6 2022",
+        "Pool": "No"
     }
 ]
