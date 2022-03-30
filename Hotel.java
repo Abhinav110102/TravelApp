@@ -88,4 +88,9 @@ public class Hotel extends Ticket {
                                                     numberOfBeds);
         return hotelTicket.toString();
     }
-}
+
+    @Override
+    public Ticket bookTicket() {
+      // TODO Auto-generated method stub
+      return null;
+    }
