@@ -69,16 +69,16 @@ public boolean login(String username, String password) {
 
 // Sign up methods / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / 
 private boolean signUp(String username,String password, String firstName, String lastName, String userID,
-                        int phone, String email, int userAge, int passportNumber,
-                        ArrayList<String> address){
+                        String phone, String email, String passportNumber, String street, String city,
+                        String state, String zipcode, String country, int userAge){
     if (userAge < 18) {
         return false;
     }
     ArrayList<String> friends = new ArrayList<String>();
     ArrayList<ArrayList<String>> family = new ArrayList<ArrayList<String>>();
     boolean senior = false;  // Senior set to false by default, will be set to true if needed when passed through addUser
-    User user = new User(username, firstName, lastName, userID, phone, email, userAge, passportNumber, password,
-                        address, friends, family, senior);
+    User user = new User(username, password, firstName, lastName, phone, email, passportNumber,
+                        new Location(street, city, state, zipcode, country), userAge, senior);
     addUser(user.getUserName(), Integer.toString(userAge));
     return true;
 }
