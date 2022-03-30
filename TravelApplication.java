@@ -68,38 +68,60 @@ private boolean login(String username, String password) {
 
 
 // Sign up methods / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / 
-private boolean signUp(String username,String password){
-    ;
+private boolean signUp(String username,String password, String firstName, String lastName, String userID,
+                        int phone, String email, int userAge, int passportNumber,
+                        ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family){
+    boolean senior = false;  // Senior set to false by default, will be set to true if needed when passed through addUser
+    User user = new User(username, firstName, lastName, userID, phone, email, userAge, passportNumber, password,
+                        address, friends, family, senior);
+    addUser(user.getUserName(), Integer.toString(userAge));
 }
 
 // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
 private void Logout(){
-    ;
+    System.exit(0);
 }
-public void addUser(String age){
-    ;
+public void addUser(String username, String age){
+    boolean senior = false;
+    if (Integer.parseInt(age) <= 18) {
+        return;
+    } else if (Integer.parseInt(age) >= 65) {
+        senior = true;
+    }
+    for (User user : users.getUsers()) {
+        if(user.getUserName().equals(username)) {
+            users.addUser(username, user.getFirstName(), user.getLastName(),
+                        user.getPhoneNumber(), user.getEmail(), user.getUserAge(),
+                        user.getPassportNumber(), user.getPassword(), user.getAddress(),
+                        user.getFriends(), user.getFamily(), user.isOver65());
+        }
+    }
 }
 public String Search(String input){
     //String results = "";
     ArrayList<Flight> flightsToSearch = flights.getFlights();
     ArrayList<Flight> flightResults;
     for (int i = 0; i < flightsToSearch.size(); i++) {
-        if (flightsToSearch.get(i).destinationAirport.equals("input")) {
+        if (flightsToSearch.get(i).destinationAirport().equals("input")) {
             flightResults.add(flightsToSearch.get(i));
             //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
-        } else if (flightsToSearch.get(i).arrivalAirport.equals("input")) {
+        } else if (flightsToSearch.get(i).arrivalAirport().equals("input")) {
             flightResults.add(flightsToSearch.get(i));
             //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
         }
-
+        return flightResults;
     }
-    return flightResults;
+
 }
 public void Booking(Ticket ticket){
     ;
 }
-private void addTicketToUser(Ticket ticket){
-    ;
+private void addTicketToUser(String username, Ticket ticket){
+    for (User user : users.getUsers()) {
+        if(user.getUserName().equals(username)) {
+            user.addTicket(ticket);
+        }
+    }
 }
 private void updateTicket(Flight){
     ;
@@ -107,9 +129,14 @@ private void updateTicket(Flight){
 private void updateTicket(Hotel){
     ;
 }
-private String printTicket(){
-    ;
+private String printTicket(Flight flight) {
+    flight.printTicket();
 }
+
+private String printTicket(Hotel hotel) {
+    hotel.printTicket();
+}
+
 public String displayOptions(){
     ;
 }
@@ -119,7 +146,12 @@ public String inputOption(int input){
 public void displayAvailableMonth(int month){
     ;
 }
-public String displayUserID(){
-    ;
+public String displayUserID(String username){
+    for (User user : users.getUsers()) {
+        if(user.getUserName().equals(username)) {
+            return user.getUserID();
+        }
+    }
+    return "Sorry, that user does not appear on our records!"; // username is not found
 }
 }
