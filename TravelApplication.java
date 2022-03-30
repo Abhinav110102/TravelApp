@@ -166,9 +166,9 @@ private void printTicket(Flight flight) {
 private void printTicket(Hotel hotel) {
     hotel.printTicket();
 }
-public String inputOption(int input){
+/*public String inputOption(int input){
     ;
-}
+}*/
 public void displayAvailableMonth(int month){
     ;
 }
