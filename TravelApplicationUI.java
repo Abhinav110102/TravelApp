@@ -96,7 +96,9 @@ public class TravelApplicationUI {
                     searchInput = scanner.nextLine();
                     ArrayList<Flight> flightResults = travelApplication.Search(searchInput);
                     for (int i = 0 ; i < flightResults.size(); i++){
-                        System.out.println(i + ". " + flightResults.get(i).getStartLocation() + " " + flightResults.get(i).getEndLocation());
+                        System.out.println(i + ". " + flightResults.get(i).getStartLocation() + " " + flightResults.get(i).getEndLocation()
+                            + " " + flightResults.get(i).getAirline() + " " + flightResults.get(i).getPlaneName()
+                            + " " + flightResults.get(i).getFlightDepartureDate() + " " + flightResults.get(i).getFlightDuration());
                     }
                     System.out.println("Which flight would you like to book?");
                     bookingOption = scanner.nextInt();
@@ -109,8 +111,8 @@ public class TravelApplicationUI {
                     //travelApplication.Search(searchInput);
                     break;
                 case 5:
-                    // insert code to save to json?
-                    //travelApplication.Logout();
+                    travelApplication.Logout();
+                    System.out.println("Logged out.");
                     break;
                 default:
                     System.out.println("Sorry! That's not an option, please try again: ");
