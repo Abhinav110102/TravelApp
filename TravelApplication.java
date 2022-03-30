@@ -68,22 +68,6 @@ public boolean login(String username, String password) {
 
 
 // Sign up methods / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / 
-<<<<<<< HEAD
-public void signUp(String username, String password, String firstName, String lastName, String phone, String email, 
-                        String passportNum, String street, String city, String state, String zipcode, String country, int age) {
-    boolean senior = false;
-    if (age >= 65) {senior = true;}
-    Location address = new Location(street, city, state, zipcode, country);
-    User newUser = new User(username, password, firstName, lastName, phone, email, passportNum, address, age, senior);
-    users.addUser(newUser);
-    currentUser = newUser;
-    
-}
-
-/**
- 
-=======
->>>>>>> 52454ac11bda914ed22f26ab4d0165740cbde25a
 private boolean signUp(String username,String password, String firstName, String lastName, String userID,
                         int phone, String email, int userAge, int passportNumber,
                         ArrayList<String> address){
@@ -98,7 +82,7 @@ private boolean signUp(String username,String password, String firstName, String
     addUser(user.getUserName(), Integer.toString(userAge));
     return true;
 }
-*/
+
 // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
 private void Logout(){
     AllFlights.logout();
@@ -123,24 +107,11 @@ public void addUser(String username, String age){
                         user.getFriends(), user.getFamily(), senior);
         }
     }
+}
 public void addUser(String age){
     ;
 }
 public ArrayList<Flight> SearchFlights(String input){
-<<<<<<< HEAD
-
-        //String results = "";
-        ArrayList<Flight> flightsToSearch = flights.getFlights();
-        ArrayList<Flight> flightResults = new ArrayList<Flight>();
-        for (int i = 0; i < flightsToSearch.size(); i++) {
-            if (flightsToSearch.get(i).getDestinationAirport().equals(input)) {
-                flightResults.add(flightsToSearch.get(i));
-                //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
-            } else if (flightsToSearch.get(i).getArrivalAirport().equals(input)) {
-                flightResults.add(flightsToSearch.get(i));
-                //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
-            }
-=======
     //String results = "";
     ArrayList<Flight> flightsToSearch = flights.getFlights();
     ArrayList<Flight> flightResults = new ArrayList<Flight>();
@@ -151,10 +122,10 @@ public ArrayList<Flight> SearchFlights(String input){
         } else if (flightsToSearch.get(i).getArrivalAirport().equals(input)) {
             flightResults.add(flightsToSearch.get(i));
             //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
->>>>>>> 52454ac11bda914ed22f26ab4d0165740cbde25a
         }
         return flightResults;
     }    
+}
 
 public ArrayList<Hotel> SearchHotels(String input){
     //String results = "";
@@ -194,10 +165,6 @@ private void printTicket(Flight flight) {
 
 private void printTicket(Hotel hotel) {
     hotel.printTicket();
-}
-
-public String displayOptions(){
-    ;
 }
 public String inputOption(int input){
     ;
