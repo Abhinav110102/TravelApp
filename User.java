@@ -7,10 +7,10 @@ public class User {
     private String firstName;
     private String lastName;
     private String userID;
-    private int phone;
+    private String phone;
     private String email;
     private int userAge;
-    private int passportNumber;
+    private String passportNumber;
     private String password;
     private ArrayList<String> address;
     private Location address1;
@@ -31,7 +31,7 @@ public class User {
     // - hotels: ArrayList<Hotel>
     // - friends: ArrayList<User>
     // - family: ArrayList<Family>
-    public User (String username, String firstName, String lastName, String userID,
+    /*public User (String username, String firstName, String lastName, String userID,
                 int phone, String email, int userAge, int passportNumber, String password,
                 ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family, boolean senior) {
         this.username = username;
@@ -52,7 +52,7 @@ public class User {
         for (int i = 0; i < family.size(); i++) {
             familyList.add(new Family(family.get(i).get(0), family.get(i).get(1), Integer.parseInt(family.get(i).get(2))));
         }
-    }
+    }*/
     
     public User (String username, String password, String firstName, String lastName, String phone, String email, 
                     String passportNumber, Location address, int userAge, boolean senior) { //new user
@@ -87,7 +87,7 @@ public class User {
         return userID;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phone;
     }
 
@@ -99,7 +99,7 @@ public class User {
         return userAge;
     }
 
-    public int getPassportNumber() {
+    public String getPassportNumber() {
         return passportNumber;
     }
 
