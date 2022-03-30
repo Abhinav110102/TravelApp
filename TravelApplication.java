@@ -68,7 +68,7 @@ private boolean login(String username, String password) {
 
 
 // Sign up methods / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / 
-private boolean signUp(String username,String password, String firstName, String lastName, String userID,
+private void signUp(String username,String password, String firstName, String lastName, String userID,
                         int phone, String email, int userAge, int passportNumber,
                         ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family){
     boolean senior = false;  // Senior set to false by default, will be set to true if needed when passed through addUser
@@ -102,21 +102,20 @@ public void addUser(String username, String age){
         }
     }
 }
-public String Search(String input){
+public ArrayList<Flight> Search(String input){
     //String results = "";
     ArrayList<Flight> flightsToSearch = flights.getFlights();
-    ArrayList<Flight> flightResults;
+    ArrayList<Flight> flightResults = new ArrayList<Flight>();
     for (int i = 0; i < flightsToSearch.size(); i++) {
-        if (flightsToSearch.get(i).destinationAirport().equals("input")) {
+        if (flightsToSearch.get(i).getDestinationAirport().equals(input)) {
             flightResults.add(flightsToSearch.get(i));
             //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
-        } else if (flightsToSearch.get(i).arrivalAirport().equals("input")) {
+        } else if (flightsToSearch.get(i).getArrivalAirport().equals(input)) {
             flightResults.add(flightsToSearch.get(i));
             //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
         }
-        return flightResults;
     }
-
+    return flightResults;
 }
 public void Booking(Ticket ticket){
     ;
@@ -128,17 +127,17 @@ private void addTicketToUser(String username, Ticket ticket){
         }
     }
 }
-private void updateTicket(Flight){
+private void updateTicket(Flight flight){
     ;
 }
-private void updateTicket(Hotel){
+private void updateTicket(Hotel hotel){
     ;
 }
-private String printTicket(Flight flight) {
+private void printTicket(Flight flight) {
     flight.printTicket();
 }
 
-private String printTicket(Hotel hotel) {
+private void printTicket(Hotel hotel) {
     hotel.printTicket();
 }
 
