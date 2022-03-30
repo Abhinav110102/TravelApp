@@ -52,45 +52,12 @@ public class TravelApplicationUI {
                     }
                     break;
                 case 2:
-                    System.out.println("Enter a username:");
-                    scanner.nextLine();
-                    usernameInput = scanner.nextLine();
-                    System.out.println("Enter a password:");
-                    passwordInput = scanner.nextLine();
-                    //travelApplication.signUp(usernameInput, passwordInput);
-                    System.out.println("Enter your first name:");
-                    firstNameInput = scanner.nextLine();
-                    System.out.println("Enter your last name:");
-                    lastNameInput = scanner.nextLine();
-                    System.out.println("Enter your user ID:");
-                    userIDInput = scanner.nextLine();
-                    System.out.println("Enter your phone number:");
-                    phoneInput = scanner.nextInt();
-                    System.out.println("Enter your email:");
-                    emailInput = scanner.nextLine();
-                    System.out.println("Enter your age:");
-                    userAgeInput = scanner.nextInt();
-                    System.out.println("Enter your passport number:");
-                    passportNumberInput = scanner.nextInt();
-                    System.out.println("Enter your street of residence:");
-                    String street = scanner.nextLine();
-                    addressInput.add(street);
-                    System.out.println("Enter your city of residence:");
-                    String city = scanner.nextLine();
-                    addressInput.add(city);
-                    System.out.println("Enter your state of residence:");
-                    String state = scanner.nextLine();
-                    addressInput.add(state);
-                    System.out.println("Enter your ZIP code:");
-                    String ZIP = scanner.nextLine();
-                    addressInput.add(ZIP);
-                    System.out.println("Enter your country of residence:");
-                    String country = scanner.nextLine();
-                    addressInput.add(country);
-                    if (travelApplication.signUp(usernameInput, passwordInput, firstNameInput, lastNameInput, userIDInput,
-                                                phoneInput, emailInput, userAgeInput, passportNumberInput, addressInput) == true) {
-                    	System.out.println("Signed up.");
-                    }
+                        if (signUp()) {
+                        System.out.println("Sign Up Successful");
+                        System.out.println("Welcome " + travelApplication.getCurrentUser().getFirstName() + "!");
+                        } else {
+                            System.out.println("Sign Up Unsuccessful");
+                        }
                     break;
                 case 3:
                     System.out.println("Where would you like to fly to or from?");
@@ -193,15 +160,22 @@ public class TravelApplicationUI {
         String password, firstName, lastName, phone, email, passportNum, street, city, state, zipcode, country;
         int age;
 
-        System.out.println("Enter a username:");
+        System.out.println("Before we can start creating your account, please enter your age:");
         scanner.nextLine();
+        age = scanner.nextInt();
+
+        if (age < 18) {
+            System.out.println("I'm sorry, but you're too young to make an account.\nAdults with accounts can add you to their account and book for you!");
+            return false;
+        }
+
         while (loop) {
+            System.out.println("Enter a username:");
             username = scanner.nextLine();
             if (!travelApplication.checkUsername(username)) {
                 loop = false;
             } else {
                 System.out.println("That username is taken. Please Try Again");
-                System.out.println("Enter a username:");
             }
         }
 
@@ -214,9 +188,6 @@ public class TravelApplicationUI {
 
         System.out.println("Enter your last name:");
         lastName = scanner.nextLine();
-
-        System.out.println("Enter your age:");
-        age = scanner.nextInt();
 
         System.out.println("Enter your phone number:");
         phone = scanner.nextLine();
@@ -243,8 +214,8 @@ public class TravelApplicationUI {
         country = scanner.nextLine();
 
         travelApplication.signUp(username, password, firstName, lastName, phone, email, passportNum, street, city, state, zipcode, country, age);
-        System.out.println("Error Logging in: Too many failed attempts. Please Try again later");
-        return false;
+        System.out.println("Signed up!!");
+        return true;
     }
 
     /**
