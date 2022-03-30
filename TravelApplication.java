@@ -45,7 +45,7 @@ public static TravelApplication getInstance(){
 
 
 // Login methods / / / / / / / / / / / / / / / / / / / / / / / / / / /
-private boolean checkUsername(String username) {
+public boolean checkUsername(String username) {
     for (User user : users.getUsers()) {
         if(user.getUserName().equals(username)) {
             return true;
@@ -54,7 +54,7 @@ private boolean checkUsername(String username) {
     return false;
 }
 
-private boolean login(String username, String password) {
+public boolean login(String username, String password) {
     for (User user : users.getUsers()) {
         if(user.getUserName().equals(username)) {
             if (user.getPassword().equals(password)) {
@@ -104,7 +104,7 @@ public void addUser(String username, String age){
             users.addUser(username, user.getFirstName(), user.getLastName(),
                         user.getPhoneNumber(), user.getEmail(), user.getUserAge(),
                         user.getPassportNumber(), user.getPassword(), user.getAddress(),
-                        user.getFriends(), user.getFamily(), user.isOver65());
+                        user.getFriends(), user.getFamily(), senior);
         }
     }
 }

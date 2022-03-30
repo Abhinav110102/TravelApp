@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class User {
     //Variables
@@ -12,6 +13,7 @@ public class User {
     private int passportNumber;
     private String password;
     private ArrayList<String> address;
+    private Location address1;
     private ArrayList<String> friends;
     //private ArrayList<ArrayList<String>> family;
     private ArrayList<Family> familyList;
@@ -51,7 +53,24 @@ public class User {
             familyList.add(new Family(family.get(i).get(0), family.get(i).get(1), Integer.parseInt(family.get(i).get(2))));
         }
     }
-
+    
+    public User (String username, String password, String firstName, String lastName, String phone, String email, 
+                    String passportNumber, Location address, int userAge, boolean senior) { //new user
+        
+        String userID = UUID.randomUUID().toString();
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userID = userID;
+        this.phone = phone;
+        this.email = email;
+        this.userAge = userAge;
+        this.passportNumber = passportNumber;
+        this.password = password;
+        this.address1 = address;
+        this.senior = senior;
+     
+    }
     public String getUserName() {
         return username;
     }
