@@ -160,4 +160,25 @@ public class Flight extends Ticket {
       // TODO Auto-generated method stub
       return null;
     }
+    
+    /**
+     * Method to return all data on a Flight in a String
+     * @return String the data to be returned.
+     */
+    public String toString() {
+        return planeName + " " +
+        airline + " " +
+        arrivalAirport + " " +
+        destinationAirport + " " +
+        planeCapacity + " " +
+        departureDate + " " +
+        duration + " " +
+        flightType + " " +
+        userID + " " +
+        flightID + " " +
+        startLocation + " " +
+        endLocation  + " " +
+        depart + " " +
+        luggage;
+    }
 }
