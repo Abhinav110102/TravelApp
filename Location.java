@@ -38,6 +38,25 @@ public class Location {
         return country;
     }
 
+    public boolean anyEquals(String location) {
+        if (street.equals(location)) {
+            return true;
+        }
+        if (city.equals(location)) {
+            return true;
+        }
+        if (state.equals(location)) {
+            return true;
+        }
+        if (zipcode.equals(location)) {
+            return true;
+        }
+        if (country.equals(location)) {
+            return true;
+        }
+        return false;
+    }
+    
     // + toString(): String
     public String toString(){
         return this.street + "\n" + this.city + ", " + this.state + " " + this.zipcode + "\n" + this.country;

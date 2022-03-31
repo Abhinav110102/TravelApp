@@ -153,17 +153,22 @@ public ArrayList<Flight> SearchFlights(String input){
 
 public ArrayList<Hotel> SearchHotels(String input){
     //String results = "";
-    ArrayList<Hotel> hotelsToSearch = hotels.getHotels();
+    //ArrayList<Hotel> hotelsToSearch = hotels.getHotels();
     ArrayList<Hotel> hotelResults = new ArrayList<Hotel>();
-    for (int i = 0; i < hotelsToSearch.size(); i++) {
-        if (hotelsToSearch.get(i).getHotelName().equals(input)) {
-            hotelResults.add(hotelsToSearch.get(i));
-            //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
-        } else if (hotelsToSearch.get(i).getHotelCompany().equals(input)) {
-            hotelResults.add(hotelsToSearch.get(i));
-            //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+    for (Hotel hotel : hotels.getHotels()) {
+        if (hotel.getLocation().anyEquals(input)) {
+            hotelResults.add(hotel);
         }
     }
+    // for (int i = 0; i < hotelsToSearch.size(); i++) {
+    //     if (hotelsToSearch.get(i).getHotelName().equals(input)) {
+    //         hotelResults.add(hotelsToSearch.get(i));
+    //         //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+    //     } else if (hotelsToSearch.get(i).getHotelCompany().equals(input)) {
+    //         hotelResults.add(hotelsToSearch.get(i));
+    //         //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
+    //     }
+    // }
     return hotelResults;
 }
 

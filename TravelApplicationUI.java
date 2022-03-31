@@ -29,45 +29,10 @@ public class TravelApplicationUI {
             printOptions();
             System.out.println("What would you like to do?:");
             option = scanner.nextInt();
-<<<<<<< HEAD
             if (travelApplication.getCurrentUser() == null) {
                 inApp = guest(option);
             } else {
                 inApp = guest(option);
-=======
-            switch(option) {
-                case 1:
-                    //login
-                    if (login()) {
-                        System.out.println("Login Successful");
-                        System.out.println("Welcome " + travelApplication.getCurrentUser().getFirstName() + "!");
-                    } else {
-                        System.out.println("Login Unsuccessful");
-                    }
-                    break;
-                case 2:
-                        if (signUp()) {
-                            System.out.println("Sign Up Successful");
-                            System.out.println("Welcome " + travelApplication.getCurrentUser().getFirstName() + "!");
-                        } else {
-                            System.out.println("Sign Up Unsuccessful");
-                        }
-                    break;
-                case 3:
-                    
-                    break;
-                case 4:
-                    
-                    break;
-                case 5:
-                    travelApplication.quit();
-                    System.out.println("Goodbye!");
-                    // insert code to save to json?
-                    //travelApplication.Logout();
-                    break;
-                default:
-                    System.out.println("Sorry! That's not an option, please try again: ");
->>>>>>> c8faaf4f49a2e962215766aee92fba2f3acfd8ee
             }
         }
     }
@@ -140,7 +105,7 @@ public class TravelApplicationUI {
                 bookHotel();
                 break;
             case 3:
-                checkAccount();
+                //checkAccount();
                 break;
             case 4:
                 logout();
@@ -268,6 +233,7 @@ public class TravelApplicationUI {
         String searchInput;
         int bookingOption;
         System.out.println("Where would you like to fly to or from?");
+        scanner.nextLine();
         searchInput = scanner.nextLine();
         ArrayList<Flight> flightResults = travelApplication.SearchFlights(searchInput);
         for (int i = 0 ; i < flightResults.size(); i++){
@@ -283,12 +249,11 @@ public class TravelApplicationUI {
         int bookingOption;
         String searchInput;
         System.out.println("Where would you like to book a hotel?");
+        scanner.nextLine();
         searchInput = scanner.nextLine();
         ArrayList<Hotel> hotelResults = travelApplication.SearchHotels(searchInput);
         for (int i = 0 ; i < hotelResults.size(); i++){
-            System.out.println(i + ". " + hotelResults.get(i).getHotelAddress()
-               + " " + hotelResults.get(i).getHotelCompany() + " " + hotelResults.get(i).getHotelName()
-               + " " + hotelResults.get(i).getHotelArrivalDate() + " " + hotelResults.get(i).getDaysBooked());
+            System.out.println(i + ". " + hotelResults.get(i).toString());
          }
          System.out.println("Which hotel would you like to book?");
          bookingOption = scanner.nextInt();
@@ -301,7 +266,7 @@ public class TravelApplicationUI {
     public void checkAccout() {
         boolean checkingAccount = true;
         while (checkingAccount) {
-            
+
         }
     }
 

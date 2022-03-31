@@ -34,4 +34,8 @@ public abstract class Ticket {
         ret = ret/10;
         return ret;
     }
+
+    public Location getLocation() {
+        return location;
+    }
 }
