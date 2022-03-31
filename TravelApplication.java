@@ -99,7 +99,7 @@ private boolean signUp(String username,String password, String firstName, String
 }
 */
 // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
-private void quit(){
+public void quit(){
     AllFlights.logout();
     AllHotels.logout();
     AllLuggages.logout();
