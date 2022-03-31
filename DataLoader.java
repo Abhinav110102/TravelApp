@@ -31,19 +31,25 @@ public class DataLoader extends DataConstants {
                 ArrayList<String> arrivalAddress = (ArrayList<String>)flightJSON.get(FLIGHT_ARRIVAL_ADDRESS);
                 String destinationAirport = (String)flightJSON.get(FLIGHT_DESTINATION_AIRPORT);
                 ArrayList<String> destinationAddress = (ArrayList<String>)flightJSON.get(FLIGHT_DESTINATION_ADDRESS);
-                int planeCapacity = (int)flightJSON.get(FLIGHT_PLANE_CAPACITY);
+                String capacity = (String)flightJSON.get(FLIGHT_PLANE_CAPACITY);
+				int planeCapacity = Integer.parseInt(capacity);
                 String departureDate = (String)flightJSON.get(FLIGHT_DEPARTURE_DATE);
                 String duration = (String)flightJSON.get(FLIGHT_DURATION);
                 String flightType = (String)flightJSON.get(FLIGHT_TYPE);
                 String userID = (String)flightJSON.get(FLIGHT_USER_ID);
                 String flightID = (String)flightJSON.get(FLIGHT_ID);
-				int seatX = (int)flightJSON.get(FLIGHT_SEAT_X);
-				int seatY = (int)flightJSON.get(FLIGHT_SEAT_Y);
-				
+				int seatX = Integer.parseInt((String)flightJSON.get(FLIGHT_SEAT_X));
+
+				int seatY = Integer.parseInt((String)flightJSON.get(FLIGHT_SEAT_Y));
+				System.out.println(departureDate);
+				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport,
+                 destinationAddress, planeCapacity, departureDate, duration, flightType, userID, flightID, seatX, seatY));
+
+				 /*
 				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress,
                                         destinationAirport, destinationAddress, planeCapacity,
                                         departureDate, duration, flightType, userID, flightID,
-										seatX, seatY));
+										seatX, seatY));*/
 			}
 			
 			System.out.println("RETURNING FLIGHTS");

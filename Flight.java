@@ -53,13 +53,12 @@ public class Flight extends Ticket {
                                     arrivalAddress.get(3), arrivalAddress.get(4));
         endLocation = new Location(destinationAddress.get(0), destinationAddress.get(1), destinationAddress.get(2),
                                     destinationAddress.get(3), destinationAddress.get(4));
-
+        /*
         try {
             this.depart = sdf.parse(departureDate);
         } catch (Exception e) {
             System.out.println("Error parsing dates");
-        }
-
+        }*/
         seating = new Seat(SeatX, SeatY);
     }
 
@@ -178,19 +177,19 @@ public class Flight extends Ticket {
      * @return String the data to be returned.
      */
     public String toString() {
-        return planeName + " " +
-        airline + " " +
-        arrivalAirport + " " +
-        destinationAirport + " " +
-        planeCapacity + " " +
-        departureDate + " " +
-        duration + " " +
-        flightType + " " +
-        userID + " " +
-        flightID + " " +
-        startLocation + " " +
-        endLocation  + " " +
-        depart + " " +
+        return "P " + planeName + " \n" +
+        airline + " \n" +
+        arrivalAirport + " \n" +
+        destinationAirport + " \n" +
+        planeCapacity + " \n" +
+        departureDate + " \n" +
+        duration + " \n" +
+        flightType + " \n" +
+        userID + " \n" +
+        flightID + " \n" +
+        startLocation + " \n" +
+        endLocation  + " \n" +
+        /*departureDate + " " +*/
         luggage;
     }
 }

@@ -238,7 +238,7 @@ public class TravelApplicationUI {
         searchInput = scanner.nextLine();
         ArrayList<Flight> flightResults = travelApplication.SearchFlights(searchInput);
         for (int i = 0 ; i < flightResults.size(); i++){
-            System.out.println(i + ". " + flightResults.get(i).toString());
+            System.out.println(i + ". " + flightResults.get(i).toString() + "\n");
         }
         if (flightResults.size() == 0) {
             System.out.println("No flights available. Maybe try chicago");
