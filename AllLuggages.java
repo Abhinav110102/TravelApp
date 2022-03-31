@@ -11,14 +11,7 @@ public class AllLuggages {
 // -AllFlights()
 // +  getInstance(): AllFlights
 // + addFlight(): void
-<<<<<<< HEAD
 // +logout: void
-private AllLuggages(){
-    DataLoader.loadLuggage();
-}
-=======
->>>>>>> ba95b011155603f9a14c501ab85f9cce35f3e064
-
     /**
      * Constructor
     */

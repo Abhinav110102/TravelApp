@@ -11,13 +11,8 @@ public class AllHotels {
     /**
      * Constructor
      */
-<<<<<<< HEAD
-    private AllHotels() {
-        DataLoader.loadHotels();
-=======
     private AllHotels(){
         hotels = DataLoader.loadHotels();
->>>>>>> ba95b011155603f9a14c501ab85f9cce35f3e064
     }
 
     /**

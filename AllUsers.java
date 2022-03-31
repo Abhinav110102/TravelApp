@@ -8,11 +8,7 @@ public class AllUsers {
 
     // + logout: void
     private AllUsers() {
-<<<<<<< HEAD
-        DataLoader.loadUsers();
-=======
         users = DataLoader.loadUsers();
->>>>>>> ba95b011155603f9a14c501ab85f9cce35f3e064
     }
 
     /**
@@ -36,7 +32,7 @@ public class AllUsers {
     public void addUser(String username, String firstName, String lastName,
     String phone, String email, int userAge, String passportNumber, String password,
     ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family, boolean senior) {
-        String userID = UUID.randomUUID().toString();
+        //String userID = UUID.randomUUID().toString();
         User user = new User(username, password, firstName, lastName, phone, email,
                             passportNumber, new Location(address.get(0), address.get(1),
                             address.get(2), address.get(3), address.get(4)), userAge,

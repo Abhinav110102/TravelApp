@@ -59,7 +59,6 @@ public class Location {
         return country;
     }
 
-<<<<<<< HEAD
     public boolean anyEquals(String location) {
         if (street.equals(location)) {
             return true;
@@ -80,11 +79,6 @@ public class Location {
     }
     
     // + toString(): String
-=======
-    /**
-     * toString() method
-     */
->>>>>>> ba95b011155603f9a14c501ab85f9cce35f3e064
     public String toString(){
         return this.street + "\n" + this.city + ", " + this.state + " " + this.zipcode + "\n" + this.country;
     }
