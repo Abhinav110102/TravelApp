@@ -147,6 +147,7 @@ public class TravelApplicationUI {
         }
 
         while (loop) {
+          scanner.nextLine();
             System.out.println("Enter a username:");
             username = scanner.nextLine();
             if (!travelApplication.checkUsername(username)) {
