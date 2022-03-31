@@ -8,7 +8,6 @@ public abstract class UserTicket {
     //private Location location;
     protected ArrayList<Rating> ratings;
 
-    // + printTicket(): String
     // + displayAvailable(): String
     // + addRating(): void
     // + getAvgRatings(): int
@@ -18,6 +17,23 @@ public abstract class UserTicket {
         this.company = company;
         //this.location = location;
         this.ratings = ratings;
+    }
+    
+    public void printTicket() throws IOException {
+        String ticketText = "ABC";
+        try {
+            FileWriter fw = new FileWriter("ticket.txt");
+            for (int j = 0; j < tickets.size(); j++) {
+
+                fw.write(ticket);
+                
+            }
+            System.out.println("Successfully written");
+            fw.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+        }
     }
 
     public abstract String toString(); // to String
