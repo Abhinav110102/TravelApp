@@ -1,14 +1,12 @@
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Class for managing data in a flight ticket which is added to a user. This is a child class of Ticket
+ * and this class holds luggage data.
+ */
 public class FlightTicket extends UserTicket{
-       // - duration: double
-    // - startLocation: Location
-    // - endLocation: Location
-    // - luggage: ArrayList<Luggage>
-    // - seating: ArrayList<Seat> 
-    // - available: boolean
-    // -  flightType: String
+
     private String duration;
     private Location startLocation; //Location start in user ticket? 
     private Location endLocation;
@@ -18,9 +16,9 @@ public class FlightTicket extends UserTicket{
     private String flightType;
     private Date date;
 
-    // + Flight(double duration, Location startLocation, Location endLocation)
-    // + printTicket(): String
-    // + addLuggage(): void
+    /**
+     * Constructor
+     */
     public FlightTicket(String ID, String company, ArrayList<Rating> ratings, String duration, Location startLocation, Location endLocation, Date date, Seat seat) {
         super(ID, company, ratings);
         this.duration = duration;
@@ -30,6 +28,9 @@ public class FlightTicket extends UserTicket{
         this.seat = seat;
     }
 
+    /**
+     * toString method
+     */
     public String toString() {
         return "Airline: " + company
                 + "\nStart Address: " + startLocation.toString()
@@ -38,6 +39,10 @@ public class FlightTicket extends UserTicket{
                 + "\nSeat Number " + seat.toString();
     }
 
+    /**
+     * Method to add a luggage instance to the array list of luggage.
+     * @param luggageInst the instance of luggage to add.
+     */
     public void addLuggage(Luggage luggageInst) {
         luggage.add(luggageInst);
     }
