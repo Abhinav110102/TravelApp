@@ -8,6 +8,7 @@ public class TravelApplication {
 // - database: Database
 private AllUsers users;
 private AllFlights flights;
+private AllLuggages luggages;
 private AllHotels hotels;
 private User currentUser;
 //private Database database;
@@ -100,10 +101,10 @@ private boolean signUp(String username,String password, String firstName, String
 */
 // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
 public void quit(){
-    AllFlights.logout();
-    AllHotels.logout();
-    AllLuggages.logout();
-    AllUsers.logout();
+    flights.logout();
+    hotels.logout();
+    luggages.logout();
+    users.logout();
 }
 public void addUser(String username, String age){
     boolean senior = false;
