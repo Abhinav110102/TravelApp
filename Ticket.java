@@ -10,7 +10,7 @@ public abstract class Ticket {
     protected Location location;
     protected ArrayList<Rating> ratings;
 
-    public abstract String printTicket(); // Print to txt
+    //public abstract String printTicket(); // Print to txt
     public abstract Ticket bookTicket();
 
     /**
