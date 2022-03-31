@@ -1,5 +1,10 @@
 import java.io.FileReader;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Map;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -144,5 +149,9 @@ public class DataLoader extends DataConstants {
 		}
 		
 		return null;
+	}
+
+	public static void main(String[] args) {
+		loadFlights();
 	}
 }
