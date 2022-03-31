@@ -10,7 +10,9 @@ private static ArrayList<Luggage> luggages = new ArrayList<>();
 // +  getInstance(): AllFlights
 // + addFlight(): void
 // +logout: void
-private AllLuggages(){}
+private AllLuggages(){
+    DataLoader.loadLuggage();
+}
 
 public static AllLuggages getInstance(){
     if (allLuggages == null) {

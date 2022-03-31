@@ -7,7 +7,9 @@ public class AllUsers {
     private static ArrayList <User> users = new ArrayList<>();
 
     // + logout: void
-    private AllUsers() {}
+    private AllUsers() {
+        DataLoader.loadUsers();
+    }
 
     /**
      * Method to return an instance of itself.
@@ -43,7 +45,7 @@ public class AllUsers {
     }
 
     public static void logout() {
-        DataWriter.saveUsers();;
+        DataWriter.saveUsers();
     }
 
     public boolean updateUser(User currentUser) { // returns true if successful

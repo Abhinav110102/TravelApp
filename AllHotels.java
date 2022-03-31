@@ -11,7 +11,9 @@ public class AllHotels {
     /**
      * Constructor
      */
-    private AllHotels(){}
+    private AllHotels() {
+        DataLoader.loadHotels();
+    }
 
     /**
      * Method to return an nstance of itself
