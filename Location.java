@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 /**
  * Class for managing data in a location.
  */
+
 public class Location {
 
     private String street;
@@ -18,6 +20,14 @@ public class Location {
         this.state = state;
         this.zipcode = zipcode;
         this.country = country;
+    }
+
+    public Location(ArrayList<String> address) {
+        this.street = address.get(0);
+        this.city = address.get(1);
+        this.state = address.get(2);
+        this.zipcode = address.get(3);
+        this.country = address.get(4);
     }
     /**
      * Method to retun the street

@@ -12,9 +12,9 @@ public class User {
     private int userAge;
     private String passportNumber;
     private String password;
-    private ArrayList<String> address;
-    private Location address1;
-    private ArrayList<String> friends;
+    private Location address;
+    //private Location address1;
+    private ArrayList<String> friends; // contains ID of friends
     //private ArrayList<ArrayList<String>> family;
     private ArrayList<Family> familyList;
     private boolean senior;
@@ -35,7 +35,7 @@ public class User {
     //this is constructor for the jsons
     public User (String username, String firstName, String lastName, String userID,
                 String phone, String email, int userAge, String passportNumber, String password,
-                ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family, boolean senior) {
+                Location address, ArrayList<String> friends, ArrayList<ArrayList<String>> family, boolean senior) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -70,7 +70,7 @@ public class User {
         this.userAge = userAge;
         this.passportNumber = passportNumber;
         this.password = password;
-        this.address1 = address;
+        this.address = address;
         this.senior = senior;
      
     }
@@ -110,8 +110,8 @@ public class User {
         return password;
     }
 
-    public ArrayList<String> getAddress() {
-        return address;
+    public String getAddress() {
+        return address.toString();
     }
 
     public ArrayList<String> getFriends() {

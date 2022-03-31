@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Map;
+import java.lang.Integer;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -45,12 +46,13 @@ public class DataLoader extends DataConstants {
 										seatX, seatY));
 			}
 			
+			System.out.println("RETURNING FLIGHTS");
 			return flights;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		System.out.println("ERROR NO FLIGHTS");
 		return null;
 	}
 
@@ -61,7 +63,6 @@ public class DataLoader extends DataConstants {
 			FileReader reader = new FileReader(USER_FILE_NAME);
 			//JSONParser parser = new JSONParser();
 			JSONArray usersJSON = (JSONArray)new JSONParser().parse(reader);
-			
 			for(int i=0; i < usersJSON.size(); i++) {
 				JSONObject userJSON = (JSONObject)usersJSON.get(i);
 				String username = (String)userJSON.get(USER_NAME);
@@ -70,26 +71,34 @@ public class DataLoader extends DataConstants {
                 String userID = (String)userJSON.get(USER_ID);
                 String phone = (String)userJSON.get(USER_PHONE);
                 String email = (String)userJSON.get(USER_EMAIL);
-                int userAge = (int)userJSON.get(USER_AGE);
+                String userAge = (String)userJSON.get(USER_AGE);
+				int age = Integer.parseInt(userAge);
                 String passportNumber = (String)userJSON.get(USER_PASSPORT_NUMBER);
                 String password = (String)userJSON.get(USER_PASSWORD);
+				System.out.println("Im here");
                 ArrayList<String> address = (ArrayList<String>)userJSON.get(USER_ADDRESS);
                 ArrayList<String> friends = (ArrayList<String>)userJSON.get(USER_FRIENDS);
                 ArrayList<ArrayList<String>> family = (ArrayList<ArrayList<String>>)userJSON.get(USER_FAMILY);
                 boolean senior = (boolean)userJSON.get(USER_SENIOR);
-				
+				Location location = new Location(address);
+				System.out.println("Got through");
+				users.add(new User(username, firstName, lastName, userID,
+					phone, email, age, passportNumber, password, location ,friends, family, senior));
+				/*
 				users.add(new User(username, password, firstName, lastName, phone, email,
                                     passportNumber, new Location(address.get(0), address.get(1),
 									address.get(2), address.get(3), address.get(4)), userAge,
 									senior));
+									*/
 			}
-			
+			System.out.println("RETURNING USERS");
 			return users;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
+		System.out.println("RETURNING ERROR USERS");
 		return null;
 	}
 
