@@ -177,19 +177,10 @@ public class Flight extends Ticket {
      * @return String the data to be returned.
      */
     public String toString() {
-        return "P " + planeName + " \n" +
-        airline + " \n" +
-        arrivalAirport + " \n" +
-        destinationAirport + " \n" +
-        planeCapacity + " \n" +
-        departureDate + " \n" +
-        duration + " \n" +
-        flightType + " \n" +
-        userID + " \n" +
-        flightID + " \n" +
-        startLocation + " \n" +
-        endLocation  + " \n" +
+        return "Plane Name: " + planeName + " \n" + "Airline: " + airline + " \n" + "Arrival Airport Name: " + arrivalAirport + " \n" + 
+        "Destination Airport Name: " + destinationAirport + " \n" + "Plane Capacity: " + planeCapacity + " \n" + "Depature Date: " +
+        departureDate + " \n" + "Duration: " + duration + " \n" + "Flight Type: " + flightType + " \n" + "UserID: " + userID + " \n" + "FlightID: " +
+        flightID + " \n" + "Board Airport: " + startLocation + " \n" + "Destination Airport: " + endLocation  + " \n" + " Luggage: " + luggage;
         /*departureDate + " " +*/
-        luggage;
     }
 }

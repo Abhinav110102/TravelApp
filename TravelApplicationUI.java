@@ -27,7 +27,7 @@ public class TravelApplicationUI {
         System.out.println("Welcome to our Booking App!");
         while (inApp) {
             printOptions();
-            System.out.println("What would you like to do?:");
+            System.out.println("What would you like to do?");
             option = scanner.nextInt();
             if (travelApplication.getCurrentUser() == null) {
                 inApp = guest(option);
