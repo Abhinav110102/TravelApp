@@ -120,14 +120,14 @@ public class Flight extends Ticket {
         return addressvals;
     }
 
-    public void transferSplit(Flight flight, String airportMidpoint, ArrayList<String> midpoint, String newFlightID) {
+    public void transferSplit(Flight flight, String airportMidpoint, ArrayList<String> midpoint, String newFlightID, ArrayList<Seat> seating) {
         if (flight.flightType.equalsIgnoreCase("TRANSFER")) {
             AllFlights.addFlight(planeName, airline, arrivalAirport, getArrivalAddress(),
                                 airportMidpoint, midpoint, planeCapacity,
-                                departureDate, duration, flightType, userID, flightID);
+                                departureDate, duration, flightType, userID, flightID, seating);
             AllFlights.addFlight(planeName, airline, airportMidpoint, midpoint,
                                 destinationAirport, getDestinationAddress(), planeCapacity,
-                                departureDate, duration, flightType, userID, newFlightID);
+                                departureDate, duration, flightType, userID, newFlightID, seating);
         }
     }
 
