@@ -15,11 +15,12 @@ public class Hotel extends Ticket {
     private Date dateArriving;
     private Date dateLeaving;
     private boolean pool;
+    private double rating;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     public Hotel(String userID, String hotelName, String hotelCompany, ArrayList<String> hotelAddress,
                 int roomNumber, int daysBooked, int capacity, int numberOfBeds,
-                String arrivalDate, String departureDate, boolean pool) {
+                String arrivalDate, String departureDate, boolean pool, double rating) {
         this.userID = userID;
         this.hotelName = hotelName;
         this.hotelCompany = hotelCompany;
@@ -34,6 +35,7 @@ public class Hotel extends Ticket {
         this.capacity = capacity;
         this.numberOfBeds = numberOfBeds;
         this.pool = pool;
+        this.rating = rating;
 
         try {
             this.dateArriving = sdf.parse(arrivalDate);
@@ -82,8 +84,11 @@ public class Hotel extends Ticket {
     public Date getHotelDepartureDate() {
         return dateLeaving;
     }
-    public boolean hasPool(){
+    public boolean getPool(){
         return pool;
+    }
+    public double getRating(){
+        return rating;
     }
 
 

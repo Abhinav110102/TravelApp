@@ -32,7 +32,8 @@
         "NumberOfBeds": 2,
         "ArrivalDate": "March 3 2022",
         "DepartureDate": "March 6 2022",
-        "Pool": true
+        "Pool": true,
+        "Rating": "3.8"
     },{	
         "UserID": "8bhbug34b7839",
         "HotelName": "Los Angeles Airport Marriott", 
@@ -44,7 +45,8 @@
         "NumberOfBeds": 2,
         "ArrivalDate": "March 3 2022",
         "DepartureDate": "March 6 2022",
-        "Pool": true
+        "Pool": true,
+        "Rating": "4.0"
     },{	
         "UserID": "8bhbug34b7839",
         "HotelName": "DoubleTree Hilton Hotel", 
@@ -56,7 +58,8 @@
         "NumberOfBeds": 2,
         "ArrivalDate": "March 3 2022",
         "DepartureDate": "March 6 2022",
-        "Pool": false
+        "Pool": false,
+        "Rating": "4.5"
     },{	
         "UserID": "8bhbug34b7839",
         "HotelName": "Hyatt Regency Los Angeles International Airport", 
@@ -68,6 +71,7 @@
         "NumberOfBeds": 2,
         "ArrivalDate": "March 3 2022",
         "DepartureDate": "March 6 2022",
-        "Pool": false
+        "Pool": false,
+        "Rating": "3.2"
     }
 ]
