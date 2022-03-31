@@ -29,45 +29,10 @@ public class TravelApplicationUI {
             printOptions();
             System.out.println("What would you like to do?:");
             option = scanner.nextInt();
-<<<<<<< HEAD
             if (travelApplication.getCurrentUser() == null) {
                 inApp = guest(option);
             } else {
                 inApp = guest(option);
-=======
-            switch(option) {
-                case 1:
-                    //login
-                    if (login()) {
-                        System.out.println("Login Successful");
-                        System.out.println("Welcome " + travelApplication.getCurrentUser().getFirstName() + "!");
-                    } else {
-                        System.out.println("Login Unsuccessful");
-                    }
-                    break;
-                case 2:
-                        if (signUp()) {
-                            System.out.println("Sign Up Successful");
-                            System.out.println("Welcome " + travelApplication.getCurrentUser().getFirstName() + "!");
-                        } else {
-                            System.out.println("Sign Up Unsuccessful");
-                        }
-                    break;
-                case 3:
-                    
-                    break;
-                case 4:
-                    
-                    break;
-                case 5:
-                    travelApplication.quit();
-                    System.out.println("Goodbye!");
-                    // insert code to save to json?
-                    //travelApplication.Logout();
-                    break;
-                default:
-                    System.out.println("Sorry! That's not an option, please try again: ");
->>>>>>> c8faaf4f49a2e962215766aee92fba2f3acfd8ee
             }
         }
     }
