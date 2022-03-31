@@ -49,14 +49,15 @@ public class TravelApplicationUI {
                         }
                     break;
                 case 3:
-                    
+                    bookFlight();
                     break;
                 case 4:
-                    
+                    bookHotel();
                     break;
                 case 5:
                     travelApplication.quit();
                     System.out.println("Goodbye!");
+                    scanner.close();
                     // insert code to save to json?
                     //travelApplication.Logout();
                     break;
