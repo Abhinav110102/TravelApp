@@ -246,7 +246,7 @@ public class TravelApplicationUI {
         }
         System.out.println("Which flight would you like to book?");
         bookingOption = scanner.nextInt();
-        travelApplication.Booking(flightResults.get(bookingOption));
+        travelApplication.bookFlight(flightResults.get(bookingOption));
     }
 
     // Book Hotel / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -264,15 +264,34 @@ public class TravelApplicationUI {
             System.out.println("No Hotels available. Maybe try chicago");
             return;
         }
-         System.out.println("Which hotel would you like to book? Enter -1 if none.");
-         bookingOption = scanner.nextInt();
-         if (bookingOption < 0) {
-            System.out.println("Canceling Requests");
-            return;
-         }
-         travelApplication.bookHotel(hotelResults.get(bookingOption));
-         // Search() method only works for flights for now.
-         //travelApplication.Search(searchInput);
+        System.out.println("Which hotel would you like to book? Enter -1 if none.");
+        bookingOption = scanner.nextInt();
+        if (bookingOption < 0) {
+           System.out.println("Canceling Requests");
+           return;
+        }
+        Hotel request = hotelResults.get(bookingOption);
+        boolean loop = true;
+        System.out.println("What year would you like to book?");
+        int arrivalYear = scanner.nextInt();
+        System.out.println("");
+
+        System.out.println("What month would you like to book? (enter 1-12)");
+        int arrivalMonth = scanner.nextInt();
+        System.out.println("");
+
+        System.out.println("Here is the avaiablity of the month\n(XX's are unavailable dates)\n----------------------------");
+        System.out.println(travelApplication.printHotelDate() + "\nWhat day would you like to check in?");
+        int arrivalDay = scanner.nextInt();
+
+
+
+        while (loop) {
+            System.out.println("");
+        }
+        travelApplication.bookHotel(request, arrivalDate, departureDate);
+        // Search() method only works for flights for now.
+        //travelApplication.Search(searchInput);
     } 
 
     // Check account

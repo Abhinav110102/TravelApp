@@ -192,11 +192,11 @@ public ArrayList<Hotel> SearchHotels(String input){
     return hotelResults;
 }
 
-public void BookFlight(Flight flight){
+public void bookFlight(Flight flight){
     ;
 }
 
-public void BookHotel(Hotel hotel) {
+public void bookHotel(Hotel hotel) {
     ;
 }
 public void addTicketToUser(String username, Ticket ticket){
