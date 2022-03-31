@@ -154,8 +154,4 @@ public class DataLoader extends DataConstants {
 		
 		return null;
 	}
-
-	public static void main(String[] args) {
-		loadFlights();
-	}
 }
