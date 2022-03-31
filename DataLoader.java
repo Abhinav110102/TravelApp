@@ -27,10 +27,13 @@ public class DataLoader extends DataConstants {
                 String flightType = (String)flightJSON.get(FLIGHT_TYPE);
                 String userID = (String)flightJSON.get(FLIGHT_USER_ID);
                 String flightID = (String)flightJSON.get(FLIGHT_ID);
+				int seatX = (int)flightJSON.get(FLIGHT_SEAT_X);
+				int seatY = (int)flightJSON.get(FLIGHT_SEAT_Y);
 				
 				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress,
                                         destinationAirport, destinationAddress, planeCapacity,
-                                        departureDate, duration, flightType, userID, flightID));
+                                        departureDate, duration, flightType, userID, flightID,
+										seatX, seatY));
 			}
 			
 			return flights;
@@ -102,9 +105,10 @@ public class DataLoader extends DataConstants {
                 String arrivalDate = (String)hotelJSON.get(HOTEL_ARRIVAL_DATE);
                 String departureDate = (String)hotelJSON.get(HOTEL_DEPARTURE_DATE);
 				boolean pool = (boolean)hotelJSON.get(HOTEL_POOL);
+				double rating = (double)hotelJSON.get(HOTEL_RATING);
 				
 				hotels.add(new Hotel(userID, hotelName, hotelCompany, hotelAddress, roomNumber,
-                                        daysBooked, capacity, numberOfBeds, arrivalDate, departureDate, pool));
+                                        daysBooked, capacity, numberOfBeds, arrivalDate, departureDate, pool, rating));
 			}
 			
 			return hotels;

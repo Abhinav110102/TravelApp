@@ -103,6 +103,8 @@ public class DataWriter extends DataConstants {
         flightDetails.put(FLIGHT_TYPE, flight.getFlightType());
         flightDetails.put(FLIGHT_USER_ID, flight.getUserID());
         flightDetails.put(FLIGHT_ID, flight.getFlightID());
+        flightDetails.put(FLIGHT_SEAT_X, flight.getSeatXPos());
+        flightDetails.put(FLIGHT_SEAT_Y, flight.getSeatYPos());
         
         return flightDetails;
     }
@@ -138,6 +140,7 @@ public class DataWriter extends DataConstants {
         hotelDetails.put(HOTEL_NUMBER_OF_BEDS, hotel.getNumberOfBeds());
         hotelDetails.put(HOTEL_ARRIVAL_DATE, hotel.getHotelArrivalDate());
         hotelDetails.put(HOTEL_DEPARTURE_DATE, hotel.getHotelDepartureDate());
+        hotelDetails.put(HOTEL_RATING, hotel.getRating());
         
         return hotelDetails;
     }
