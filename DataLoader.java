@@ -38,12 +38,11 @@ public class DataLoader extends DataConstants {
                 String flightType = (String)flightJSON.get(FLIGHT_TYPE);
                 String userID = (String)flightJSON.get(FLIGHT_USER_ID);
                 String flightID = (String)flightJSON.get(FLIGHT_ID);
-				int seatX = Integer.parseInt((String)flightJSON.get(FLIGHT_SEAT_X));
+				ArrayList<Integer> seats = (ArrayList<Integer>)flightJSON.get(FLIGHT_SEATS);
 
-				int seatY = Integer.parseInt((String)flightJSON.get(FLIGHT_SEAT_Y));
 				System.out.println(departureDate);
 				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport,
-                 destinationAddress, planeCapacity, departureDate, duration, flightType, userID, flightID, seatX, seatY));
+                 destinationAddress, planeCapacity, departureDate, duration, flightType, userID, flightID, seats));
 
 				 /*
 				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress,
