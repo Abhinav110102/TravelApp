@@ -175,24 +175,24 @@ public ArrayList<Hotel> SearchHotels(String input){
 public void Booking(Ticket ticket){
     ;
 }
-private void addTicketToUser(String username, Ticket ticket){
+public void addTicketToUser(String username, Ticket ticket){
     for (User user : users.getUsers()) {
         if(user.getUserName().equals(username)) {
             user.addTicket(ticket);
         }
     }
 }
-private void updateTicket(Flight flight){
+public void updateTicket(Flight flight){
     ;
 }
-private void updateTicket(Hotel hotel){
+public void updateTicket(Hotel hotel){
     ;
 }
-private void printTicket(Flight flight) {
+public void printTicket(Flight flight) {
     flight.printTicket();
 }
 
-private void printTicket(Hotel hotel) {
+public void printTicket(Hotel hotel) {
     hotel.printTicket();
 }
 /*public String inputOption(int input){
