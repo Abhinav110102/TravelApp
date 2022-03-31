@@ -27,7 +27,6 @@ public abstract class UserTicket {
      * @throws IOException
      */
     public void printTicket() throws IOException {
-        String ticketText = "ABC";
         try {
             FileWriter fw = new FileWriter("ticket.txt");
             fw.write(toString());
