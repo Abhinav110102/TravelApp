@@ -232,6 +232,7 @@ public class TravelApplicationUI {
     public void bookFlight() {
         String searchInput;
         int bookingOption;
+        scanner.nextLine();
         System.out.println("Where would you like to fly to or from?");
         searchInput = scanner.nextLine();
         ArrayList<Flight> flightResults = travelApplication.SearchFlights(searchInput);
@@ -247,6 +248,7 @@ public class TravelApplicationUI {
     public void bookHotel() {
         int bookingOption;
         String searchInput;
+        scanner.nextLine();
         System.out.println("Where would you like to book a hotel?");
         searchInput = scanner.nextLine();
         ArrayList<Hotel> hotelResults = travelApplication.SearchHotels(searchInput);
