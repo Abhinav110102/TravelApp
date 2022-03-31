@@ -100,11 +100,22 @@ private boolean signUp(String username,String password, String firstName, String
 */
 // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
 public void quit(){
+    if (currentUser != null) {logout();}
     AllFlights.logout();
     AllHotels.logout();
     AllLuggages.logout();
     AllUsers.logout();
 }
+
+// / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+public void logout() {
+    if (users.updateUser(currentUser)) {
+        return;
+    }
+    System.out.println("error logging out fully");
+    return;
+}
+
 public void addUser(String username, String age){
     boolean senior = false;
     if (Integer.parseInt(age) <= 18) {

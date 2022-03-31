@@ -41,9 +41,19 @@ public class AllUsers {
     public void addUser(User user) {
         users.add(user);
     }
-    
+
     public static void logout() {
         DataWriter.saveUsers();;
     }
 
+    public boolean updateUser(User currentUser) { // returns true if successful
+        for (User user : users) {
+            if(user.getUserID().equals(currentUser.getUserID())) {
+               users.remove(user);
+               users.add(currentUser); //updates info
+               return true;
+            }
+        }
+        return false;
+    }
 }
