@@ -32,7 +32,7 @@ public class TravelApplicationUI {
             if (travelApplication.getCurrentUser() == null) {
                 inApp = guest(option);
             } else {
-                inApp = guest(option);
+                inApp = registeredUser(option);
             }
         }
     }
@@ -105,7 +105,7 @@ public class TravelApplicationUI {
                 bookHotel();
                 break;
             case 3:
-                checkAccount();
+               // checkAccount();
                 break;
             case 4:
                 logout();
