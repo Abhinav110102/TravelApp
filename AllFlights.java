@@ -1,43 +1,70 @@
 import java.util.ArrayList;
 
+/**
+ * Method for managing data for all flights. Calls the DataWrtiter and holds an
+ * array list of Flights.
+ */
 public class AllFlights {
-// -allFlights: AllFlights
-// -flights: ArrayList<Flight
-private static AllFlights allFlights = null;
-private static ArrayList<Flight> flights = new ArrayList<>();
 
-// -AllFlights()
-// +  getInstance(): AllFlights
-// + addFlight(): void
-// +logout: void
-private AllFlights(){}
+    private static AllFlights allFlights = null;
+    private static ArrayList<Flight> flights = new ArrayList<>();
 
-public static AllFlights getInstance(){
-    if (allFlights == null) {
-        allFlights = new AllFlights();
+    /**
+     * Constructor
+     */
+    private AllFlights(){}
+
+    /**
+     * Method to return an instance of AllFLights
+     * @return AllFlights the instance to be returned.
+     */
+    public static AllFlights getInstance(){
+        if (allFlights == null) {
+            allFlights = new AllFlights();
+        }
+        return allFlights;
     }
-    return allFlights;
-}
 
-public static ArrayList<Flight> getFlights() {
-    return flights;
-}
+    /**
+     * Method to return an ArrayList of flights
+     * @return flights the ArrayList to be returned.
+     */
+    public static ArrayList<Flight> getFlights() {
+        return flights;
+    }
 
-public static void addFlight(String planeName, String airline, String arrivalAirport,
+    /**
+     * Method to add a flight to ArrayList<Flight> flights
+     * @param planeName value in Flight constructor
+     * @param airline value in Flight constructor
+     * @param arrivalAirport value in Flight constructor
+     * @param arrivalAddress value in Flight constructor
+     * @param destinationAirport value in Flight constructor
+     * @param destinationAddress value in Flight constructor
+     * @param planeCapacity value in Flight constructor
+     * @param departureDate value in Flight constructor
+     * @param duration value in Flight constructor
+     * @param flightType value in Flight constructor
+     * @param userID value in Flight constructor
+     * @param flightID value in Flight constructor
+     * @param seatX value in Flight constructor
+     * @param seatY value in Flight constructor
+     */
+    public static void addFlight(String planeName, String airline, String arrivalAirport,
                         ArrayList<String> arrivalAddress, String destinationAirport,
                         ArrayList<String> destinationAddress, int planeCapacity,
                         String departureDate, String duration, String flightType,
                         String userID, String flightID, int seatX, int seatY) {
-    Flight flight = new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport,
+        Flight flight = new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport,
                                 destinationAddress, planeCapacity, departureDate, duration, flightType,
                                 userID, flightID, seatX, seatY);
-    flights.add(flight);
-}
+        flights.add(flight);
+    }
 
-public static void logout() {
-    DataWriter.saveFlights();
-}
-
-
-
+    /**
+     * Method to call DataWriter and save flights to JSON file
+     */
+    public static void logout() {
+        DataWriter.saveFlights();
+    }
 }
