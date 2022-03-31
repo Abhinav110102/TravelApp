@@ -28,6 +28,8 @@ public class Flight extends Ticket {
     private Location endLocation;
     private ArrayList<Luggage> luggage;
     private Date depart;
+    private int seatXMax;
+    private int seatYMax;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     /**
@@ -37,7 +39,7 @@ public class Flight extends Ticket {
                 ArrayList<String> arrivalAddress, String destinationAirport,
                 ArrayList<String> destinationAddress, int planeCapacity,
                 String departureDate, String duration, String flightType,
-                String userID, String flightID, ArrayList<Seat> seating) {
+                String userID, String flightID, ArrayList<Integer> seats) {
         this.planeName = planeName;
         this.airline = airline;
         this.arrivalAirport = arrivalAirport;
@@ -60,6 +62,13 @@ public class Flight extends Ticket {
         } catch (Exception e) {
             System.out.println("Error parsing dates");
         }*/
+        seatXMax = seats.get(0);
+        seatYMax = seats.get(1);
+        for (int i = 0; i < seats.get(0); i++) {
+            for (int j = 0; i < seats.get(1); i++) {
+                seating.add(new Seat(i, j));
+            }
+        }
     }
 
     /**
@@ -156,6 +165,13 @@ public class Flight extends Ticket {
 
     public ArrayList<Seat> getSeating() {
         return seating;
+    }
+
+    public ArrayList<Integer> getSeatingAsJSONFormat() {
+        ArrayList<Integer> retArr = new ArrayList<Integer>();
+        retArr.add(seatXMax);
+        retArr.add(seatYMax);
+        return retArr;
     }
 
     @Override
