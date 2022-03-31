@@ -141,8 +141,19 @@ public void addUser(String age){
 }
 public ArrayList<Flight> SearchFlights(String input){
     //String results = "";
-    ArrayList<Flight> flightsToSearch = flights.getFlights();
+    //ArrayList<Flight> flightsToSearch = flights.getFlights();
+
+    for (Flight f : flights.getFlights()) {
+        System.out.println(f.toString());
+    }
+    
     ArrayList<Flight> flightResults = new ArrayList<Flight>();
+    for (Flight flight : flights.getFlights()) {
+        if (flight.getLocation().anyEquals(input)) {
+            flightResults.add(flight);
+        }
+    }
+    /*
     for (int i = 0; i < flightsToSearch.size(); i++) {
         if (flightsToSearch.get(i).getDestinationAirport().equals(input)) {
             flightResults.add(flightsToSearch.get(i));
@@ -152,6 +163,7 @@ public ArrayList<Flight> SearchFlights(String input){
             //results += flightsToSearch.get(i).getStartLocation() + " " + flightsToSearch.get(i).getEndLocation() + "\n";
         }
     }
+    */
     return flightResults;
 }
 

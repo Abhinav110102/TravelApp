@@ -131,9 +131,9 @@ public class TravelApplicationUI {
         boolean loop = true;
         String usernameInput = "";
         String passwordInput = "";
+        scanner.nextLine();
         while (attempts < 5 && loop) {
             System.out.println("Enter your username:");
-            scanner.nextLine();
             usernameInput = scanner.nextLine();
             if (travelApplication.checkUsername(usernameInput)) {
                 loop = false;
@@ -148,12 +148,11 @@ public class TravelApplicationUI {
         }
 
         attempts = 0;
-        loop = true;
-        while (attempts < 5 && loop) {
+        while (attempts < 5) {
             System.out.println("Enter your password:");
             passwordInput = scanner.nextLine();
             if (travelApplication.login(usernameInput, passwordInput)) {
-                loop = false;
+                return true;
             } else {
                 System.out.println("Incorrect Password. Please Try Again");
                 attempts++;
@@ -179,8 +178,9 @@ public class TravelApplicationUI {
             return false;
         }
 
+        
+        scanner.nextLine();
         while (loop) {
-          scanner.nextLine();
             System.out.println("Enter a username:");
             username = scanner.nextLine();
             if (!travelApplication.checkUsername(username)) {
@@ -235,11 +235,14 @@ public class TravelApplicationUI {
         int bookingOption;
         scanner.nextLine();
         System.out.println("Where would you like to fly to or from?");
-        scanner.nextLine();
         searchInput = scanner.nextLine();
         ArrayList<Flight> flightResults = travelApplication.SearchFlights(searchInput);
         for (int i = 0 ; i < flightResults.size(); i++){
             System.out.println(i + ". " + flightResults.get(i).toString());
+        }
+        if (flightResults.size() == 0) {
+            System.out.println("No flights available. Maybe try chicago");
+            return;
         }
         System.out.println("Which flight would you like to book?");
         bookingOption = scanner.nextInt();
@@ -252,7 +255,6 @@ public class TravelApplicationUI {
         String searchInput;
         scanner.nextLine();
         System.out.println("Where would you like to book a hotel?");
-        scanner.nextLine();
         searchInput = scanner.nextLine();
         ArrayList<Hotel> hotelResults = travelApplication.SearchHotels(searchInput);
         for (int i = 0 ; i < hotelResults.size(); i++){

@@ -31,7 +31,7 @@ public class AllFlights {
      * Method to return an ArrayList of flights
      * @return flights the ArrayList to be returned.
      */
-    public static ArrayList<Flight> getFlights() {
+    public ArrayList<Flight> getFlights() {
         return flights;
     }
 
