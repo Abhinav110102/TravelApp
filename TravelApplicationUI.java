@@ -6,14 +6,14 @@ import java.util.Scanner;
  * @author Mark Valentino
  */
 public class TravelApplicationUI {
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
     private TravelApplication travelApplication; // NOT IN UML
     
     /**
      * Constructor
      */
-    public TravelApplicationUI(){
-        Scanner scanner = new Scanner(System.in);
+    public TravelApplicationUI(){ 
+        this.scanner = new Scanner(System.in);
         travelApplication = TravelApplication.getInstance();
         //TravelApplication travelApplication = new TravelApplication();
     }
@@ -32,13 +32,10 @@ public class TravelApplicationUI {
             if (travelApplication.getCurrentUser() == null) {
                 inApp = guest(option);
             } else {
-<<<<<<< HEAD
-                inApp = guest(option);
-=======
                 inApp = registeredUser(option);
->>>>>>> ba95b011155603f9a14c501ab85f9cce35f3e064
             }
         }
+        this.scanner.close();
     }
 
     /**
@@ -109,11 +106,7 @@ public class TravelApplicationUI {
                 bookHotel();
                 break;
             case 3:
-<<<<<<< HEAD
                 //checkAccount();
-=======
-               // checkAccount();
->>>>>>> ba95b011155603f9a14c501ab85f9cce35f3e064
                 break;
             case 4:
                 logout();
