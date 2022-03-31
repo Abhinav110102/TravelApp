@@ -7,7 +7,9 @@ public class AllUsers {
     private static ArrayList <User> users = new ArrayList<>();
 
     // + logout: void
-    private AllUsers() {}
+    private AllUsers() {
+        users = DataLoader.loadUsers();
+    }
 
     /**
      * Method to return an instance of itself.

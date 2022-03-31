@@ -15,7 +15,9 @@ public class AllLuggages {
     /**
      * Constructor
     */
-    private AllLuggages(){}
+    private AllLuggages(){
+        luggages = DataLoader.loadLuggage();
+    }
 
     /**
     * Method to return an instance of itself

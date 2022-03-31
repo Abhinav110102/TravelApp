@@ -12,7 +12,9 @@ public class AllFlights {
     /**
      * Constructor
      */
-    private AllFlights(){}
+    private AllFlights(){
+        flights = DataLoader.loadFlights();
+    }
 
     /**
      * Method to return an instance of AllFLights

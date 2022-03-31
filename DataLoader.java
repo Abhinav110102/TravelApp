@@ -1,4 +1,5 @@
 import java.io.FileReader;
+import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -14,6 +15,9 @@ public class DataLoader extends DataConstants {
 		ArrayList<Flight> flights = new ArrayList<Flight>();
 		
 		try {
+			//JSONParser jsonP = new JSONParser();
+			//JSONObject jsonO = (JSONObject) jsonP.parse(new FileReader(FLIGHT_FILE_NAME));
+
 			FileReader reader = new FileReader(FLIGHT_FILE_NAME);
 			//JSONParser parser = new JSONParser();
 			JSONArray flightsJSON = (JSONArray)new JSONParser().parse(reader);
