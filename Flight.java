@@ -30,14 +30,6 @@ public class Flight extends Ticket {
     private Date depart;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-    // + Flight(double duration, Location startLocation, Location endLocation)
-    // + printTicket(): String
-    // + addLuggage(): void
-    public Flight(double duration, Location startLocation, Location endLocation) {
-        //Constructor shall generate an arrayList of seats - Mark V
-        ;
-    }
-
     /**
      * Flight constructor with constants passed in via DataLoader
      */

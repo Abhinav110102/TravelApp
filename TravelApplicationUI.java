@@ -32,7 +32,11 @@ public class TravelApplicationUI {
             if (travelApplication.getCurrentUser() == null) {
                 inApp = guest(option);
             } else {
+<<<<<<< HEAD
                 inApp = guest(option);
+=======
+                inApp = registeredUser(option);
+>>>>>>> ba95b011155603f9a14c501ab85f9cce35f3e064
             }
         }
     }
@@ -105,7 +109,11 @@ public class TravelApplicationUI {
                 bookHotel();
                 break;
             case 3:
+<<<<<<< HEAD
                 //checkAccount();
+=======
+               // checkAccount();
+>>>>>>> ba95b011155603f9a14c501ab85f9cce35f3e064
                 break;
             case 4:
                 logout();
@@ -232,6 +240,7 @@ public class TravelApplicationUI {
     public void bookFlight() {
         String searchInput;
         int bookingOption;
+        scanner.nextLine();
         System.out.println("Where would you like to fly to or from?");
         scanner.nextLine();
         searchInput = scanner.nextLine();
@@ -248,6 +257,7 @@ public class TravelApplicationUI {
     public void bookHotel() {
         int bookingOption;
         String searchInput;
+        scanner.nextLine();
         System.out.println("Where would you like to book a hotel?");
         scanner.nextLine();
         searchInput = scanner.nextLine();

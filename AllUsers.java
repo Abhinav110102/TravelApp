@@ -8,7 +8,11 @@ public class AllUsers {
 
     // + logout: void
     private AllUsers() {
+<<<<<<< HEAD
         DataLoader.loadUsers();
+=======
+        users = DataLoader.loadUsers();
+>>>>>>> ba95b011155603f9a14c501ab85f9cce35f3e064
     }
 
     /**

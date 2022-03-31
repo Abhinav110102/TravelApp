@@ -1,5 +1,5 @@
 public abstract class DataConstants {
-    protected static final String FLIGHT_FILE_NAME = "flights.json";
+    protected static final String FLIGHT_FILE_NAME = "flightstest.json";
 	protected static final String FLIGHT = "flights";
     protected static final String FLIGHT_PLANE_NAME = "PlaneName";
 	protected static final String FLIGHT_AIRLINE = "Airline";
@@ -16,7 +16,7 @@ public abstract class DataConstants {
     protected static final String FLIGHT_SEAT_X = "SeatX";
     protected static final String FLIGHT_SEAT_Y = "SeatY";
 
-    protected static final String USER_FILE_NAME = "users.json";
+    protected static final String USER_FILE_NAME = "userstest.json";
 	protected static final String USER = "users";
     protected static final String USER_NAME = "Username";
     protected static final String USER_FIRST_NAME = "FirstName";
@@ -32,7 +32,7 @@ public abstract class DataConstants {
     protected static final String USER_FAMILY = "Family";
     protected static final String USER_SENIOR = "Senior";
 
-    protected static final String HOTEL_FILE_NAME = "hotels.json";
+    protected static final String HOTEL_FILE_NAME = "hotelstest.json";
 	protected static final String HOTEL = "hotels";
     protected static final String HOTEL_USER_ID = "UserID";
 	protected static final String HOTEL_NAME = "HotelName";
@@ -47,7 +47,7 @@ public abstract class DataConstants {
     protected static final String HOTEL_POOL = "Pool";
     protected static final String HOTEL_RATING = "Rating";
 
-    protected static final String LUGGAGE_FILE_NAME = "luggage.json";
+    protected static final String LUGGAGE_FILE_NAME = "luggagetest.json";
 	protected static final String LUGGAGE = "luggage";
     protected static final String LUGGAGE_USER_ID = "UserID";
 	protected static final String LUGGAGE_FLIGHT_ID = "FlightID";
