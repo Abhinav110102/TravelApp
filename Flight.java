@@ -10,7 +10,7 @@ public class Flight extends Ticket {
     // - seating: ArrayList<Seat> 
     // - available: boolean
     // -  flightType: String
-    private Seat seating;
+    private ArrayList<Seat> seating;
     private boolean available;
 
     //Variables from JSON files & others;
@@ -37,7 +37,7 @@ public class Flight extends Ticket {
                 ArrayList<String> arrivalAddress, String destinationAirport,
                 ArrayList<String> destinationAddress, int planeCapacity,
                 String departureDate, String duration, String flightType,
-                String userID, String flightID, int SeatX, int SeatY) {
+                String userID, String flightID, ArrayList<Seat> seating) {
         this.planeName = planeName;
         this.airline = airline;
         this.arrivalAirport = arrivalAirport;
@@ -48,6 +48,7 @@ public class Flight extends Ticket {
         this.flightType = flightType;
         this.userID = userID;
         this.flightID = flightID;
+        this.seating = seating;
 
         startLocation = new Location(arrivalAddress.get(0), arrivalAddress.get(1), arrivalAddress.get(2),
                                     arrivalAddress.get(3), arrivalAddress.get(4));
@@ -59,12 +60,11 @@ public class Flight extends Ticket {
         } catch (Exception e) {
             System.out.println("Error parsing dates");
         }*/
-        seating = new Seat(SeatX, SeatY);
     }
 
     /**
-     * Method to return 
-     * @return
+     * Method to return name of plane.
+     * @return planeName the name of plane.
      */
     public String getPlaneName() {
         return planeName;
@@ -124,10 +124,10 @@ public class Flight extends Ticket {
         if (flight.flightType.equalsIgnoreCase("TRANSFER")) {
             AllFlights.addFlight(planeName, airline, arrivalAirport, getArrivalAddress(),
                                 airportMidpoint, midpoint, planeCapacity,
-                                departureDate, duration, flightType, userID, flightID, seating.getXpos(), seating.getYpos());
+                                departureDate, duration, flightType, userID, flightID);
             AllFlights.addFlight(planeName, airline, airportMidpoint, midpoint,
                                 destinationAirport, getDestinationAddress(), planeCapacity,
-                                departureDate, duration, flightType, userID, newFlightID, seating.getXpos(), seating.getYpos());
+                                departureDate, duration, flightType, userID, newFlightID);
         }
     }
 
@@ -154,16 +154,8 @@ public class Flight extends Ticket {
         luggage.add(new Luggage(getUserID(), getFlightID(), weight));
     }
 
-    public Seat getSeating() {
+    public ArrayList<Seat> getSeating() {
         return seating;
-    }
-
-    public int getSeatXPos() {
-        return seating.getXpos();
-    }
-
-    public int getSeatYPos() {
-        return seating.getYpos();
     }
 
     @Override
