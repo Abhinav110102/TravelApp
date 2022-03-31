@@ -24,10 +24,9 @@ public class TravelApplicationUI {
     public void run() {
         int option = 0;
         int bookingOption;
-        ArrayList<String> addressInput = new ArrayList<String>();
-        String searchInput;
+        boolean inApp = true;
         System.out.println("Welcome to our Booking App!");
-        while (true) {
+        while (inApp) {
             printOptions();
             System.out.println("What would you like to do?:");
             option = scanner.nextInt();
@@ -51,17 +50,7 @@ public class TravelApplicationUI {
                         }
                     break;
                 case 3:
-                    System.out.println("Where would you like to fly to or from?");
-                    searchInput = scanner.nextLine();
-                    ArrayList<Flight> flightResults = travelApplication.SearchFlights(searchInput);
-                    for (int i = 0 ; i < flightResults.size(); i++){
-                        System.out.println(i + ". " + flightResults.get(i).getStartLocation() + " " + flightResults.get(i).getEndLocation()
-                            + " " + flightResults.get(i).getAirline() + " " + flightResults.get(i).getPlaneName()
-                            + " " + flightResults.get(i).getFlightDepartureDate() + " " + flightResults.get(i).getFlightDuration());
-                    }
-                    System.out.println("Which flight would you like to book?");
-                    bookingOption = scanner.nextInt();
-                    travelApplication.Booking(flightResults.get(bookingOption));
+                    
                     break;
                 case 4:
                     System.out.println("Where would you like to book a hotel?");
@@ -79,8 +68,8 @@ public class TravelApplicationUI {
                     //travelApplication.Search(searchInput);
                     break;
                 case 5:
-                    travelApplication.Logout();
-                    System.out.println("Logged out.");
+                    travelApplication.quit();
+                    System.out.println("Goodbye!");
                     // insert code to save to json?
                     //travelApplication.Logout();
                     break;
@@ -94,25 +83,20 @@ public class TravelApplicationUI {
      * Method to print options of input in UI.
      */
     public void printOptions(){
+        if (travelApplication.getCurrentUser() == null) {
+            System.out.println("************ Main Menu ************");
+            System.out.println("1. Login");
+            System.out.println("2. Sign up");
+            System.out.println("3. Book a Flight");
+            System.out.println("4. Book a Hotel");
+            System.out.println("5. Quit app"); 
+            return;
+        }
         System.out.println("************ Main Menu ************");
-        System.out.println("1. Login");
-        System.out.println("2. Sign up");
-        System.out.println("3. Book a Flight");
-        System.out.println("4. Book a Hotel");
-        System.out.println("5. Quit app"); 
-    }
-
-
-    
-    /**
-     * Method to print options of input in UI.
-     */
-    public void printOptions(){
-        System.out.println("************ Main Menu ************");
-        System.out.println("1. Login");
-        System.out.println("2. Sign up");
-        System.out.println("3. Book a Flight");
-        System.out.println("4. Book a Hotel");
+        System.out.println("1. Book a Flight");
+        System.out.println("2. Book a Hotel");
+        System.out.println("3. Check Accout Profile");
+        System.out.println("4. Logout");
         System.out.println("5. Quit app"); 
     }
 
@@ -222,6 +206,24 @@ public class TravelApplicationUI {
         System.out.println("Signed up!!");
         return true;
     }
+
+    // Book Flight / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+    public void bookFlight() {
+        String searchInput;
+        int bookingOption;
+        System.out.println("Where would you like to fly to or from?");
+        searchInput = scanner.nextLine();
+        ArrayList<Flight> flightResults = travelApplication.SearchFlights(searchInput);
+        for (int i = 0 ; i < flightResults.size(); i++){
+            System.out.println(i + ". " + flightResults.get(i).getStartLocation() + " " + flightResults.get(i).getEndLocation()
+              + " " + flightResults.get(i).getAirline() + " " + flightResults.get(i).getPlaneName()
+              + " " + flightResults.get(i).getFlightDepartureDate() + " " + flightResults.get(i).getFlightDuration());
+        }
+        System.out.println("Which flight would you like to book?");
+        bookingOption = scanner.nextInt();
+        travelApplication.Booking(flightResults.get(bookingOption));
+    }
+
 
     /**
      * Method main for running the entire Application.
