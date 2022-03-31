@@ -38,6 +38,10 @@ public class AllUsers {
         users.add(user);
     }
 
+    public void addUser(User user) {
+        users.add(user);
+    }
+    
     public static void logout() {
         DataWriter.saveUsers();;
     }

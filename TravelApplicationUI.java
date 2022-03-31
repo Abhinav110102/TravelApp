@@ -30,7 +30,6 @@ public class TravelApplicationUI {
             printOptions();
             System.out.println("What would you like to do?:");
             option = scanner.nextInt();
-
             switch(option) {
                 case 1:
                     //login
@@ -53,19 +52,7 @@ public class TravelApplicationUI {
                     
                     break;
                 case 4:
-                    System.out.println("Where would you like to book a hotel?");
-                    searchInput = scanner.nextLine();
-                    ArrayList<Hotel> hotelResults = travelApplication.SearchHotels(searchInput);
-                    for (int i = 0 ; i < hotelResults.size(); i++){
-                        System.out.println(i + ". " + hotelResults.get(i).getHotelAddress()
-                            + " " + hotelResults.get(i).getHotelCompany() + " " + hotelResults.get(i).getHotelName()
-                            + " " + hotelResults.get(i).getHotelArrivalDate() + " " + hotelResults.get(i).getDaysBooked());
-                    }
-                    System.out.println("Which hotel would you like to book?");
-                    bookingOption = scanner.nextInt();
-                    travelApplication.Booking(hotelResults.get(bookingOption));
-                    // Search() method only works for flights for now.
-                    //travelApplication.Search(searchInput);
+                    
                     break;
                 case 5:
                     travelApplication.quit();
@@ -224,6 +211,24 @@ public class TravelApplicationUI {
         travelApplication.Booking(flightResults.get(bookingOption));
     }
 
+    // Book Hotel / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+    public void bookHotel() {
+        int bookingOption;
+        String searchInput;
+        System.out.println("Where would you like to book a hotel?");
+        searchInput = scanner.nextLine();
+        ArrayList<Hotel> hotelResults = travelApplication.SearchHotels(searchInput);
+        for (int i = 0 ; i < hotelResults.size(); i++){
+            System.out.println(i + ". " + hotelResults.get(i).getHotelAddress()
+               + " " + hotelResults.get(i).getHotelCompany() + " " + hotelResults.get(i).getHotelName()
+               + " " + hotelResults.get(i).getHotelArrivalDate() + " " + hotelResults.get(i).getDaysBooked());
+         }
+         System.out.println("Which hotel would you like to book?");
+         bookingOption = scanner.nextInt();
+         travelApplication.Booking(hotelResults.get(bookingOption));
+         // Search() method only works for flights for now.
+         //travelApplication.Search(searchInput);
+    } 
 
     /**
      * Method main for running the entire Application.

@@ -92,8 +92,8 @@ private boolean signUp(String username,String password, String firstName, String
     ArrayList<String> friends = new ArrayList<String>();
     ArrayList<ArrayList<String>> family = new ArrayList<ArrayList<String>>();
     boolean senior = false;  // Senior set to false by default, will be set to true if needed when passed through addUser
-    User user = new User(username, firstName, lastName, userID, phone, email, userAge, passportNumber, password,
-                        address, friends, family, senior);
+    User user = new User(username, password, firstName, lastName, phone, email, passportNumber,
+                        new Location(street, city, state, zipcode, country), userAge, senior);
     addUser(user.getUserName(), Integer.toString(userAge));
     return true;
 }
@@ -104,8 +104,6 @@ private void quit(){
     AllHotels.logout();
     AllLuggages.logout();
     AllUsers.logout();
-    TravelApplicationUI ui = new TravelApplicationUI();
-    ui.run();
 }
 public void addUser(String username, String age){
     boolean senior = false;

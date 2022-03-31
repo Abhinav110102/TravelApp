@@ -31,8 +31,10 @@ public class User {
     // - hotels: ArrayList<Hotel>
     // - friends: ArrayList<User>
     // - family: ArrayList<Family>
-    /*public User (String username, String firstName, String lastName, String userID,
-                int phone, String email, int userAge, int passportNumber, String password,
+
+    //this is constructor for the jsons
+    public User (String username, String firstName, String lastName, String userID,
+                String phone, String email, int userAge, String passportNumber, String password,
                 ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family, boolean senior) {
         this.username = username;
         this.firstName = firstName;
@@ -52,10 +54,11 @@ public class User {
         for (int i = 0; i < family.size(); i++) {
             familyList.add(new Family(family.get(i).get(0), family.get(i).get(1), Integer.parseInt(family.get(i).get(2))));
         }
-    }*/
+    }
     
+    //this is for new users
     public User (String username, String password, String firstName, String lastName, String phone, String email, 
-                    String passportNumber, Location address, int userAge, boolean senior) { //new user
+                    String passportNumber, Location address, int userAge, boolean senior) {
         
         String userID = UUID.randomUUID().toString();
         this.username = username;
