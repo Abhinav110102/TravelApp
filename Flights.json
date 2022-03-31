@@ -1,6 +1,6 @@
-[
-	{ 
-		"PlaneName": "M876578",
+[   
+    { 
+        "PlaneName": "M876578",
         "Airline": "Delta",
         "ArrivalAirport": "Columbia Metropolitan Airport",
         "ArrivalAddress" : ["101 Park st", "Columbia", "SC", "20222", "United States"],
@@ -15,7 +15,7 @@
         "SeatX": 1,
         "SeatY": 1 
     },{ 
-		"PlaneName": "D7jggfk755",
+        "PlaneName": "D7jggfk755",
         "Airline": "United Airlines",
         "ArrivalAirport": "Columbia Metropolitan Airport",
         "ArrivalAddress": ["101 Park st", "Columbia", "SC", "20222", "United States"],
@@ -30,7 +30,7 @@
         "SeatX": 2,
         "SeatY": 2
     },{ 
-		"PlaneName": "Hbibi53io89",
+        "PlaneName": "Hbibi53io89",
         "Airline": "United Airlines",
         "ArrivalAirport": "Central Nebraska Regional Airport",
         "ArrivalAddress": ["3773 Sky Park Rd", "Grand Island", "Nebraska", "68801", "United States"],
@@ -45,7 +45,7 @@
         "SeatX": 3,
         "SeatY": 3
     },{ 
-		"PlaneName": "8ihbsdgb4",
+        "PlaneName": "8ihbsdgb4",
         "Airline": "United Airlines",
         "ArrivalAirport": "Columbia Metropolitan Airport",
         "ArrivalAddress": ["101 Park st", "Columbia", "SC", "20222", "United States"],
@@ -60,7 +60,7 @@
         "SeatX": 4,
         "SeatY": 4
     },{ 
-		"PlaneName": "9yg234uos7",
+        "PlaneName": "9yg234uos7",
         "Airline": "United Airlines",
         "ArrivalAirport": "George Bush Intercontinental Airport",
         "ArrivalAddress": ["2800 N Terminal Rd", "Houston", "Texas", "77032", "United States"],
@@ -75,7 +75,7 @@
         "SeatX": 5,
         "SeatY": 5
     },{ 
-		"PlaneName": "ybjsuy49",
+        "PlaneName": "ybjsuy49",
         "Airline": "United Airlines",
         "ArrivalAirport": "Columbia Metropolitan Airport",
         "ArrivalAddress": ["101 Park st", "Columbia", "SC", "20222", "United States"],
@@ -90,7 +90,7 @@
         "SeatX": 6,
         "SeatY": 6
     },{ 
-		"PlaneName": "yh4yujbnb",
+        "PlaneName": "yh4yujbnb",
         "Airline": "United Airlines",
         "ArrivalAirport": "Nashville International Airport",
         "ArrivalAddress": ["1 Terminal Dr", "Nashville", "Tennessee", "37214", "United States"],
@@ -105,7 +105,7 @@
         "SeatX": 7,
         "SeatY": 7
     },{ 
-		"PlaneName": "bhekoe329",
+        "PlaneName": "bhekoe329",
         "Airline": "United Airlines",
         "ArrivalAirport": "Denver International Airport",
         "ArrivalAddress": ["8500 Peña Blvd", "Denver", "Colorado", "80249", "United States"],
@@ -120,5 +120,4 @@
         "SeatX": 8,
         "SeatY": 8
     }
-
 ]

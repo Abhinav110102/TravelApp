@@ -18,18 +18,33 @@ public class Family {
         this.age = age;
     }
 
+    /**
+     * Method to return the first name
+     * @return firstName the first name to be returned.
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Method to return the last name.
+     * @return lastName the last name to be returned.
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Method to return the age
+     * @return age the age to be returned in an int.
+     */
     public int getAge() {
         return age;
     }
 
+    /**
+     * Method to return user info in a String.
+     */
     public String toString() {
         return firstName + " " + lastName + "\nAge: " + age; 
     }

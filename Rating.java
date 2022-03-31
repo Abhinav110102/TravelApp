@@ -25,9 +25,12 @@ public class Rating {
   public void HideName() {
     isNameVisible = false;
   }
-
+  
+  /**
+   * Method to get a rating.
+   * @return the int value of rating.
+   */
   public int getRating() {
     return this.rating;
   }
 }
-

@@ -38,7 +38,9 @@ public class Flight extends Ticket {
         ;
     }
 
-    //Flight constructor with constants passed in via DataLoader
+    /**
+     * Flight constructor with constants passed in via DataLoader
+     */
     public Flight(String planeName, String airline, String arrivalAirport,
                 ArrayList<String> arrivalAddress, String destinationAirport,
                 ArrayList<String> destinationAddress, int planeCapacity,
@@ -69,6 +71,10 @@ public class Flight extends Ticket {
         seating = new Seat(SeatX, SeatY);
     }
 
+    /**
+     * Method to return 
+     * @return
+     */
     public String getPlaneName() {
         return planeName;
     }
