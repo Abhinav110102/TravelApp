@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
 
 //import javax.naming.directory.InitialDirContext;
 
@@ -8,7 +11,6 @@ public abstract class UserTicket {
     //private Location location;
     protected ArrayList<Rating> ratings;
 
-    // + printTicket(): String
     // + displayAvailable(): String
     // + addRating(): void
     // + getAvgRatings(): int
@@ -18,6 +20,22 @@ public abstract class UserTicket {
         this.company = company;
         //this.location = location;
         this.ratings = ratings;
+    }
+    
+    /**
+     * Method to print a ticket to a text file
+     * @throws IOException
+     */
+    public void printTicket() throws IOException {
+        try {
+            FileWriter fw = new FileWriter("ticket.txt");
+            fw.write(toString());
+            System.out.println("Ticket printed.");
+            fw.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+        }
     }
 
     public abstract String toString(); // to String
@@ -37,4 +55,3 @@ public abstract class UserTicket {
         return ret;
     }
 }
-

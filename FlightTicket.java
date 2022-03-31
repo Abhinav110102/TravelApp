@@ -35,7 +35,7 @@ public class FlightTicket extends UserTicket{
                 + "\nStart Address: " + startLocation.toString()
                 + "\nEnd Address: " + endLocation
                 + "\nFlight Date: " + date
-                + "\nSeat Number " + seating.toString();
+                + "\nSeat Number " + seat.toString();
     }
 
     public void addLuggage(Luggage luggageInst) {

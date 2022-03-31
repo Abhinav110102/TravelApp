@@ -13,6 +13,8 @@ public abstract class DataConstants {
     protected static final String FLIGHT_TYPE = "FlightType";
     protected static final String FLIGHT_USER_ID = "UserID";
     protected static final String FLIGHT_ID = "FlightID";
+    protected static final String FLIGHT_SEAT_X = "SeatX";
+    protected static final String FLIGHT_SEAT_Y = "SeatY";
 
     protected static final String USER_FILE_NAME = "users.json";
 	protected static final String USER = "users";
@@ -43,6 +45,7 @@ public abstract class DataConstants {
     protected static final String HOTEL_ARRIVAL_DATE = "ArrivalDate";
     protected static final String HOTEL_DEPARTURE_DATE = "DepartureDate";
     protected static final String HOTEL_POOL = "Pool";
+    protected static final String HOTEL_RATING = "Rating";
 
     protected static final String LUGGAGE_FILE_NAME = "luggage.json";
 	protected static final String LUGGAGE = "luggage";

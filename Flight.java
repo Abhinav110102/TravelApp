@@ -10,7 +10,7 @@ public class Flight extends Ticket {
     // - seating: ArrayList<Seat> 
     // - available: boolean
     // -  flightType: String
-    private ArrayList<Seat> seating;
+    private Seat seating;
     private boolean available;
 
     //Variables from JSON files & others;
@@ -43,7 +43,7 @@ public class Flight extends Ticket {
                 ArrayList<String> arrivalAddress, String destinationAirport,
                 ArrayList<String> destinationAddress, int planeCapacity,
                 String departureDate, String duration, String flightType,
-                String userID, String flightID) {
+                String userID, String flightID, int SeatX, int SeatY) {
         this.planeName = planeName;
         this.airline = airline;
         this.arrivalAirport = arrivalAirport;
@@ -65,6 +65,8 @@ public class Flight extends Ticket {
         } catch (Exception e) {
             System.out.println("Error parsing dates");
         }
+
+        seating = new Seat(SeatX, SeatY);
     }
 
     public String getPlaneName() {
@@ -125,10 +127,10 @@ public class Flight extends Ticket {
         if (flight.flightType.equalsIgnoreCase("TRANSFER")) {
             AllFlights.addFlight(planeName, airline, arrivalAirport, getArrivalAddress(),
                                 airportMidpoint, midpoint, planeCapacity,
-                                departureDate, duration, flightType, userID, flightID);
+                                departureDate, duration, flightType, userID, flightID, seating.getXpos(), seating.getYpos());
             AllFlights.addFlight(planeName, airline, airportMidpoint, midpoint,
                                 destinationAirport, getDestinationAddress(), planeCapacity,
-                                departureDate, duration, flightType, userID, newFlightID);
+                                departureDate, duration, flightType, userID, newFlightID, seating.getXpos(), seating.getYpos());
         }
     }
 
@@ -147,12 +149,24 @@ public class Flight extends Ticket {
     }
 
     public String printTicket() {
-        FlightTicket flightTicket = new FlightTicket(flightID, airline, ratings, duration, startLocation, endLocation, depart);
+        FlightTicket flightTicket = new FlightTicket(flightID, airline, ratings, duration, startLocation, endLocation, depart, seating);
         return flightTicket.toString();
     }
 
     public void addLuggage(double weight) {
         luggage.add(new Luggage(getUserID(), getFlightID(), weight));
+    }
+
+    public Seat getSeating() {
+        return seating;
+    }
+
+    public int getSeatXPos() {
+        return seating.getXpos();
+    }
+
+    public int getSeatYPos() {
+        return seating.getYpos();
     }
 
     @Override

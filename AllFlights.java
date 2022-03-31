@@ -27,10 +27,10 @@ public static void addFlight(String planeName, String airline, String arrivalAir
                         ArrayList<String> arrivalAddress, String destinationAirport,
                         ArrayList<String> destinationAddress, int planeCapacity,
                         String departureDate, String duration, String flightType,
-                        String userID, String flightID) {
+                        String userID, String flightID, int seatX, int seatY) {
     Flight flight = new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport,
                                 destinationAddress, planeCapacity, departureDate, duration, flightType,
-                                userID, flightID);
+                                userID, flightID, seatX, seatY);
     flights.add(flight);
 }
 
