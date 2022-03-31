@@ -149,7 +149,7 @@ public ArrayList<Flight> SearchFlights(String input){
         System.out.println("HERE TO");
     }
     */
-    
+
     ArrayList<Flight> flightResults = new ArrayList<Flight>();
     for (Flight flight : flights.getFlights()) {
         System.out.println("HERE TO CLOWN");
@@ -192,7 +192,11 @@ public ArrayList<Hotel> SearchHotels(String input){
     return hotelResults;
 }
 
-public void Booking(Ticket ticket){
+public void BookFlight(Flight flight){
+    ;
+}
+
+public void BookHotel(Hotel hotel) {
     ;
 }
 public void addTicketToUser(String username, Ticket ticket){

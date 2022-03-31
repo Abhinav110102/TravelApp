@@ -260,9 +260,17 @@ public class TravelApplicationUI {
         for (int i = 0 ; i < hotelResults.size(); i++){
             System.out.println(i + ". " + hotelResults.get(i).toString());
          }
-         System.out.println("Which hotel would you like to book?");
+         if (hotelResults.size() == 0) {
+            System.out.println("No Hotels available. Maybe try chicago");
+            return;
+        }
+         System.out.println("Which hotel would you like to book? Enter -1 if none.");
          bookingOption = scanner.nextInt();
-         travelApplication.Booking(hotelResults.get(bookingOption));
+         if (bookingOption < 0) {
+            System.out.println("Canceling Requests");
+            return;
+         }
+         travelApplication.bookHotel(hotelResults.get(bookingOption));
          // Search() method only works for flights for now.
          //travelApplication.Search(searchInput);
     } 
