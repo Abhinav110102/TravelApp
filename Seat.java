@@ -10,7 +10,7 @@ public class Seat {
     private int yPos;
     // X position of seat as a letter
     private String column;
-    private boolean isTaken = false;
+    private boolean isTaken;
     private boolean isWindowSeat = false;
     private boolean isAisleSeat = false;
     
@@ -18,9 +18,10 @@ public class Seat {
      * Constructor. Calls setColum method since xPos is passed through.
      * @author Mark Valentino
      */
-    Seat(int xPos, int yPos) {
+    Seat(int xPos, int yPos, boolean isTaken) {
       this.xPos = xPos;
       this.yPos = yPos;
+      this.isTaken = isTaken;
       this.column = setColumn(xPos);
     }
     
