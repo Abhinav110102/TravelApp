@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.io.UncheckedIOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -146,7 +145,7 @@ public class User {
         tickets.add(ticket);
     }
 
-    public void requestRefund(Ticket ticket) {
+    public void requestRefund(UserTicket ticket) {
         tickets.remove(ticket);
     }
 
