@@ -44,8 +44,8 @@ public class DataLoader extends DataConstants {
 				ArrayList<Integer> seats = (ArrayList<Integer>)flightJSON.get(FLIGHT_SEATS);
 				
 				ArrayList<Seat> seating = new ArrayList<Seat>();
-				for (int j = 0; j < seats.get(0); j++) {
-					for (int k = 0; k < seats.get(1); k++) {
+				for (int j = 0; j < seats.size(); j++) {
+					for (int k = 0; k < seats.get(j); k++) {
 						seating.add(new Seat(j, k, false));
 					}
 				}
