@@ -159,7 +159,7 @@ public class TravelApplication {
         
         ArrayList<Flight> flightResults = new ArrayList<Flight>();
         for (Flight flight : flights.getFlights()) {
-            System.out.println("HERE TO CLOWN");
+            //System.out.println("HERE TO CLOWN");
             if (flight.getStartLocation().anyEquals(input) || flight.getEndLocation().anyEquals(input)) {
                 flightResults.add(flight);
             }

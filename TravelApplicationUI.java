@@ -240,7 +240,7 @@ public class TravelApplicationUI {
         searchInput = scanner.nextLine();
         ArrayList<Flight> flightResults = travelApplication.SearchFlights(searchInput);
         for (int i = 0 ; i < flightResults.size(); i++){
-            System.out.println(i + ". " + flightResults.get(i).toString() + "\n");
+            System.out.println(i + ". " + flightResults.get(i).simpleDetails() + "\n");
         }
         if (flightResults.size() == 0) {
             System.out.println("No flights available. Maybe try chicago");
@@ -255,7 +255,7 @@ public class TravelApplicationUI {
         //TESTING 
         System.out.println(request.printSeatingChart());
 
-        System.out.println("Here is the avaliable seating:\nPlease type which seat you would like (ex. B10):");
+        System.out.println("Here is the avaliable seating:\nPlease type which seat you would like (ex. B3):");
         scanner.nextLine();
         seat = scanner.nextLine();
         if (travelApplication.bookFlight(request, seat)) {

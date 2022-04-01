@@ -198,7 +198,7 @@ public class Flight extends Ticket {
    // @Override
     public FlightTicket bookTicket(String seat) { // seat = B10
         String posX = seat.substring(0,1);
-        int posY = Integer.parseInt(seat.substring(0,1));
+        int posY = Integer.parseInt(seat.substring(1));
         Seat newSeat = new Seat(posX, posY, false);
         for (int i = 0; i < seating.size(); i++) {
             Seat s = seating.get(i);
@@ -243,4 +243,10 @@ public class Flight extends Ticket {
         flightID + " \n" + "Board Airport: " + startLocation + " \n" + "Destination Airport: " + endLocation  + " \n" + " Luggage: " + luggage;
         /*departureDate + " " +*/
     }
+
+    public String simpleDetails() {
+        return "Airline:" + airline + "\n" +  "Depature Date: " + departureDate + " \n" + "Duration: " + duration  + "Flight Type: " + flightType + " \n"
+        + "Board Airport: " + startLocation + " \n" + "Destination Airport: " + endLocation;
+    }
+
 }
