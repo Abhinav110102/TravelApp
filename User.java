@@ -18,8 +18,8 @@ public class User {
     //private ArrayList<ArrayList<String>> family;
     private ArrayList<Family> familyList;
     private boolean senior;
-    private ArrayList<Hotel> hotels;
-    private ArrayList<Flight> flights;
+    private ArrayList<HotelTicket> hotels;
+    private ArrayList<FlightTicket> flights;
     private ArrayList<Rating> ratings;
     private ArrayList<Ticket> tickets;
     private ArrayList<Luggage> luggages;
@@ -182,6 +182,10 @@ public class User {
         return cost;
     }
 
+    public void addFlight(FlightTicket flightTicket) {
+        flights.add(flightTicket);
+        tickets.add(flightTicket);
+    }
     // + addDeal(): Deal
     // + registerLuggage(): void
     // + addTicket(Ticket): void
