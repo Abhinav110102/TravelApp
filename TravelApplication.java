@@ -147,15 +147,6 @@ public class TravelApplication {
         ;
     }
     public ArrayList<Flight> SearchFlights(String input){
-        //String results = "";
-        //ArrayList<Flight> flightsToSearch = flights.getFlights();
-        /*
-        System.out.println("HERE + " + (flights.getFlights()).size());
-        for (Flight f : flights.getFlights()) {
-            System.out.println(f.toString());
-            System.out.println("HERE TO");
-        }
-        */
         
         ArrayList<Flight> flightResults = new ArrayList<Flight>();
         for (Flight flight : flights.getFlights()) {
@@ -205,6 +196,7 @@ public boolean bookFlight(Flight flight, String seat){
         currentUser.addFlight(userFlightTicket);
         return true;
     }
+    System.out.println("HIHIHI");
     return false;
 }
 
