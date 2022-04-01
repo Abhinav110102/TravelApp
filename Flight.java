@@ -133,10 +133,10 @@ public class Flight extends Ticket {
         if (flight.flightType.equalsIgnoreCase("TRANSFER")) {
             AllFlights.addFlight(planeName, airline, arrivalAirport, getArrivalAddress(),
                                 airportMidpoint, midpoint, planeCapacity,
-                                departureDate, duration, flightType, userID, flightID, seating);
+                                departureDate, duration, flightType, userID, flightID, getSeatingAsJSONFormat());
             AllFlights.addFlight(planeName, airline, airportMidpoint, midpoint,
                                 destinationAirport, getDestinationAddress(), planeCapacity,
-                                departureDate, duration, flightType, userID, newFlightID, seating);
+                                departureDate, duration, flightType, userID, newFlightID, getSeatingAsJSONFormat());
         }
     }
 
@@ -155,8 +155,18 @@ public class Flight extends Ticket {
     }
 
     public String printTicket() {
-        FlightTicket flightTicket = new FlightTicket(flightID, airline, ratings, duration, startLocation, endLocation, depart, seating);
+        FlightTicket flightTicket = new FlightTicket(flightID, airline, ratings, duration, startLocation, endLocation, depart, AvailableSeat());
         return flightTicket.toString();
+    }
+
+    public Seat AvailableSeat() {
+        Seat seatChoice = new Seat(0, 0);
+        for (int i = 0; i < seating.size(); i++) {
+            if (!seating.get(i).isTaken()) {
+                seatChoice = seating.get(i);
+            }
+        }
+        return seatChoice;
     }
 
     public void addLuggage(double weight) {
