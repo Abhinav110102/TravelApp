@@ -200,11 +200,16 @@ public class Flight extends Ticket {
     public Ticket bookTicket(String seat) { // seat = B10
         String posX = seat.substring(0,1);
         int posY = Integer.parseInt(seat.substring(0,1));
+        Seat newSeat = new Seat(posX, posY, false);
+        for (Seat s : seating) {
+            if(newSeat.equals(s)) {
 
-        
+            }
+        }
+
         return null;
     }
-
+    
     public void printSeatingChart(ArrayList<Seat> seating) {
         int previousRow = seating.get(0).getYpos();
         System.out.println("  ABC DEF");
@@ -223,7 +228,7 @@ public class Flight extends Ticket {
 	        previousRow = seating.get(i).getYpos();
         }
     }
-    
+
     /**
      * Method to return all data on a Flight in a String
      * @return String the data to be returned.
