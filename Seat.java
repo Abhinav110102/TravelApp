@@ -24,6 +24,13 @@ public class Seat {
       this.column = setColumn(xPos);
     }
     
+    public Seat(String xPos, int yPos, boolean isTaken) {
+      this.isTaken = isTaken;
+      this.xPos = setXPos(xPos);
+      this.yPos = yPos;
+      this.column = setColumn(this.xPos);
+    }
+
     /**
      * Method to determine the column letter of a seat which is needed for
      * printing a ticket.
@@ -122,5 +129,13 @@ public class Seat {
       isTaken = true;
     }
     
+    public int setXPos(String column) {
+      if (column.equals("A")) {return 0;}
+      if (column.equals("B")) {return 1;}
+      if (column.equals("C")) {return 2;}
+      if (column.equals("D")) {return 3;}
+      if (column.equals("E")) {return 4;}
+      return 5;
+    }
   }
   

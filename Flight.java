@@ -159,9 +159,12 @@ public class Flight extends Ticket {
     }
 
     @Override
-    public Ticket bookTicket() {
-      // TODO Auto-generated method stub
-      return null;
+    public Ticket bookTicket(String seat) { // seat = B10
+        String posX = seat.substring(0,1);
+        int posY = Integer.parseInt(seat.substring(0,1));
+
+        
+        return null;
     }
     
     /**

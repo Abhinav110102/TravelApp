@@ -146,15 +146,6 @@ public class TravelApplication {
     public void addUser(String age){
         ;
     }
-<<<<<<< HEAD
-    */
-
-    ArrayList<Flight> flightResults = new ArrayList<Flight>();
-    for (Flight flight : flights.getFlights()) {
-        System.out.println("HERE TO CLOWN");
-        if (flight.getStartLocation().anyEquals(input) || flight.getEndLocation().anyEquals(input)) {
-            flightResults.add(flight);
-=======
     public ArrayList<Flight> SearchFlights(String input){
         //String results = "";
         //ArrayList<Flight> flightsToSearch = flights.getFlights();
@@ -163,7 +154,6 @@ public class TravelApplication {
         for (Flight f : flights.getFlights()) {
             System.out.println(f.toString());
             System.out.println("HERE TO");
->>>>>>> 261ee7c6df33717c8f04989f5715d7634fa78463
         }
         */
         
@@ -209,28 +199,18 @@ public class TravelApplication {
         return hotelResults;
     }
 
-<<<<<<< HEAD
-public void bookFlight(Flight flight){
-    ;
+public void bookFlight(Flight flight, String seat){
+    flight.bookTicket(seat);
 }
 
 public void bookHotel(Hotel hotel) {
     ;
 }
-public void addTicketToUser(String username, Ticket ticket){
-    for (User user : users.getUsers()) {
-        if(user.getUserName().equals(username)) {
-            user.addTicket(ticket);
-=======
-    public void Booking(Ticket ticket){
-        ;
-    }
     public void addTicketToUser(String username, Ticket ticket){
         for (User user : users.getUsers()) {
             if(user.getUserName().equals(username)) {
                 user.addTicket(ticket);
             }
->>>>>>> 261ee7c6df33717c8f04989f5715d7634fa78463
         }
     }
     public void updateTicket(Flight flight){
