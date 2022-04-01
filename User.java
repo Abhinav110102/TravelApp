@@ -146,14 +146,14 @@ public class User {
         tickets.add(ticket);
     }
 
-    public void requestRefund(Ticket ticket) {
+    public void requestRefund(UserTicket ticket) {
         tickets.remove(ticket);
     }
 
     public void printAllTickets() {
         for (int i = 0; i < tickets.size(); i++) {
             try {
-                tickets.get(i).printTicket();;
+                tickets.get(i).printTicket();
             } catch (IOException e) {
                 e.printStackTrace();;
             }
@@ -162,13 +162,13 @@ public class User {
 
     public void printFlights() {
         for (int i = 0; i < flights.size(); i++) {
-            System.out.println(flights.get(i).toString());
+            System.out.println(flights.get(i).toString()); // should not be sys.out
         }
     }
 
     public void printHotels() {
         for (int i = 0; i < hotels.size(); i++) {
-            System.out.println(hotels.get(i).toString());
+            System.out.println(hotels.get(i).toString()); // should not be sys.out
         }
     }
 

@@ -225,7 +225,7 @@ public void bookHotel(Hotel hotel) {
         ;
     }
     public void printTicket(Flight flight) {
-        flight.printTicket();
+        //flight.icket();
     }
 
     public void printTicket(Hotel hotel) {
@@ -247,5 +247,9 @@ public void bookHotel(Hotel hotel) {
     }
     public User getCurrentUser() {
         return currentUser;
+    }
+
+    public void printAllTickets() {
+        currentUser.printAllTickets();
     }
 }

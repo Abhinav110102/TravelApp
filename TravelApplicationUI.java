@@ -54,7 +54,8 @@ public class TravelApplicationUI {
         System.out.println("************ Main Menu ************");
         System.out.println("1. Book a Flight");
         System.out.println("2. Book a Hotel");
-        System.out.println("3. Check Accout Profile");
+        //System.out.println("3. Check Accout Profile");
+        System.out.println("3. Print Itinerary");
         System.out.println("4. Logout");
         System.out.println("5. Quit app"); 
     }
@@ -107,6 +108,7 @@ public class TravelApplicationUI {
                 break;
             case 3:
                 //checkAccount();
+                printItinerary();
                 break;
             case 4:
                 logout();
@@ -310,13 +312,18 @@ public class TravelApplicationUI {
     } 
 
     // Check account
-    public void checkAccout() {
-        boolean checkingAccount = true;
-        while (checkingAccount) {
+    // public void checkAccout() {
+    //     boolean checkingAccount = true;
+    //     while (checkingAccount) {
 
-        }
+    //     }
+    // }
+
+    //Print itienerarary
+    public void printItinerary() {
+        travelApplication.printAllTickets();
+        System.out.println("Printed all Tickets to a txt file!\n");
     }
-
 
 
     //logout
