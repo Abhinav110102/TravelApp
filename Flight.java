@@ -40,7 +40,7 @@ public class Flight extends Ticket {
                 ArrayList<String> arrivalAddress, String destinationAirport,
                 ArrayList<String> destinationAddress, int planeCapacity,
                 String departureDate, String duration, String flightType,
-                String userID, String flightID, ArrayList<Integer> seats) {
+                String userID, String flightID, ArrayList<Seat> seating) {
         this.planeName = planeName;
         this.airline = airline;
         this.arrivalAirport = arrivalAirport;
@@ -63,11 +63,10 @@ public class Flight extends Ticket {
         } catch (Exception e) {
             System.out.println("Error parsing dates");
         }*/
-        seatXMax = seats.get(0);
-        seatYMax = seats.get(1);
-        for (int i = 0; i < seats.get(0); i++) {
-            for (int j = 0; i < seats.get(1); i++) {
-                seating.add(new Seat(i, j, false));
+        for (int i = 0; i < seating.size(); i++) {
+            if (i == seating.size() - 1) {
+                seatXMax = seating.get(i).getXpos();
+                seatYMax = seating.get(i).getYpos();
             }
         }
     }
@@ -134,10 +133,10 @@ public class Flight extends Ticket {
         if (flight.flightType.equalsIgnoreCase("TRANSFER")) {
             AllFlights.addFlight(planeName, airline, arrivalAirport, getArrivalAddress(),
                                 airportMidpoint, midpoint, planeCapacity,
-                                departureDate, duration, flightType, userID, flightID, getSeatingAsJSONFormat());
+                                departureDate, duration, flightType, userID, flightID, seating);
             AllFlights.addFlight(planeName, airline, airportMidpoint, midpoint,
                                 destinationAirport, getDestinationAddress(), planeCapacity,
-                                departureDate, duration, flightType, userID, newFlightID, getSeatingAsJSONFormat());
+                                departureDate, duration, flightType, userID, newFlightID, seating);
         }
     }
 
@@ -212,26 +211,32 @@ public class Flight extends Ticket {
 
         return null;
     }
+<<<<<<< HEAD
 
     public void printSeatingChart(ArrayList<Seat> seating) {
+=======
+    
+    public String printSeatingChart() {
+>>>>>>> 3acc204e0717ab490c343580cadd9a3e3a9fe1de
         int previousRow = seating.get(0).getYpos();
-        System.out.println("  ABC DEF");
+        String seatingChart = "  ABC DEF";
         for (int i = 0; i < seating.size(); i++) {
 	        if (seating.get(i).getYpos() != (previousRow)){
-		        System.out.println();
+		        seatingChart += "\n";
 	        }
 	        if (seating.get(i).isTaken()) {
-		        System.out.print(seating.get(i).getYpos() + " " + "X");
+		        seatingChart += seating.get(i).getYpos() + " " + "X";
 	        } else {
-		        System.out.print(seating.get(i).getYpos() + " " + "O");
+		        seatingChart += seating.get(i).getYpos() + " " + "O";
 		    }
 	        if (seating.get(i).getColumn().equals("C")) {
-		        System.out.print(" ");
+		        seatingChart += " ";
 	        } 
 	        previousRow = seating.get(i).getYpos();
         }
+        return seatingChart;
     }
-
+	
     /**
      * Method to return all data on a Flight in a String
      * @return String the data to be returned.

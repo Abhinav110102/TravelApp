@@ -5,6 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Map;
+
+import javax.xml.namespace.QName;
+
 import java.lang.Integer;
 
 import org.json.simple.JSONArray;
@@ -39,11 +42,19 @@ public class DataLoader extends DataConstants {
                 String userID = (String)flightJSON.get(FLIGHT_USER_ID);
                 String flightID = (String)flightJSON.get(FLIGHT_ID);
 				ArrayList<Integer> seats = (ArrayList<Integer>)flightJSON.get(FLIGHT_SEATS);
+				
+				ArrayList<Seat> seating = new ArrayList<Seat>();
+				for (int j = 0; j < seats.get(0); j++) {
+					for (int k = 0; k < seats.get(1); k++) {
+						seating.add(new Seat(j, k, false));
+					}
+				}
+
 				ArrayList<ArrayList<Integer>> takenSeats = (ArrayList<ArrayList<Integer>>)flightJSON.get(FLIGHT_TAKEN_SEATS);
 
 				System.out.println(departureDate);
 				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport,
-                 destinationAddress, planeCapacity, departureDate, duration, flightType, userID, flightID, seats));
+                 destinationAddress, planeCapacity, departureDate, duration, flightType, userID, flightID, seating));
 
 				 /*
 				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress,

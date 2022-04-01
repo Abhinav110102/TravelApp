@@ -56,7 +56,7 @@ public class AllFlights {
                         ArrayList<String> arrivalAddress, String destinationAirport,
                         ArrayList<String> destinationAddress, int planeCapacity,
                         String departureDate, String duration, String flightType,
-                        String userID, String flightID, ArrayList<Integer> seating) {
+                        String userID, String flightID, ArrayList<Seat> seating) {
         Flight flight = new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport,
                                 destinationAddress, planeCapacity, departureDate, duration, flightType,
                                 userID, flightID, seating);
