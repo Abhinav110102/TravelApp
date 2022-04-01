@@ -63,6 +63,12 @@ public class AllFlights {
         flights.add(flight);
     }
 
+    public void bookFlight(Flight flight, String seat) {
+        for (Flight f : flights) {
+            
+        }
+    }
+
     /**
      * Method to call DataWriter and save flights to JSON file
      */

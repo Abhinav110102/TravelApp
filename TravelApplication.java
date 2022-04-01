@@ -199,8 +199,13 @@ public class TravelApplication {
         return hotelResults;
     }
 
-public void bookFlight(Flight flight, String seat){
-    flight.bookTicket(seat);
+public boolean bookFlight(Flight flight, String seat){
+    FlightTicket userFlightTicket = flight.bookTicket(seat);
+    if (userFlightTicket != null) {
+        currentUser.addFlight(userFlightTicket);
+        return true;
+    }
+    return false;
 }
 
 public void bookHotel(Hotel hotel) {

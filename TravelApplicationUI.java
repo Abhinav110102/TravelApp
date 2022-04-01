@@ -258,8 +258,10 @@ public class TravelApplicationUI {
         seat = scanner.nextLine();
         if (travelApplication.bookFlight(request, seat)) {
             System.out.println("Booking Successful!! :D");
+            return;
         }
         System.out.println("Sorry we could not book your ticket at this time. :(");
+        return;
     }
 
     // Book Hotel / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /

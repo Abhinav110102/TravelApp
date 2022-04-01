@@ -165,7 +165,7 @@ public class Hotel extends Ticket {
     }
 
 
-    @Override
+   // @Override
     public Ticket bookTicket() {
       // TODO Auto-generated method stub
       return null;

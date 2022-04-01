@@ -154,10 +154,10 @@ public class Flight extends Ticket {
         return addressvals;
     }
 
-    public String printTicket() {
-        FlightTicket flightTicket = new FlightTicket(flightID, airline, ratings, duration, startLocation, endLocation, depart, AvailableSeat());
-        return flightTicket.toString();
-    }
+    // public String printTicket() {
+    //     FlightTicket flightTicket = new FlightTicket(flightID, airline, ratings, duration, startLocation, endLocation, depart, AvailableSeat());
+    //     return flightTicket.toString();
+    // }
 
     public Seat AvailableSeat() {
         Seat seatChoice = new Seat(0, 0, false);
@@ -211,13 +211,8 @@ public class Flight extends Ticket {
 
         return null;
     }
-<<<<<<< HEAD
-
-    public void printSeatingChart(ArrayList<Seat> seating) {
-=======
     
     public String printSeatingChart() {
->>>>>>> 3acc204e0717ab490c343580cadd9a3e3a9fe1de
         int previousRow = seating.get(0).getYpos();
         String seatingChart = "  ABC DEF";
         for (int i = 0; i < seating.size(); i++) {
