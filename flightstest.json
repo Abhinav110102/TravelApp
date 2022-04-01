@@ -10,9 +10,9 @@
         "DepatureDate": "March 1, 2022",
         "Duration": "3:45 hours",
         "FlightType": "OneWay",
-        "UserID": "bbbih53ugv23",
+        "UserID": "8bhbug34b7839",
         "FlightID": "2i45b4b52ibj",
-        "Seats": [5, 20],
+        "Seats": [4, 10],
         "TakenSeats": []
     },{ 
         "PlaneName": "D7jggfk755",
@@ -27,7 +27,7 @@
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "97huuc7vjk8",
-        "Seats": [10, 25],
+        "Seats": [4, 10],
         "TakenSeats": []
     },{ 
         "PlaneName": "Hbibi53io89",
@@ -42,7 +42,7 @@
         "FlightType": "OneWay",
         "UserID": "8bhbug34b7839",
         "FlightID": "97hujhbbiu",
-        "Seats": [10, 25],
+        "Seats": [4, 10],
         "TakenSeats": []
     },{ 
         "PlaneName": "8ihbsdgb4",
@@ -57,7 +57,7 @@
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "87gvg237vgs",
-        "Seats": [10, 25],
+        "Seats": [4, 10],
         "TakenSeats": []
     },{ 
         "PlaneName": "9yg234uos7",
@@ -72,7 +72,7 @@
         "FlightType": "OneWay",
         "UserID": "8bhbug34b7839",
         "FlightID": "9136vuy432s",
-        "Seats": [10, 25],
+        "Seats": [4, 10],
         "TakenSeats": []
     },{ 
         "PlaneName": "ybjsuy49",
@@ -87,7 +87,7 @@
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "98vg67kbi32g",
-        "Seats": [10, 25],
+        "Seats": [4, 10],
         "TakenSeats": []
     },{ 
         "PlaneName": "yh4yujbnb",
@@ -102,7 +102,7 @@
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "073v8hkbgysd",
-        "Seats": [10, 25],
+        "Seats": [4, 10],
         "TakenSeats": []
     },{ 
         "PlaneName": "bhekoe329",
@@ -117,7 +117,7 @@
         "FlightType": "OneWay",
         "UserID": "8bhbug34b7839",
         "FlightID": "bkhy249bhs",
-        "Seats": [10, 25],
+        "Seats": [4, 10],
         "TakenSeats": []
     }
 ]
