@@ -199,11 +199,36 @@ public class Flight extends Ticket {
     public Ticket bookTicket(String seat) { // seat = B10
         String posX = seat.substring(0,1);
         int posY = Integer.parseInt(seat.substring(0,1));
+        Seat newSeat = new Seat(posX, posY, false);
+        for (Seat s : seating) {
+            if(newSeat.equals(s)) {
 
-        
+            }
+        }
+
         return null;
     }
     
+    public String printSeatingChart() {
+        int previousRow = seating.get(0).getYpos();
+        String seatingChart = "  ABC DEF";
+        for (int i = 0; i < seating.size(); i++) {
+	        if (seating.get(i).getYpos() != (previousRow)){
+		        seatingChart += "\n";
+	        }
+	        if (seating.get(i).isTaken()) {
+		        seatingChart += seating.get(i).getYpos() + " " + "X";
+	        } else {
+		        seatingChart += seating.get(i).getYpos() + " " + "O";
+		    }
+	        if (seating.get(i).getColumn().equals("C")) {
+		        seatingChart += " ";
+	        } 
+	        previousRow = seating.get(i).getYpos();
+        }
+        return seatingChart;
+    }
+	
     /**
      * Method to return all data on a Flight in a String
      * @return String the data to be returned.
