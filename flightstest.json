@@ -6,14 +6,14 @@
         "ArrivalAddress" : ["101 Park st", "Columbia", "SC", "20222", "United States"],
         "DestinationAirport": "Los Angeles International Airport",
         "DestinationAddress": ["1 World Way", "Los Angeles", "California", "90045", "United States"],
-        "PlaneCapacity": "100", 
-        "DepartureDate": "March 1, 2022",
+        "PlaneCapacity": 100, 
+        "DepatureDate": "March 1, 2022",
         "Duration": "3:45 hours",
         "FlightType": "OneWay",
         "UserID": "bbbih53ugv23",
         "FlightID": "2i45b4b52ibj",
-        "SeatX": "1",
-        "SeatY": "1" 
+        "Seats": [5, 20],
+        "TakenSeats": []
     },{ 
         "PlaneName": "D7jggfk755",
         "Airline": "United Airlines",
@@ -21,14 +21,14 @@
         "ArrivalAddress": ["101 Park st", "Columbia", "SC", "20222", "United States"],
         "DestinationAirport": "Central Nebraska Regional Airport",
         "DestinationAddress": ["3773 Sky Park Rd", "Grand Island", "Nebraska", "68801", "United States"],
-        "PlaneCapacity": "250", 
-        "DepartureDate": "February 21 2022", 
+        "PlaneCapacity": 250, 
+        "DepatureDate": "February 21 2022", 
         "Duration": "1:35 hours",
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "97huuc7vjk8",
-        "SeatX": "2",
-        "SeatY": "2"
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "Hbibi53io89",
         "Airline": "United Airlines",
@@ -36,14 +36,14 @@
         "ArrivalAddress": ["3773 Sky Park Rd", "Grand Island", "Nebraska", "68801", "United States"],
         "DestinationAirport": "Los Angeles International Airport",
         "DestinationAddress": ["1 World Way", "Los Angeles", "California", "90045", "United States"],
-        "PlaneCapacity": "250", 
-        "DepartureDate": "February 21 2022", 
+        "PlaneCapacity": 250, 
+        "DepatureDate": "February 21 2022", 
         "Duration": "2:00 hours",
         "FlightType": "OneWay",
         "UserID": "8bhbug34b7839",
         "FlightID": "97hujhbbiu",
-        "SeatX": "3",
-        "SeatY": "3"
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "8ihbsdgb4",
         "Airline": "United Airlines",
@@ -51,14 +51,14 @@
         "ArrivalAddress": ["101 Park st", "Columbia", "SC", "20222", "United States"],
         "DestinationAirport": "George Bush Intercontinental Airport",
         "DestinationAddress": ["2800 N Terminal Rd", "Houston", "Texas", "77032", "United States"],
-        "PlaneCapacity": "250", 
-        "DepartureDate": "February 21 2022", 
+        "PlaneCapacity": 250, 
+        "DepatureDate": "February 21 2022", 
         "Duration": "1:00 hours",
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "87gvg237vgs",
-        "SeatX": "4",
-        "SeatY": "4"
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "9yg234uos7",
         "Airline": "United Airlines",
@@ -66,14 +66,14 @@
         "ArrivalAddress": ["2800 N Terminal Rd", "Houston", "Texas", "77032", "United States"],
         "DestinationAirport": "Los Angeles International Airport",
         "DestinationAddress": ["1 World Way", "Los Angeles", "California", "90045", "United States"],
-        "PlaneCapacity": "250", 
-        "DepartureDate": "February 21 2022", 
+        "PlaneCapacity": 250, 
+        "DepatureDate": "February 21 2022", 
         "Duration": "2:30 hours",
         "FlightType": "OneWay",
         "UserID": "8bhbug34b7839",
         "FlightID": "9136vuy432s",
-        "SeatX": "5",
-        "SeatY": "5"
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "ybjsuy49",
         "Airline": "United Airlines",
@@ -81,14 +81,14 @@
         "ArrivalAddress": ["101 Park st", "Columbia", "SC", "20222", "United States"],
         "DestinationAirport": "Nashville International Airport",
         "DestinationAddress": ["1 Terminal Dr", "Nashville", "Tennessee", "37214", "United States"],
-        "PlaneCapacity": "250", 
-        "DepartureDate": "February 21 2022", 
+        "PlaneCapacity": 250, 
+        "DepatureDate": "February 21 2022", 
         "Duration": "9:00 hours",
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "98vg67kbi32g",
-        "SeatX": "6",
-        "SeatY": "6"
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "yh4yujbnb",
         "Airline": "United Airlines",
@@ -96,14 +96,14 @@
         "ArrivalAddress": ["1 Terminal Dr", "Nashville", "Tennessee", "37214", "United States"],
         "DestinationAirport": "Denver International Airport",
         "DestinationAddress": ["8500 Peña Blvd", "Denver", "Colorado", "80249", "United States"],
-        "PlaneCapacity": "250", 
-        "DepartureDate": "February 21 2022", 
+        "PlaneCapacity": 250, 
+        "DepatureDate": "February 21 2022", 
         "Duration": "9:00 hours",
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "073v8hkbgysd",
-        "SeatX": "7",
-        "SeatY": "7"
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "bhekoe329",
         "Airline": "United Airlines",
@@ -111,13 +111,13 @@
         "ArrivalAddress": ["8500 Peña Blvd", "Denver", "Colorado", "80249", "United States"],
         "DestinationAirport": "Los Angeles International Airport",
         "DestinationAddress": ["1 World Way", "Los Angeles", "California", "90045", "United States"],
-        "PlaneCapacity": "250", 
-        "DepartureDate": "February 21 2022", 
+        "PlaneCapacity": 250, 
+        "DepatureDate": "February 21 2022", 
         "Duration": "9:00 hours",
         "FlightType": "OneWay",
         "UserID": "8bhbug34b7839",
         "FlightID": "bkhy249bhs",
-        "SeatX": "8",
-        "SeatY": "8"
+        "Seats": [10, 25],
+        "TakenSeats": []
     }
 ]
