@@ -204,6 +204,25 @@ public class Flight extends Ticket {
         
         return null;
     }
+
+    public void printSeatingChart(ArrayList<Seat> seating) {
+        int previousRow = seating.get(0).getYpos();
+        System.out.println("  ABC DEF");
+        for (int i = 0; i < seating.size(); i++) {
+	        if (seating.get(i).getYpos() != (previousRow)){
+		        System.out.println();
+	        }
+	        if (seating.get(i).isTaken()) {
+		        System.out.print(seating.get(i).getYpos() + " " + "X");
+	        } else {
+		        System.out.print(seating.get(i).getYpos() + " " + "O");
+		    }
+	        if (seating.get(i).getColumn().equals("C")) {
+		        System.out.print(" ");
+	        } 
+	        previousRow = seating.get(i).getYpos();
+        }
+    }
     
     /**
      * Method to return all data on a Flight in a String
