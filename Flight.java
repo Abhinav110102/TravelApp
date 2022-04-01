@@ -30,6 +30,7 @@ public class Flight extends Ticket {
     private Date depart;
     private int seatXMax;
     private int seatYMax;
+    ArrayList<ArrayList<Integer>> takenSeats;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     /**
@@ -66,7 +67,7 @@ public class Flight extends Ticket {
         seatYMax = seats.get(1);
         for (int i = 0; i < seats.get(0); i++) {
             for (int j = 0; i < seats.get(1); i++) {
-                seating.add(new Seat(i, j));
+                seating.add(new Seat(i, j, false));
             }
         }
     }
@@ -160,7 +161,7 @@ public class Flight extends Ticket {
     }
 
     public Seat AvailableSeat() {
-        Seat seatChoice = new Seat(0, 0);
+        Seat seatChoice = new Seat(0, 0, false);
         for (int i = 0; i < seating.size(); i++) {
             if (!seating.get(i).isTaken()) {
                 seatChoice = seating.get(i);
@@ -182,6 +183,17 @@ public class Flight extends Ticket {
         retArr.add(seatXMax);
         retArr.add(seatYMax);
         return retArr;
+    }
+
+    public ArrayList<ArrayList<Integer>> getTakenSeats() {
+        ArrayList<ArrayList<Integer>> takens = new ArrayList<ArrayList<Integer>>();
+        for (int i = 0; i < seating.size(); i++) {
+            if (seating.get(i).isTaken()) {
+                takens.get(i).add(seating.get(i).getXpos());
+                takens.get(i).add(seating.get(i).getYpos());
+            }
+        }
+        return takens;
     }
 
     @Override

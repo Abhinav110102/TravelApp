@@ -104,6 +104,7 @@ public class DataWriter extends DataConstants {
         flightDetails.put(FLIGHT_USER_ID, flight.getUserID());
         flightDetails.put(FLIGHT_ID, flight.getFlightID());
         flightDetails.put(FLIGHT_SEATS, flight.getSeatingAsJSONFormat());
+        flightDetails.put(FLIGHT_TAKEN_SEATS, flight.getTakenSeats());
         
         return flightDetails;
     }
