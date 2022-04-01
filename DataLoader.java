@@ -34,8 +34,7 @@ public class DataLoader extends DataConstants {
                 ArrayList<String> arrivalAddress = (ArrayList<String>)flightJSON.get(FLIGHT_ARRIVAL_ADDRESS);
                 String destinationAirport = (String)flightJSON.get(FLIGHT_DESTINATION_AIRPORT);
                 ArrayList<String> destinationAddress = (ArrayList<String>)flightJSON.get(FLIGHT_DESTINATION_ADDRESS);
-                String capacity = (String)flightJSON.get(FLIGHT_PLANE_CAPACITY);
-				int planeCapacity = Integer.parseInt(capacity);
+				int planeCapacity = Integer.parseInt((String)flightJSON.get(FLIGHT_PLANE_CAPACITY));
                 String departureDate = (String)flightJSON.get(FLIGHT_DEPARTURE_DATE);
                 String duration = (String)flightJSON.get(FLIGHT_DURATION);
                 String flightType = (String)flightJSON.get(FLIGHT_TYPE);
