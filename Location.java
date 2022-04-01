@@ -22,6 +22,10 @@ public class Location {
         this.country = country;
     }
 
+    /**
+     * Constructor
+     * 
+     */
     public Location(ArrayList<String> address) {
         this.street = address.get(0);
         this.city = address.get(1);
@@ -69,6 +73,12 @@ public class Location {
         return country;
     }
 
+    /**
+     * Method to check whether a passed in location equals a city, street, state, or zipcode.
+     * 
+     * @param location the location that can either be a city, street, state, or zipcode.
+     * @return true if location is valid. Else false.
+     */
     public boolean anyEquals(String location) {
         if (street.equals(location)) {
             return true;
@@ -88,7 +98,9 @@ public class Location {
         return false;
     }
     
-    // + toString(): String
+    /**
+     * toString method
+     */
     public String toString(){
         return this.street + "\n" + this.city + ", " + this.state + " " + this.zipcode + "\n" + this.country;
     }
