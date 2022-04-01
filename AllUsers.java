@@ -35,7 +35,21 @@ public class AllUsers {
         return users;
     }
 
-
+    /**
+     * Method to add a user to an array list of users.
+     * @param username a value to be set to a new user
+     * @param firstName a value to be set to a new user
+     * @param lastName a value to be set to a new user
+     * @param phone a value to be set to a new user
+     * @param email a value to be set to a new user
+     * @param userAge a value to be set to a new user
+     * @param passportNumber a value to be set to a new user
+     * @param password a value to be set to a new user
+     * @param address a value to be set to a new user
+     * @param friends a value to be set to a new user
+     * @param family a value to be set to a new user
+     * @param senior a value to be set to a new user
+     */
     public void addUser(String username, String firstName, String lastName,
     String phone, String email, int userAge, String passportNumber, String password,
     ArrayList<String> address, ArrayList<String> friends, ArrayList<ArrayList<String>> family, boolean senior) {
