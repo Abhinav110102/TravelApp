@@ -196,20 +196,23 @@ public class Flight extends Ticket {
         return takens;
     }
 
-    @Override
-    public Ticket bookTicket(String seat) { // seat = B10
+   // @Override
+    public FlightTicket bookTicket(String seat) { // seat = B10
         String posX = seat.substring(0,1);
         int posY = Integer.parseInt(seat.substring(0,1));
         Seat newSeat = new Seat(posX, posY, false);
-        for (Seat s : seating) {
+        for (int i = 0; i < seating.size(); i++) {
+            Seat s = seating.get(i);
             if(newSeat.equals(s)) {
-
+                newSeat.setIsTaken(true);
+                this.seating.set(i, newSeat);
+                return new FlightTicket(this.ID, this.airline, this.ratings, duration, startLocation, endLocation, departureDate, seat);
             }
         }
 
         return null;
     }
-    
+
     public void printSeatingChart(ArrayList<Seat> seating) {
         int previousRow = seating.get(0).getYpos();
         System.out.println("  ABC DEF");

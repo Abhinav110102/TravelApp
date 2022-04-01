@@ -122,6 +122,9 @@ public class Seat {
       return isAisleSeat;
     }
     
+    public void setIsTaken(boolean isTaken) {
+      this.isTaken = isTaken;
+    }
     /**
      * Method to fill a seat by changing isTaken to true.
      * @author Mark Valentino

@@ -11,15 +11,15 @@ public class FlightTicket extends UserTicket{
     private Location startLocation; //Location start in user ticket? 
     private Location endLocation;
     private ArrayList<Luggage> luggage;
-    private Seat seat;
+    private String seat;
     private boolean available;
     private String flightType;
-    private Date date;
+    private String date;
 
     /**
      * Constructor
      */
-    public FlightTicket(String ID, String company, ArrayList<Rating> ratings, String duration, Location startLocation, Location endLocation, Date date, Seat seat) {
+    public FlightTicket(String ID, String company, ArrayList<Rating> ratings, String duration, Location startLocation, Location endLocation, String date, String seat) {
         super(ID, company, ratings);
         this.duration = duration;
         this.startLocation = startLocation;
@@ -36,7 +36,7 @@ public class FlightTicket extends UserTicket{
                 + "\nStart Address: " + startLocation.toString()
                 + "\nEnd Address: " + endLocation
                 + "\nFlight Date: " + date
-                + "\nSeat Number " + seat.toString();
+                + "\nSeat Number " + seat;
     }
 
     /**

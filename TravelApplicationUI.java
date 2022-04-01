@@ -246,7 +246,20 @@ public class TravelApplicationUI {
         }
         System.out.println("Which flight would you like to book?");
         bookingOption = scanner.nextInt();
-        travelApplication.bookFlight(flightResults.get(bookingOption));
+
+        Flight request = flightResults.get(bookingOption);
+        String seat;
+
+        //TESTING 
+        System.out.println(request.printSeatingChart());
+
+        System.out.println("Here is the avaliable seating:\nPlease type which seat you would like (ex. B10):");
+        scanner.nextLine();
+        seat = scanner.nextLine();
+        if (travelApplication.bookFlight(request, seat)) {
+            System.out.println("Booking Successful!! :D");
+        }
+        System.out.println("Sorry we could not book your ticket at this time. :(");
     }
 
     // Book Hotel / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
@@ -281,7 +294,7 @@ public class TravelApplicationUI {
         System.out.println("");
 
         System.out.println("Here is the avaiablity of the month\n(XX's are unavailable dates)\n----------------------------");
-        System.out.println(travelApplication.printHotelDate() + "\nWhat day would you like to check in?");
+        //System.out.println(travelApplication.printHotelDate() + "\nWhat day would you like to check in?");
         int arrivalDay = scanner.nextInt();
 
 
@@ -289,7 +302,7 @@ public class TravelApplicationUI {
         while (loop) {
             System.out.println("");
         }
-        travelApplication.bookHotel(request, arrivalDate, departureDate);
+        //travelApplication.bookHotel(request, arrivalDate, departureDate);
         // Search() method only works for flights for now.
         //travelApplication.Search(searchInput);
     } 

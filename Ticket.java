@@ -11,7 +11,7 @@ public abstract class Ticket {
     protected ArrayList<Rating> ratings;
 
     //public abstract String printTicket(); // Print to txt
-    public abstract Ticket bookTicket();
+    //public abstract Ticket bookTicket();
 
     /**
      * Method to add a rating created by a user to  array list of ratings.
