@@ -211,7 +211,7 @@ public boolean bookFlight(Flight flight, String seat){
 public void bookHotel(Hotel hotel) {
     ;
 }
-    public void addTicketToUser(String username, Ticket ticket){
+    public void addTicketToUser(String username, UserTicket ticket){
         for (User user : users.getUsers()) {
             if(user.getUserName().equals(username)) {
                 user.addTicket(ticket);

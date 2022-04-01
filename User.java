@@ -1,3 +1,5 @@
+import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -21,7 +23,7 @@ public class User {
     private ArrayList<HotelTicket> hotels;
     private ArrayList<FlightTicket> flights;
     private ArrayList<Rating> ratings;
-    private ArrayList<Ticket> tickets;
+    private ArrayList<UserTicket> tickets;
     private ArrayList<Luggage> luggages;
     private ArrayList<User> friendList;
 
@@ -140,7 +142,7 @@ public class User {
         luggages.add(luggage);
     }
 
-    public void addTicket(Ticket ticket) {
+    public void addTicket(UserTicket ticket) {
         tickets.add(ticket);
     }
 
@@ -150,7 +152,11 @@ public class User {
 
     public void printAllTickets() {
         for (int i = 0; i < tickets.size(); i++) {
-            System.out.println(tickets.get(i).printTicket());
+            try {
+                tickets.get(i).printTicket();;
+            } catch (IOException e) {
+                e.printStackTrace();;
+            }
         }
     }
 
@@ -197,4 +203,3 @@ public class User {
     // + addRating(String username, int rating, boolean isNameVisible)
     // + calCost(): int //frequent flyer and senior
 }
-
