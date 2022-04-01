@@ -12,7 +12,8 @@
         "FlightType": "OneWay",
         "UserID": "bbbih53ugv23",
         "FlightID": "2i45b4b52ibj",
-        "Seats": [5, 20] 
+        "Seats": [5, 20],
+        "TakenSeats": []
     },{ 
         "PlaneName": "D7jggfk755",
         "Airline": "United Airlines",
@@ -26,7 +27,8 @@
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "97huuc7vjk8",
-        "Seats": [10, 25]
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "Hbibi53io89",
         "Airline": "United Airlines",
@@ -40,7 +42,8 @@
         "FlightType": "OneWay",
         "UserID": "8bhbug34b7839",
         "FlightID": "97hujhbbiu",
-        "Seats": [10, 25]
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "8ihbsdgb4",
         "Airline": "United Airlines",
@@ -54,7 +57,8 @@
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "87gvg237vgs",
-        "Seats": [10, 25]
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "9yg234uos7",
         "Airline": "United Airlines",
@@ -68,7 +72,8 @@
         "FlightType": "OneWay",
         "UserID": "8bhbug34b7839",
         "FlightID": "9136vuy432s",
-        "Seats": [10, 25]
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "ybjsuy49",
         "Airline": "United Airlines",
@@ -82,7 +87,8 @@
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "98vg67kbi32g",
-        "Seats": [10, 25]
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "yh4yujbnb",
         "Airline": "United Airlines",
@@ -96,7 +102,8 @@
         "FlightType": "Transfer",
         "UserID": "8bhbug34b7839",
         "FlightID": "073v8hkbgysd",
-        "Seats": [10, 25]
+        "Seats": [10, 25],
+        "TakenSeats": []
     },{ 
         "PlaneName": "bhekoe329",
         "Airline": "United Airlines",
@@ -110,6 +117,7 @@
         "FlightType": "OneWay",
         "UserID": "8bhbug34b7839",
         "FlightID": "bkhy249bhs",
-        "Seats": [10, 25]
+        "Seats": [10, 25],
+        "TakenSeats": []
     }
 ]
