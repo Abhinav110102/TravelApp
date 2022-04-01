@@ -40,7 +40,7 @@ public class Flight extends Ticket {
                 ArrayList<String> arrivalAddress, String destinationAirport,
                 ArrayList<String> destinationAddress, int planeCapacity,
                 String departureDate, String duration, String flightType,
-                String userID, String flightID, ArrayList<Seat> seating) {
+                String userID, String flightID, ArrayList<Integer> seats) {
         this.planeName = planeName;
         this.airline = airline;
         this.arrivalAirport = arrivalAirport;
@@ -63,10 +63,11 @@ public class Flight extends Ticket {
         } catch (Exception e) {
             System.out.println("Error parsing dates");
         }*/
-        for (int i = 0; i < seating.size(); i++) {
-            if (i == seating.size() - 1) {
-                seatXMax = seating.get(i).getXpos();
-                seatYMax = seating.get(i).getYpos();
+        seatXMax = seats.get(0);
+        seatYMax = seats.get(1);
+        for (int i = 0; i < seats.get(0); i++) {
+            for (int j = 0; i < seats.get(1); i++) {
+                seating.add(new Seat(i, j, false));
             }
         }
     }
@@ -133,10 +134,10 @@ public class Flight extends Ticket {
         if (flight.flightType.equalsIgnoreCase("TRANSFER")) {
             AllFlights.addFlight(planeName, airline, arrivalAirport, getArrivalAddress(),
                                 airportMidpoint, midpoint, planeCapacity,
-                                departureDate, duration, flightType, userID, flightID, seating);
+                                departureDate, duration, flightType, userID, flightID, getSeatingAsJSONFormat());
             AllFlights.addFlight(planeName, airline, airportMidpoint, midpoint,
                                 destinationAirport, getDestinationAddress(), planeCapacity,
-                                departureDate, duration, flightType, userID, newFlightID, seating);
+                                departureDate, duration, flightType, userID, newFlightID, getSeatingAsJSONFormat());
         }
     }
 
@@ -154,10 +155,10 @@ public class Flight extends Ticket {
         return addressvals;
     }
 
-    // public String printTicket() {
-    //     FlightTicket flightTicket = new FlightTicket(flightID, airline, ratings, duration, startLocation, endLocation, depart, AvailableSeat());
-    //     return flightTicket.toString();
-    // }
+    public String printTicket() {
+        FlightTicket flightTicket = new FlightTicket(flightID, airline, ratings, duration, startLocation, endLocation, depart, AvailableSeat());
+        return flightTicket.toString();
+    }
 
     public Seat AvailableSeat() {
         Seat seatChoice = new Seat(0, 0, false);
@@ -195,43 +196,35 @@ public class Flight extends Ticket {
         return takens;
     }
 
-   // @Override
-    public FlightTicket bookTicket(String seat) { // seat = B10
+    @Override
+    public Ticket bookTicket(String seat) { // seat = B10
         String posX = seat.substring(0,1);
         int posY = Integer.parseInt(seat.substring(0,1));
-        Seat newSeat = new Seat(posX, posY, false);
-        for (int i = 0; i < seating.size(); i++) {
-            Seat s = seating.get(i);
-            if(newSeat.equals(s)) {
-                newSeat.setIsTaken(true);
-                this.seating.set(i, newSeat);
-                return new FlightTicket(this.ID, this.airline, this.ratings, duration, startLocation, endLocation, departureDate, seat);
-            }
-        }
 
+        
         return null;
     }
-    
+
     public String printSeatingChart() {
-        int previousRow = seating.get(0).getYpos();
+        int previousRow = seating.get(0).getXpos();
         String seatingChart = "  ABC DEF";
         for (int i = 0; i < seating.size(); i++) {
-	        if (seating.get(i).getYpos() != (previousRow)){
+	        if (seating.get(i).getXpos() != (previousRow)){
 		        seatingChart += "\n";
 	        }
 	        if (seating.get(i).isTaken()) {
-		        seatingChart += seating.get(i).getYpos() + " " + "X";
+		        seatingChart += seating.get(i).getXpos() + " " + "X";
 	        } else {
-		        seatingChart += seating.get(i).getYpos() + " " + "O";
+		        seatingChart += seating.get(i).getXpos() + " " + "O";
 		    }
 	        if (seating.get(i).getColumn().equals("C")) {
 		        seatingChart += " ";
 	        } 
-	        previousRow = seating.get(i).getYpos();
+	        previousRow = seating.get(i).getXpos();
         }
         return seatingChart;
     }
-	
+    
     /**
      * Method to return all data on a Flight in a String
      * @return String the data to be returned.
