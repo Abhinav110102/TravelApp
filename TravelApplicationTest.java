@@ -27,5 +27,13 @@ public class TravelApplicationTest {
 	public static void tearDown() {
 		//runs after each test
 	}
+
+	@Test
+	public void setColumnTest(){
+		// In Seat.java
+		Seat seat = new Seat(-1, 0, false);
+		String letter = seat.setColumn(-1);
+		assertEquals(null, letter, "Should not set a letter.");
+	}
     
 }
