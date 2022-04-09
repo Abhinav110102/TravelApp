@@ -8,7 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class UserTest {
+public class RoomTest {
     
     @BeforeClass
 	public static void oneTimeSetup() {
@@ -31,26 +31,16 @@ public class UserTest {
 	}
 
 	@Test
-	public void calCostTest(){
-		// In User.java
-        Location location = new Location("a", "a", "a", "a", "a");
-        User user = new User("a", "a", "a", "a", "a", "a", "a", location, -1, false);
-        double cost = user.calCost();
-		assertEquals(0, 0, "a person with negative age should not exist or be charged.");
+	public void isAvailableTest(){
+        Date unavailableDate = new Date(1, 1, 1);
+        Date date = new Date(1,1,1);
+        ArrayList<Date> unavailableDates = new ArrayList<Date>();
+        unavailableDates.add(unavailableDate);
+        Room room = new Room(1, 0, unavailableDates);
+        boolean isAvailable = room.isAvailable(date);
+		assertTrue(isAvailable);
 	}
 
-    @Test
-	public void requestRefundTest(){
-		// In User.java
-        Location location = new Location("a", "a", "a", "a", "a");
-        User user = new User("a", "a", "a", "a", "a", "a", "a", location, 20, false);
-        Rating rating = new Rating("a", 1, false);
-        ArrayList<Rating> ratings = new ArrayList<Rating>();
-        ratings.add(rating);
-        UserTicket userTicket = new UserTicket("a", "a", ratings);
-		user.addTicket(userTicket);
-        user.requestRefund(userTicket);
-		assertSame(user.tickets.getSize(), 0, "If a user has one ticket and removes a ticket, the user should have zero tickets.");
-	}
+
   
 }
