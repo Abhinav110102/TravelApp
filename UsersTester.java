@@ -13,10 +13,33 @@ public class UsersTester {
 	@BeforeEach
 	public void setup() {
 		userList.clear();
-		userList.add(new User(username, firstName, lastName, userID, phone, email, userAge,
-								passportNumber, password, address, friends, family, senior));
-		userList.add(new User(username, firstName, lastName, userID, phone, email, userAge,
-								passportNumber, password, address, friends, family, senior));
+
+		Location address1 = new Location("Rain Street", "Jefferson City", "Missouri", "65043", "United States");
+
+		ArrayList<String> friends1 = new ArrayList<String> ();
+		friends1.add("hgrfy59658");
+		friends1.add("fjkgh6850j");
+
+		ArrayList<ArrayList<String>> family1 = new ArrayList<ArrayList<String>> ();
+		family1.get(0).add("Amanda");
+		family1.get(0).add("Munny");
+		family1.get(0).add("66");
+
+		Location address2 = new Location("Ocean Avenue", "Liberty City", "Florida", "33125", "United States");
+
+		ArrayList<String> friends2 = new ArrayList<String> ();
+		friends2.add("dkggkh56895");
+		friends2.add("gjfk6950653");
+
+		ArrayList<ArrayList<String>> family2 = new ArrayList<ArrayList<String>> ();
+		family2.get(0).add("Philip");
+		family2.get(0).add("Talbot");
+		family2.get(0).add("32");
+
+		userList.add(new User("williammunny1975", "William", "Munny", "fjhiu587087", "8039999999", "williammunny@gmail.com", 45,
+								"95683020", "kjh8780b345", address1, friends1, family1, false));
+		userList.add(new User("George Talbot", "George", "Talbot", "djgh47678576", "8034558008", "gtalbot@protonmail.com", 24,
+								"38540234", "458hg95y800", address1, friends2, family2, false));
 		DataWriter.saveUsers();
 	}
 	
