@@ -52,20 +52,20 @@ public class UsersTester {
 	
 	@Test
 	void testHaveUserValidFirstItem() {
-		boolean hasAmy = users.haveUser("asmith");
-		assertTrue(hasAmy);
+		boolean hasWilliam = users.haveUser("williammunny1975");
+		assertTrue(hasWilliam);
 	}
 	
 	@Test
 	void testHaveUserValidLastItem() {
-		boolean hasBob = users.haveUser("bwhite");
-		assertTrue(hasBob);
+		boolean hasGeorge = users.haveUser("George Talbot");
+		assertTrue(hasGeorge);
 	}
 	
 	@Test
 	void testHaveUserInValid() {
-		boolean hasJoe = users.haveUser("jsmith");
-		assertFalse(hasJoe);
+		boolean hasPiggsy = users.haveUser("Piggsy");
+		assertFalse(hasPiggsy);
 	}
 	
 	@Test

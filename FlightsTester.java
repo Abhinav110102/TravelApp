@@ -63,20 +63,20 @@ public class FlightsTester {
 	
 	@Test
 	void testHaveUserValidFirstItem() {
-		boolean hasFlight = flights.haveFlight("asmith");
-		assertTrue(hasFlight);
+		boolean has_jshf45743t890 = flights.haveFlight("jshf45743t890");
+		assertTrue(has_jshf45743t890);
 	}
 	
 	@Test
 	void testHaveFlightValidLastItem() {
-		boolean hasFlight = flights.haveFlight("bwhite");
-		assertTrue(hasFlight);
+		boolean has_tc1998cs2001 = flights.haveFlight("tc1998cs2001");
+		assertTrue(has_tc1998cs2001);
 	}
 	
 	@Test
 	void testHaveUserInValid() {
-		boolean hasFlight = flights.haveFlight("jsmith");
-		assertFalse(hasFlight);
+		boolean hasPlaneWithSnakes = flights.haveFlight("Plane With Snakes");
+		assertFalse(hasPlaneWithSnakes);
 	}
 	
 	@Test

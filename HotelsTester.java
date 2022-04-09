@@ -44,20 +44,20 @@ public class HotelsTester {
 	
 	@Test
 	void testHaveHotelValidFirstItem() {
-		boolean hasAmy = hotels.haveHotel("asmith");
-		assertTrue(hasAmy);
+		boolean hasHilton = hotels.haveHotel("HiltonHotel");
+		assertTrue(hasHilton);
 	}
 	
 	@Test
 	void testHaveHotelValidLastItem() {
-		boolean hasBob = hotels.haveHotel("bwhite");
-		assertTrue(hasBob);
+		boolean hasHoliday = hotels.haveHotel("Holiday Inn");
+		assertTrue(hasHoliday);
 	}
 	
 	@Test
 	void testHaveHotelInValid() {
-		boolean hasJoe = hotels.haveHotel("jsmith");
-		assertFalse(hasJoe);
+		boolean hasTheLastHouseOnTheLeft = hotels.haveHotel("The Last House On The Left");
+		assertFalse(hasTheLastHouseOnTheLeft);
 	}
 	
 	@Test
