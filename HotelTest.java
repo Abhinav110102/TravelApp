@@ -31,14 +31,21 @@ public class HotelTest {
 	}
 
 	@Test
-	public void isAvailableTest(){
-        Date unavailableDate = new Date(1, 1, 1);
-        Date date = new Date(1,1,1);
-        ArrayList<Date> unavailableDates = new ArrayList<Date>();
-        unavailableDates.add(unavailableDate);
-        Room room = new Room(1, 0, unavailableDates);
-        boolean isAvailable = room.isAvailable(date);
-		assertTrue(isAvailable);
+	public void getHotelAddressTest(){
+		ArrayList<String> address = new ArrayList<String>();
+		address.add("a");
+		address.add("a");
+		address.add("a");
+		address.add("a");
+		address.add("a");
+		Hotel hotel = new Hotel("a", "a", "a", address,
+		1, 1, 1, 1, "a", "a", false, 5.0);
+		
+		assertTrue(hotel.location.getCity().equals("a") &&
+		hotel.location.getCountry().equals("a") &&
+		hotel.location.getState().equals("a") &&
+		hotel.location.getStreet().equals("a") &&
+		hotel.location.getZipcode().equals("a"));
 	}
 
 
