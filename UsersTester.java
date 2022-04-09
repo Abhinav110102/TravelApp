@@ -13,8 +13,10 @@ public class UsersTester {
 	@BeforeEach
 	public void setup() {
 		userList.clear();
-		userList.add(new User());
-		userList.add(new User());
+		userList.add(new User(username, firstName, lastName, userID, phone, email, userAge,
+								passportNumber, password, address, friends, family, senior));
+		userList.add(new User(username, firstName, lastName, userID, phone, email, userAge,
+								passportNumber, password, address, friends, family, senior));
 		DataWriter.saveUsers();
 	}
 	

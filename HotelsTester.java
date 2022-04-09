@@ -13,8 +13,10 @@ public class HotelsTester {
 	@BeforeEach
 	public void setup() {
 		hotelList.clear();
-		hotelList.add(new Hotel());
-		hotelList.add(new Hotel());
+		hotelList.add(new Hotel(userID, hotelName, hotelCompany, hotelAddress, roomNumber, daysBooked,
+								capacity, numberOfBeds, arrivalDate, departureDate, pool, rating));
+		hotelList.add(new Hotel(userID, hotelName, hotelCompany, hotelAddress, roomNumber, daysBooked,
+								capacity, numberOfBeds, arrivalDate, departureDate, pool, rating));
 		DataWriter.saveHotels();
 	}
 	

@@ -13,8 +13,10 @@ public class FlightsTester {
 	@BeforeEach
 	public void setup() {
 		flightList.clear();
-		flightList.add(new Flight());
-		flightList.add(new Flight());
+		flightList.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport, destinationAddress,
+									planeCapacity, departureDate, duration, flightType, userID, flightID, seats));
+		flightList.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport, destinationAddress,
+									planeCapacity, departureDate, duration, flightType, userID, flightID, seats));
 		DataWriter.saveFlights();
 	}
 	
