@@ -27,6 +27,10 @@ public class TravelApplication {
         if (travelApplication == null) {
             travelApplication = new TravelApplication();
         }
+        DataLoader.loadFlights();
+        DataLoader.loadHotels();
+        DataLoader.loadLuggage();
+        DataLoader.loadUsers();
         return travelApplication;
     }
 
