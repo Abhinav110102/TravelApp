@@ -63,4 +63,14 @@ public class AllHotels {
     public static void logout(){
         DataWriter.saveHotels();;
     }
+
+    public boolean haveHotel(String hotelName) {
+		for(Hotel hotel : hotels) {
+			if(hotel.getHotelName().equals(hotelName)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }

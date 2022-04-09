@@ -55,4 +55,14 @@ public class AllLuggages {
     public static void logout(){
         DataWriter.saveLuggages();
     }
+
+    public boolean haveLuggage(String userID) {
+		for(Luggage luggage : luggages) {
+			if(luggage.getUserID().equals(userID)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }

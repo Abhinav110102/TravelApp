@@ -91,4 +91,14 @@ public class AllUsers {
         }
         return false;
     }
+
+    public boolean haveUser(String userName) {
+		for(User user : users) {
+			if(user.getUserName().equals(userName)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
