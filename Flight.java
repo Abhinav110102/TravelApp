@@ -40,7 +40,7 @@ public class Flight extends Ticket {
                 ArrayList<String> arrivalAddress, String destinationAirport,
                 ArrayList<String> destinationAddress, int planeCapacity,
                 String departureDate, String duration, String flightType,
-                String userID, String flightID, ArrayList<Integer> seats) {
+                String userID, String flightID, ArrayList<Seat> seating) {
         this.planeName = planeName;
         this.airline = airline;
         this.arrivalAirport = arrivalAirport;
@@ -63,13 +63,14 @@ public class Flight extends Ticket {
         } catch (Exception e) {
             System.out.println("Error parsing dates");
         }*/
+        /* 
         seatXMax = seats.get(0);
         seatYMax = seats.get(1);
         for (int i = 0; i < seats.get(0); i++) {
             for (int j = 0; i < seats.get(1); i++) {
                 seating.add(new Seat(i, j, false));
             }
-        }
+        }*/
     }
 
     /**
@@ -130,16 +131,16 @@ public class Flight extends Ticket {
         return addressvals;
     }
 
-    public void transferSplit(Flight flight, String airportMidpoint, ArrayList<String> midpoint, String newFlightID, ArrayList<Seat> seating) {
-        if (flight.flightType.equalsIgnoreCase("TRANSFER")) {
-            AllFlights.addFlight(planeName, airline, arrivalAirport, getArrivalAddress(),
-                                airportMidpoint, midpoint, planeCapacity,
-                                departureDate, duration, flightType, userID, flightID, getSeatingAsJSONFormat());
-            AllFlights.addFlight(planeName, airline, airportMidpoint, midpoint,
-                                destinationAirport, getDestinationAddress(), planeCapacity,
-                                departureDate, duration, flightType, userID, newFlightID, getSeatingAsJSONFormat());
-        }
-    }
+    // public void transferSplit(Flight flight, String airportMidpoint, ArrayList<String> midpoint, String newFlightID, ArrayList<Seat> seating) {
+    //     if (flight.flightType.equalsIgnoreCase("TRANSFER")) {
+    //         AllFlights.addFlight(planeName, airline, arrivalAirport, getArrivalAddress(),
+    //                             airportMidpoint, midpoint, planeCapacity,
+    //                             departureDate, duration, flightType, userID, flightID, getSeatingAsJSONFormat());
+    //         AllFlights.addFlight(planeName, airline, airportMidpoint, midpoint,
+    //                             destinationAirport, getDestinationAddress(), planeCapacity,
+    //                             departureDate, duration, flightType, userID, newFlightID, getSeatingAsJSONFormat());
+    //     }
+    // }
 
     public Location getEndLocation() {
         return endLocation;
@@ -155,10 +156,10 @@ public class Flight extends Ticket {
         return addressvals;
     }
 
-    public String printTicket() {
-        FlightTicket flightTicket = new FlightTicket(flightID, airline, ratings, duration, startLocation, endLocation, depart, AvailableSeat());
-        return flightTicket.toString();
-    }
+    // public String printTicket() {
+    //     FlightTicket flightTicket = new FlightTicket(flightID, airline, ratings, duration, startLocation, endLocation, depart, AvailableSeat());
+    //     return flightTicket.toString();
+    // }
 
     public Seat AvailableSeat() {
         Seat seatChoice = new Seat(0, 0, false);
@@ -196,8 +197,8 @@ public class Flight extends Ticket {
         return takens;
     }
 
-    @Override
-    public Ticket bookTicket(String seat) { // seat = B10
+   // @Override
+    public FlightTicket bookTicket(String seat) { // seat = B10
         String posX = seat.substring(0,1);
         int posY = Integer.parseInt(seat.substring(1));
         Seat newSeat = new Seat(posX, posY, false);

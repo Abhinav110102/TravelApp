@@ -52,9 +52,10 @@ public class DataLoader extends DataConstants {
 
 				ArrayList<ArrayList<Integer>> takenSeats = (ArrayList<ArrayList<Integer>>)flightJSON.get(FLIGHT_TAKEN_SEATS);
 
-				System.out.println(departureDate);
-				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport,
-                 destinationAddress, planeCapacity, departureDate, duration, flightType, userID, flightID, seating));
+			//	System.out.println(departureDate);
+				
+				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport, destinationAddress, planeCapacity,
+                	departureDate, duration, flightType, userID, flightID, seating));
 
 				 /*
 				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress,
@@ -63,13 +64,13 @@ public class DataLoader extends DataConstants {
 										seatX, seatY));*/
 			}
 			
-			System.out.println("RETURNING FLIGHTS");
+			//System.out.println("RETURNING FLIGHTS");
 			return flights;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("ERROR NO FLIGHTS");
+		//System.out.println("ERROR NO FLIGHTS");
 		return null;
 	}
 
@@ -92,13 +93,11 @@ public class DataLoader extends DataConstants {
 				int age = Integer.parseInt(userAge);
                 String passportNumber = (String)userJSON.get(USER_PASSPORT_NUMBER);
                 String password = (String)userJSON.get(USER_PASSWORD);
-				System.out.println("Im here");
                 ArrayList<String> address = (ArrayList<String>)userJSON.get(USER_ADDRESS);
                 ArrayList<String> friends = (ArrayList<String>)userJSON.get(USER_FRIENDS);
                 ArrayList<ArrayList<String>> family = (ArrayList<ArrayList<String>>)userJSON.get(USER_FAMILY);
                 boolean senior = (boolean)userJSON.get(USER_SENIOR);
 				Location location = new Location(address);
-				System.out.println("Got through");
 				users.add(new User(username, firstName, lastName, userID,
 					phone, email, age, passportNumber, password, location ,friends, family, senior));
 				/*
@@ -108,14 +107,14 @@ public class DataLoader extends DataConstants {
 									senior));
 									*/
 			}
-			System.out.println("RETURNING USERS");
+			//System.out.println("RETURNING USERS");
 			return users;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		System.out.println("RETURNING ERROR USERS");
+		//System.out.println("RETURNING ERROR USERS");
 		return null;
 	}
 

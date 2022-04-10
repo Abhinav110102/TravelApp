@@ -196,7 +196,6 @@ public boolean bookFlight(Flight flight, String seat){
         currentUser.addFlight(userFlightTicket);
         return true;
     }
-    System.out.println("HIHIHI");
     return false;
 }
 
