@@ -1,6 +1,5 @@
 //import java.rmi.AlreadyBoundException;
 import java.util.ArrayList;
-import java.util.Date;
 //import java.time.LocalDateTime;
 
 /**
@@ -28,9 +27,8 @@ public class Room {
      */
     public void addUnavailableDate(Date arrivalDate, Date departureDate) {
         this.unavailableDates.add(arrivalDate);
-        int addDay = 1000*60*60*24;
         while (arrivalDate != departureDate) {
-            arrivalDate = new Date(arrivalDate.getTime() + addDay);
+            arrivalDate.addDay();
             this.unavailableDates.add(arrivalDate);
         }
     }
@@ -43,9 +41,8 @@ public class Room {
      */
     public void removeUnavailableDates(Date arrivalDate, Date departureDate) {
         this.unavailableDates.remove(arrivalDate);
-        int addDay = 1000*60*60*24;
-        while (arrivalDate != departureDate) {
-            arrivalDate = new Date(arrivalDate.getTime() + addDay);
+        while (arrivalDate != departureDate) { 
+            arrivalDate.addDay();
             this.unavailableDates.remove(arrivalDate);
         }
     }

@@ -12,6 +12,12 @@ public class Date {
         this.year = year;
     }
 
+    public Date (Date date) {
+        this.day = date.getday();
+        this.month = date.getmonth();
+        this.year = date.getyear();
+    }
+
     // Gets and sets
     /**
      * Method to return the day
@@ -31,8 +37,16 @@ public class Date {
      * Method to return the year
      * @return year the year to be returned.
      */
-    public int  getyear() {
+    public int getyear() {
         return year;
+    }
+
+    /**
+     * Method to return the year
+     * @return year the year to be returned.
+     */
+    public void addDay() {
+        this.day += 1;
     }
 
     public String convertToMonth() {

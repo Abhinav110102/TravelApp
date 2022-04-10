@@ -32,11 +32,11 @@ public class RoomTest {
 
 	@Test
 	public void isAvailableTest(){
-        Date unavailableDate = new Date(1, 1, 1);
-        Date date = new Date(1,1,1);
+        Date unavailableDate = new Date(4, 20, 2022);
+        Date date = new Date(4,21,2022);
         ArrayList<Date> unavailableDates = new ArrayList<Date>();
         unavailableDates.add(unavailableDate);
-        Room room = new Room(1, 0, unavailableDates);
+        Room room = new Room(401, 2, unavailableDates);
         boolean isAvailable = room.isAvailable(date);
 		assertTrue(isAvailable);
 	}
