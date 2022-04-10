@@ -75,4 +75,14 @@ public class AllFlights {
     public static void logout() {
         DataWriter.saveFlights();
     }
+
+    public boolean haveFlight(String flightID) {
+		for(Flight flight : flights) {
+			if(flight.getFlightID().equals(flightID)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
