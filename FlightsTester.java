@@ -25,9 +25,12 @@ public class FlightsTester {
 		Address1_1.add("California");
 		Address1_1.add("45776");
 		Address1_1.add("United States");
-		ArrayList<Integer> SeatDim1 = new ArrayList<Integer> ();
-		SeatDim1.add(4);
-		SeatDim1.add(10);
+		ArrayList<Seat> seating1 = new ArrayList<Seat> ();
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; i < 10; i++) {
+                seating1.add(new Seat(i, j, false));
+            }
+        }
 
 		ArrayList<String> Address2_1 = new ArrayList<String> ();
 		Address1_1.add("New Jersey International Airport");
@@ -41,16 +44,19 @@ public class FlightsTester {
 		Address1_1.add("Florida");
 		Address1_1.add("55555");
 		Address1_1.add("United States");
-		ArrayList<Integer> SeatDim2 = new ArrayList<Integer> ();
-		SeatDim2.add(4);
-		SeatDim2.add(10);
+		ArrayList<Seat> seating2 = new ArrayList<Seat> ();
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; i < 10; i++) {
+                seating2.add(new Seat(i, j, false));
+            }
+        }
 
 		flightList.add(new Flight("df567496024", "Delta", "New York International Airport", Address1_1,
 									"Los Angeles International Airport", Address1_2, 250, "4-9-2022",
-									"12:00 Hours", "OneWay", "dsjfh756948t", "jshf45743t890", SeatDim1));
+									"12:00 Hours", "OneWay", "dsjfh756948t", "jshf45743t890", seating1));
 		flightList.add(new Flight("djfkdg59655", "United Airlines", "New Jersey International Airport", Address2_1,
 									"Miami International Airport", Address2_2, 250, "3-4-1986", "9:00 Hours",
-									"OneWay", "nb2008vv1984", "tc1998cs2001", SeatDim2));
+									"OneWay", "nb2008vv1984", "tc1998cs2001", seating2));
 		DataWriter.saveFlights();
 	}
 	
