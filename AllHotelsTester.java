@@ -6,7 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class HotelsTester {
+public class AllHotelsTester {
     private AllHotels hotels = AllHotels.getInstance();
     private ArrayList<Hotel> hotelList = hotels.getHotels();
 	
