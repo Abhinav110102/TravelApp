@@ -6,7 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class UsersTester {
+public class AllUsersTester {
     private AllUsers users = AllUsers.getInstance();
     private ArrayList<User> userList = users.getUsers();
 	

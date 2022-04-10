@@ -1,6 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -36,11 +37,13 @@ public class RoomTest {
         Date date = new Date(4,21,2022);
         ArrayList<Date> unavailableDates = new ArrayList<Date>();
         unavailableDates.add(unavailableDate);
+<<<<<<< HEAD
         Room room = new Room(401, 2, unavailableDates);
+=======
+        Room room = new Room(1, 1, unavailableDates);
+>>>>>>> b31476336b5bf26529d03a38909b8e3d62ebc411
         boolean isAvailable = room.isAvailable(date);
 		assertTrue(isAvailable);
 	}
 
-
-  
 }

@@ -32,9 +32,6 @@ public class FlightTest {
 
 	@Test
 	public void printSeatingChartTest() {
-        ArrayList<Integer> seatDimensions = new ArrayList<Integer>();
-        seatDimensions.add(4);
-        seatDimensions.add(10);
         ArrayList<String> address = new ArrayList<String>();
         address.add("a");
         address.add("a");
@@ -48,7 +45,8 @@ public class FlightTest {
             }
         }
         Flight flight = new Flight("a", "a", "a", address, "a",
-            address, 40, "a", "a", "a", "a", "a", seatDimensions);
+            address, 40, "a", "a", "a", "a", "a", seating);
+        
         String testResult = flight.printSeatingChart();
         // Counts how many rows there should be.
         int newLineCount = 0;
@@ -59,8 +57,5 @@ public class FlightTest {
         }
         assertSame(newLineCount, 11, "There should be 10 rows of seats in printed"
         + "seating chart plus column letters.");
-
     }
-	
-  
 }
