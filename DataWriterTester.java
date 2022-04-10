@@ -354,7 +354,7 @@ class DataWriterTester {
 	}
 	
 	@Test
-	void testWritingNullLuggage() {
+	void testWritingNullHotel() {
 		ArrayList<String> Address1_1 = new ArrayList<String> ();
 		Address1_1.add("");
 		Address1_1.add("");
