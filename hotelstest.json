@@ -1,27 +1,5 @@
 [
     {	
-        "UserID": "bbbih53ugv23",
-        "HotelName": "The Marriott Virginia", 
-        "HotelCompany": "Marriott",
-        "HotelAddress": ["Oceanshore Street", "Virginia", "Virginia", "23456", "United States"],
-        "RoomNumber": 239,
-        "DaysBooked": 3,
-        "Capacity": 150,
-        "NumberOfBeds": 2,
-        "ArrivalDate": "February 26 2022",
-        "DepartureDate": "February 28 2022"
-    },{	
-        "UserID": "8bhbug34b7839",
-        "HotelName": "Rome Marriott Grand Hotel Flora", 
-        "HotelNompany": "Marriott",
-        "HotelAddress": ["Via Vittorio Veneto", "Rome", "Rome", "00187", "Italy"],
-        "RoomNumber": 78,
-        "DaysBooked": 3,
-        "Capacity": 150,
-        "NumberOfBeds": 2,
-        "ArrivalDate": "March 3 2022",
-        "DepartureDate": "March 6 2022"
-    },{	
         "UserID": "8bhbug34b7839",
         "HotelName": "Hilton Los Angeles Airport", 
         "HotelNompany": "Hilton",
