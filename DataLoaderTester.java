@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+//@author Tested by Samuel J. Godfrey
 class DataLoaderTester {
 	private AllUsers users = AllUsers.getInstance();
     private AllFlights flights = AllFlights.getInstance();
