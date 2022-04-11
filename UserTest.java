@@ -1,6 +1,9 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -47,9 +50,16 @@ public class UserTest {
         Rating rating = new Rating("a", 1, false);
         ArrayList<Rating> ratings = new ArrayList<Rating>();
         ratings.add(rating);
-        UserTicket userTicket = new UserTicket("a", "a", ratings);
+        UserTicket userTicket = new HotelTicket("a", "a", location, ratings, 1, "a", "a", 1);
         user.requestRefund(userTicket);
-		//assertEquals(user.tickets.get(0), null, "a person with negative age should not exist or be charged.");
+		File file = new File("ticket.txt");
+		try (Scanner sc = new Scanner(file)) {
+			String data = sc.nextLine();
+			assertEquals(data, "", "Ticket file should be empty if user has no tickets.");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
   
 }
