@@ -202,3 +202,4 @@ class DataLoaderTester {
 		assertEquals("Hilton Hotel", hotelList.get(0).getHotelName());
 	}
 }
+
