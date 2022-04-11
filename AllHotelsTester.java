@@ -1,3 +1,6 @@
+/**
+ * @author Mark Valentino, Samuel Godfrey, Abhinav Myadala
+ */
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
