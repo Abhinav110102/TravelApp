@@ -22,11 +22,11 @@ public class AllHotelsTester {
 		Address1_1.add("United States");
 
 		ArrayList<String> Address2_1 = new ArrayList<String> ();
-		Address1_1.add("New York International Airport");
-		Address1_1.add("New York");
-		Address1_1.add("New York");
-		Address1_1.add("33333");
-		Address1_1.add("United States");
+		Address2_1.add("New York International Airport");
+		Address2_1.add("New York");
+		Address2_1.add("New York");
+		Address2_1.add("33333");
+		Address2_1.add("United States");
 
 		hotelList.add(new Hotel("fhdjfgh7596407", "Hilton Hotel", "Hilton", Address1_1, 77, 2,
 								150, 2, "2-4-2022", "2-6-2022", true, 4.0));
