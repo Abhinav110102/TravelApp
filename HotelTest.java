@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class HotelTest {
 
 	private Hotel hotel;
-	private ArrayList<String> address;
+	private ArrayList<String> address = new ArrayList<String>();
 	
 	@BeforeEach
 	public void setup() {
