@@ -1,7 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -10,7 +9,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class RoomTest {
-    
+    private Room room;
+
+	/*
     @BeforeClass
 	public static void oneTimeSetup() {
 		
@@ -20,30 +21,33 @@ public class RoomTest {
 	public static void oneTimeTearDown() {
 		
 	}
+	*/
 	
 	@BeforeEach
-	public static void setup() {
-		//runs before each test
+	public void setup() {
+        ArrayList<Date> unavailableDates = new ArrayList<Date>();
+		Date unavailableDate = new Date(4, 20, 2022);
+        unavailableDates.add(unavailableDate);
+        room = new Room(401, 2, unavailableDates);
 	}
 	
 	@AfterEach
-	public static void tearDown() {
-		//runs after each test
+	public void tearDown() {
+		
 	}
 
 	@Test
 	public void isAvailableTest(){
-        Date unavailableDate = new Date(4, 20, 2022);
-        Date date = new Date(4,21,2022);
-        ArrayList<Date> unavailableDates = new ArrayList<Date>();
-        unavailableDates.add(unavailableDate);
-<<<<<<< HEAD
-        Room room = new Room(401, 2, unavailableDates);
-=======
-        Room room = new Room(1, 1, unavailableDates);
->>>>>>> b31476336b5bf26529d03a38909b8e3d62ebc411
+		Date date = new Date(4, 21, 2022);
         boolean isAvailable = room.isAvailable(date);
 		assertTrue(isAvailable);
+	}
+
+	@Test
+	public void isUnavailableTest(){
+		Date date = new Date(4, 20, 2022);
+        boolean isAvailable = room.isAvailable(date);
+		assertFalse(isAvailable);
 	}
 
 }

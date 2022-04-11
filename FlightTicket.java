@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Date;
-
 /**
  * Class for managing data in a flight ticket which is added to a user. This is a child class of Ticket
  * and this class holds luggage data.
