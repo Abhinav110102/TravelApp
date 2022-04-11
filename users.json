@@ -1,1 +1,21 @@
-[]
+
+[
+	{
+		"Username": "johnsonvein@gmail.com",
+		"FirstName": "Johnson",
+		"LastName": "Vein",
+		"UserID": "8bhbug34b7839",  
+        "Phone": "2025550172", 
+        "Email": "johnsonvein@gmail.com", 
+        "UserAge": "69", 
+        "PassportNumber": "979880831", 
+        "Password": "Whatisthis?2022", 
+        "Address": ["8 Pennington Rd.", "Lincolnton", "North Carolina", "28092", "United States"],
+        "Friends" : ["gvv77v7ed6b", "id98yutr646dx", "897867tcytd5"],
+        "Family" : [
+		[ "Katy", "Vein", "68" ],
+        [ "Kathy", "Vein", "72" ]
+	      ],
+        "Senior": true
+	}
+]
