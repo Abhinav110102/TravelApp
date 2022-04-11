@@ -38,6 +38,7 @@ public class TravelApplicationTest {
 		assertEquals(null, letter, "Should not set a letter.");
 	}
     
+	@Test
 	public void checkCorrectUsernameTest() {
 		travelApplication.signUp("username", "password", "firstName", "lastName", "803 192 1211", 
 		"email", "passportNum", "street", "city", "state", "zipcode", "country", 21);
@@ -45,7 +46,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.checkUsername("username");
 		assertTrue(check);
 	}
-
+	@Test
 	public void successLoginTest() {
 		travelApplication.signUp("username", "password", "firstName", "lastName", "803 192 1211", 
 		"email", "passportNum", "street", "city", "state", "zipcode", "country", 21);
@@ -53,7 +54,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.login("username", "password");
 		assertTrue(check);
 	}
-
+	@Test
 	public void unsuccessLoginTest() {
 		travelApplication.signUp("username", "password", "firstName", "lastName", "803 192 1211", 
 		"email", "passportNum", "street", "city", "state", "zipcode", "country", 21);
@@ -61,7 +62,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.login("Nice", "Work");
 		assertFalse(check);
 	}
-
+	@Test
 	public void saveUsersTest() {
 		travelApplication.signUp("Mr.Mime", "password", "firstName", "lastName", "803 192 1211", 
 		"email", "passportNum", "street", "city", "state", "zipcode", "country", 21);
@@ -70,7 +71,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.login("Mr.Mime", "password");
 		assertTrue(check);
 	}
-
+	@Test
 	public void createUserWithNegativeAgeTest() {
 		travelApplication.signUp("Ghost", "password", "firstName", "lastName", "803 192 1211", 
 		"email", "passportNum", "street", "city", "state", "zipcode", "country", -1);
@@ -78,7 +79,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.login("Ghost", "password");
 		assertFalse(check);
 	}
-
+	@Test
 	public void createUserUnder18Test() {
 		travelApplication.signUp("Child", "password", "firstName", "lastName", "803 192 1211", 
 		"email", "passportNum", "street", "city", "state", "zipcode", "country", 12);
@@ -86,7 +87,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.login("Child", "password");
 		assertFalse(check);
 	}
-
+	@Test
 	public void successfullyLogoutTest() {
 		travelApplication.signUp("username", "password", "firstName", "lastName", "803 192 1211", 
 		"email", "passportNum", "street", "city", "state", "zipcode", "country", 12);
