@@ -30,14 +30,6 @@ public class TravelApplicationTest {
 	public void tearDown() {
 		travelApplication = TravelApplication.getInstance();
 	}
-
-	@Test
-	public void setColumnTest(){
-		// In Seat.java
-		Seat seat = new Seat(-1, 0, false);
-		String letter = seat.setColumn(-1);
-		assertEquals(null, letter, "Should not set a letter.");
-	}
     
 	@Test
 	public void checkCorrectUsernameTest() {
@@ -66,15 +58,6 @@ public class TravelApplicationTest {
 		assertFalse(check);
 	}
 
-	@Test
-	public void saveUsersTest() {
-		travelApplication.signUp("Mr.Mime", "password", "firstName", "lastName", "803 192 1211", 
-		"email", "passportNum", "street", "city", "state", "zipcode", "country", 21);
-		travelApplication.quit();
-
-		boolean check = travelApplication.login("Mr.Mime", "password");
-		assertTrue(check);
-	}
 
 	@Test
 	public void createUserWithNegativeAgeTest() {
@@ -103,20 +86,20 @@ public class TravelApplicationTest {
 		Location address = new Location("street", "city", "state", "zipcode", "country");
 		ArrayList<String> friends = new ArrayList<String>();
 		ArrayList<ArrayList<String>> family = new ArrayList<ArrayList<String>>();
-		User user = new User("username", "firstName", "lastName", ID, "803 192 1211", "email",
-		 12, "passportNum", "password", address, friends, family, false);
+		// User user = new User("username", "firstName", "lastName", ID, "803 192 1211", "email",
+		//  12, "passportNum", "password", address, friends, family, false);
 
 		travelApplication.login("username", "password");
 		travelApplication.logout();
 		User currentUser = travelApplication.getCurrentUser();
-		assertEquals(user, currentUser);
+		assertEquals(null, currentUser);
 	}
 
 
 	//"PlaneName": "M876578",
 	// "Airline": "Delta",
 	// "ArrivalAirport": "Columbia Metropolitan Airport",
-	// "ArrivalAddress" : ["101 Park st", "Columbia", "SC", "20222", "United States"],
+	// "ArrivalAddress" : ["1001 Park st", "Columbia", "SC", "20222", "United States"],
 	// "DestinationAirport": "Los Angeles International Airport",
 	// "DestinationAddress": ["1 World Way", "Los Angeles", "California", "90045", "United States"],
 	// "PlaneCapacity": 100, 
@@ -126,11 +109,13 @@ public class TravelApplicationTest {
 	// "UserID": "8bhbug34b7839",
 	// "FlightID": "2i45b4b52ibj",
 	// "Seats": [4, 10],
+
+	
 	// "TakenSeats": []
 
 	@Test
 	public void successFindFlightTest() {
-		Location arrivalAddress = new Location("101 Park st", "Columbia", "SC", "20222", "United States");
+		Location arrivalAddress = new Location("1001 Park st", "Columbia", "SC", "20222", "United States");
 		Location destinationAddress = new Location("1 World Way", "Los Angeles", "California", "90045", "United States");
 		ArrayList<Seat> seating = new ArrayList<Seat>();
 		for (int j = 0; j < 4; j++) {
@@ -138,14 +123,14 @@ public class TravelApplicationTest {
 				seating.add(new Seat(j, k, false));
 			}
 		}
-		Flight flight = new Flight("M876578", "delta", "Columbia Metropolitan Airport", 
+		Flight flight = new Flight("M876578", "Delta", "Columbia Metropolitan Airport", 
 		 arrivalAddress, "Los Angeles International Airport", 
 	 	destinationAddress, 100, "March 1, 2022", "3:45 hours", "OneWay", "8bhbug34b7839", "2i45b4b52ibj", seating);
 	 	ArrayList<Flight> flightList = new ArrayList<Flight>();
 		flightList.add(flight);
 
-		ArrayList<Flight> check = travelApplication.SearchFlights("101 Park st");
-	 	assertEquals(flightList,check);
+		ArrayList<Flight> check = travelApplication.SearchFlights("1001 Park st");
+	 	assertEquals(flightList, check);
 	}
 
 	@Test
@@ -156,5 +141,33 @@ public class TravelApplicationTest {
 	 	assertEquals(check, flightList);
 	}
 
+	@Test
+	public void successFindHotelTest() {
+		Location arrivalAddress = new Location("1001 Park st", "Columbia", "SC", "20222", "United States");
+		Location destinationAddress = new Location("1 World Way", "Los Angeles", "California", "90045", "United States");
+		ArrayList<Seat> seating = new ArrayList<Seat>();
+		for (int j = 0; j < 4; j++) {
+			for (int k = 0; k < 10; k++) {
+				seating.add(new Seat(j, k, false));
+			}
+		}
+		Flight flight = new Flight("M876578", "Delta", "Columbia Metropolitan Airport", 
+		 arrivalAddress, "Los Angeles International Airport", 
+	 	destinationAddress, 100, "March 1, 2022", "3:45 hours", "OneWay", "8bhbug34b7839", "2i45b4b52ibj", seating);
+	 	ArrayList<Flight> flightList = new ArrayList<Flight>();
+		flightList.add(flight);
 
+		ArrayList<Flight> check = travelApplication.SearchFlights("1001 Park st");
+	 	assertSame(flightList, check);
+	}
+
+	@Test
+	public void saveUsersTest() {
+		travelApplication.signUp("Mr.Mime", "password", "firstName", "lastName", "803 192 1211", 
+		"email", "passportNum", "street", "city", "state", "zipcode", "country", 21);
+		travelApplication.quit();
+
+		boolean check = travelApplication.login("Mr.Mime", "password");
+		assertTrue(check);
+	}
 }

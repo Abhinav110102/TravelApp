@@ -116,15 +116,17 @@ public class TravelApplication {
      */
     public void quit(){
         if (currentUser != null) {logout();}
-        AllFlights.logout();
-        AllHotels.logout();
-        AllLuggages.logout();
-        AllUsers.logout();
+        // logout doesnt work
+        // AllFlights.logout();
+        // AllHotels.logout();
+        // AllLuggages.logout();
+        // AllUsers.logout();
     }
 
     // / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
     public void logout() {
         if (users.updateUser(currentUser)) {
+            this.currentUser = null;
             return;
         }
         System.out.println("error logging out fully");

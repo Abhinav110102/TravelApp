@@ -57,6 +57,9 @@ public class DataLoader extends DataConstants {
 				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport, destinationAddress, planeCapacity,
                 	departureDate, duration, flightType, userID, flightID, seating));
 
+				// System.out.println((new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport, destinationAddress, planeCapacity,
+				// departureDate, duration, flightType, userID, flightID, seating).toString()));
+				//System.out.println("HELLO!!!!!!!!!!!!!!!!!!!!!!!");
 				 /*
 				flights.add(new Flight(planeName, airline, arrivalAirport, arrivalAddress,
                                         destinationAirport, destinationAddress, planeCapacity,
