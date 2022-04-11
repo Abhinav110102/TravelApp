@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 public class TravelApplicationTest {
     
 	private TravelApplication travelApplication = TravelApplication.getInstance();
@@ -102,10 +103,38 @@ public class TravelApplicationTest {
 		assertEquals(currentUser, user);
 	}
 
-	// public void successFindFlightTest() {
-	// 	Flight flight = new Flight(planeName, airline, arrivalAirport, arrivalAddress, destinationAirport, 
-	// 	destinationAddress, planeCapacity, departureDate, duration, flightType, userID, flightID, seating) 
-	// 	boolean check = travelApplication.SearchFlights("Columbia");
-	// 	assertTrue(check);
-	// }
+
+	//"PlaneName": "M876578",
+	// "Airline": "Delta",
+	// "ArrivalAirport": "Columbia Metropolitan Airport",
+	// "ArrivalAddress" : ["101 Park st", "Columbia", "SC", "20222", "United States"],
+	// "DestinationAirport": "Los Angeles International Airport",
+	// "DestinationAddress": ["1 World Way", "Los Angeles", "California", "90045", "United States"],
+	// "PlaneCapacity": 100, 
+	// "DepatureDate": "March 1, 2022",
+	// "Duration": "3:45 hours",
+	// "FlightType": "OneWay",
+	// "UserID": "8bhbug34b7839",
+	// "FlightID": "2i45b4b52ibj",
+	// "Seats": [4, 10],
+	// "TakenSeats": []
+
+	public void successFindFlightTest() {
+		Location arrivalAddress = new Location("101 Park st", "Columbia", "SC", "20222", "United States");
+		Location destinationAddress = new Location("1 World Way", "Los Angeles", "California", "90045", "United States");
+		ArrayList<Seat> seating = new ArrayList<Seat>();
+		for (int j = 0; j < 4; j++) {
+			for (int k = 0; k < 10; k++) {
+				seating.add(new Seat(j, k, false));
+			}
+		}
+		Flight flight = new Flight("M876578", "delta", "Columbia Metropolitan Airport", 
+		 arrivalAddress, "Los Angeles International Airport", 
+	 	destinationAddress, 100, "March 1, 2022", "3:45 hours", "OneWay", "8bhbug34b7839", "2i45b4b52ibj", seating);
+	 	ArrayList<Flight> flightList = new ArrayList<Flight>();
+		flightList.add(flight);
+
+		ArrayList<Flight> check = travelApplication.SearchFlights("101 Park st");
+	 	assertEquals(check, flightList);
+	}
 }
