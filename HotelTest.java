@@ -11,10 +11,10 @@ import org.junit.jupiter.api.Test;
 public class HotelTest {
 
 	private Hotel hotel;
+	private ArrayList<String> address;
 	
 	@BeforeEach
 	public void setup() {
-		ArrayList<String> address = new ArrayList<String>();
 		address.add("a");
 		address.add("a");
 		address.add("a");
@@ -33,7 +33,5 @@ public class HotelTest {
 		hotel.location.getStreet().equals("a") &&
 		hotel.location.getZipcode().equals("a"));
 	}
-
-
   
 }
