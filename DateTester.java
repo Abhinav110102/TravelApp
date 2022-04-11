@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+//@author Samuel J. Godfrey
 public class DateTester {
     Date date = new Date(9, 7, 2022);
     
