@@ -145,3 +145,4 @@ class DataLoaderTester {
 		assertEquals("asmith", userList.get(0).getUserName());
 	}
 }
+

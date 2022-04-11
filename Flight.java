@@ -73,6 +73,27 @@ public class Flight extends Ticket {
         }*/
     }
 
+    public Flight(String planeName, String airline, String arrivalAirport,
+                Location arrivalAddress, String destinationAirport,
+                Location destinationAddress, int planeCapacity,
+                String departureDate, String duration, String flightType,
+                String userID, String flightID, ArrayList<Seat> seating) {
+        this.planeName = planeName;
+        this.airline = airline;
+        this.arrivalAirport = arrivalAirport;
+        this.destinationAirport = destinationAirport;
+        this.planeCapacity = planeCapacity;
+        this.departureDate = departureDate;
+        this.duration = duration;
+        this.flightType = flightType;
+        this.userID = userID;
+        this.flightID = flightID;
+        this.seating = seating;
+
+        this.startLocation = arrivalAddress;
+        this.endLocation = destinationAddress;
+    }
+
     /**
      * Method to return name of plane.
      * @return planeName the name of plane.

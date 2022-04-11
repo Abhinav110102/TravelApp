@@ -23,12 +23,12 @@ public class TravelApplicationTest {
 	
 	@BeforeEach
 	public void setup() {
-		//runs before each test
+		travelApplication = TravelApplication.getInstance();
 	}
 	
 	@AfterEach
 	public void tearDown() {
-		//runs after each test
+		travelApplication = TravelApplication.getInstance();
 	}
 
 	@Test
@@ -47,6 +47,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.checkUsername("username");
 		assertTrue(check);
 	}
+
 	@Test
 	public void successLoginTest() {
 		travelApplication.signUp("username", "password", "firstName", "lastName", "803 192 1211", 
@@ -55,6 +56,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.login("username", "password");
 		assertTrue(check);
 	}
+
 	@Test
 	public void unsuccessLoginTest() {
 		travelApplication.signUp("username", "password", "firstName", "lastName", "803 192 1211", 
@@ -63,6 +65,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.login("Nice", "Work");
 		assertFalse(check);
 	}
+
 	@Test
 	public void saveUsersTest() {
 		travelApplication.signUp("Mr.Mime", "password", "firstName", "lastName", "803 192 1211", 
@@ -72,6 +75,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.login("Mr.Mime", "password");
 		assertTrue(check);
 	}
+
 	@Test
 	public void createUserWithNegativeAgeTest() {
 		travelApplication.signUp("Ghost", "password", "firstName", "lastName", "803 192 1211", 
@@ -80,6 +84,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.login("Ghost", "password");
 		assertFalse(check);
 	}
+
 	@Test
 	public void createUserUnder18Test() {
 		travelApplication.signUp("Child", "password", "firstName", "lastName", "803 192 1211", 
@@ -88,6 +93,7 @@ public class TravelApplicationTest {
 		boolean check = travelApplication.login("Child", "password");
 		assertFalse(check);
 	}
+
 	@Test
 	public void successfullyLogoutTest() {
 		travelApplication.signUp("username", "password", "firstName", "lastName", "803 192 1211", 
@@ -95,13 +101,15 @@ public class TravelApplicationTest {
 
 		String ID = travelApplication.getCurrentUser().getUserID();
 		Location address = new Location("street", "city", "state", "zipcode", "country");
+		ArrayList<String> friends = new ArrayList<String>();
+		ArrayList<ArrayList<String>> family = new ArrayList<ArrayList<String>>();
 		User user = new User("username", "firstName", "lastName", ID, "803 192 1211", "email",
-		 12, "passportNum", "password", address, null, null, false);
+		 12, "passportNum", "password", address, friends, family, false);
 
 		travelApplication.login("username", "password");
 		travelApplication.logout();
 		User currentUser = travelApplication.getCurrentUser();
-		assertEquals(currentUser, user);
+		assertEquals(user, currentUser);
 	}
 
 
@@ -120,6 +128,7 @@ public class TravelApplicationTest {
 	// "Seats": [4, 10],
 	// "TakenSeats": []
 
+	@Test
 	public void successFindFlightTest() {
 		Location arrivalAddress = new Location("101 Park st", "Columbia", "SC", "20222", "United States");
 		Location destinationAddress = new Location("1 World Way", "Los Angeles", "California", "90045", "United States");
@@ -136,6 +145,16 @@ public class TravelApplicationTest {
 		flightList.add(flight);
 
 		ArrayList<Flight> check = travelApplication.SearchFlights("101 Park st");
+	 	assertEquals(flightList,check);
+	}
+
+	@Test
+	public void unsuccessFindFlightTest() {
+		ArrayList<Flight> flightList = new ArrayList<Flight>();
+
+		ArrayList<Flight> check = travelApplication.SearchFlights("Kachow");
 	 	assertEquals(check, flightList);
 	}
+
+
 }
