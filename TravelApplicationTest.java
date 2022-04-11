@@ -1,3 +1,4 @@
+//Tested by Mia Dia
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.AfterClass;
@@ -141,25 +142,50 @@ public class TravelApplicationTest {
 	 	assertEquals(check, flightList);
 	}
 
+
+	// //"UserID": "8bhbug34b7839",
+	// "HotelName": "Hilton Los Angeles Airport", 
+	// "HotelNompany": "Hilton",
+	// "HotelAddress": ["5711 W Century Blvd", "Los Angeles", "California", "90045", "United States"],
+	// "RoomNumber": 78,
+	// "DaysBooked": 3,
+	// "Capacity": 150,
+	// "NumberOfBeds": 2,
+	// "ArrivalDate": "March 3 2022",
+	// "DepartureDate": "March 6 2022",
+	// "Pool": true,
+	// "Rating": "3.8"
+
 	@Test
 	public void successFindHotelTest() {
-		Location arrivalAddress = new Location("1001 Park st", "Columbia", "SC", "20222", "United States");
-		Location destinationAddress = new Location("1 World Way", "Los Angeles", "California", "90045", "United States");
-		ArrayList<Seat> seating = new ArrayList<Seat>();
-		for (int j = 0; j < 4; j++) {
-			for (int k = 0; k < 10; k++) {
-				seating.add(new Seat(j, k, false));
-			}
-		}
-		Flight flight = new Flight("M876578", "Delta", "Columbia Metropolitan Airport", 
-		 arrivalAddress, "Los Angeles International Airport", 
-	 	destinationAddress, 100, "March 1, 2022", "3:45 hours", "OneWay", "8bhbug34b7839", "2i45b4b52ibj", seating);
-	 	ArrayList<Flight> flightList = new ArrayList<Flight>();
-		flightList.add(flight);
+		//Location hotelAddress = new Location("5711 W Century Blvd", "Los Angeles", "California", "90045", "United States"); //:(((
+		ArrayList<String> hotelAddress = new ArrayList<String>();
+		hotelAddress.add("5711 W Century Blvd");
+		hotelAddress.add("Los Angeles");
+		hotelAddress.add("California");
+		hotelAddress.add("90045");
+		hotelAddress.add("United States");
 
-		ArrayList<Flight> check = travelApplication.SearchFlights("1001 Park st");
-	 	assertSame(flightList, check);
+		Date ArrivalDate = new Date(26, 26, 2022);
+		Date DepartureDate = new Date(26, 26, 2022);
+
+		Hotel hotel = new Hotel("8bhbug34b7839", "Hilton Los Angeles Airport", "Hilton", hotelAddress, 239, 3, 150, 2, 
+		"March 3 2022", "March 6 2022", true, 3.8);
+	 	ArrayList<Hotel> hotelList = new ArrayList<Hotel>();
+		hotelList.add(hotel);
+
+		ArrayList<Hotel> check = travelApplication.SearchHotels("5711 W Century Blvd");
+		
+	 	assertSame(hotelList, check);
 	}
+
+	public void unsuccessFindHotelTest() {
+		ArrayList<Hotel> hotelList = new ArrayList<Hotel>();
+
+		ArrayList<Hotel> check = travelApplication.SearchHotels("Kachow");
+	 	assertEquals(check, hotelList);
+	}
+
 
 	@Test
 	public void saveUsersTest() {
