@@ -9,29 +9,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class FlightTest {
-    
-    @BeforeClass
-	public static void oneTimeSetup() {
-		
-	}
-	
-	@AfterClass
-	public static void oneTimeTearDown() {
-		
-	}
+    private Flight flight;
 	
 	@BeforeEach
-	public static void setup() {
-		//runs before each test
-	}
-	
-	@AfterEach
-	public static void tearDown() {
-		//runs after each test
-	}
-
-	@Test
-	public void printSeatingChartTest() {
+	public void setup() {
         ArrayList<String> address = new ArrayList<String>();
         address.add("a");
         address.add("a");
@@ -46,7 +27,11 @@ public class FlightTest {
         }
         Flight flight = new Flight("a", "a", "a", address, "a",
             address, 40, "a", "a", "a", "a", "a", seating);
-        
+	}
+	
+
+	@Test
+	public void printSeatingChartTest() {
         String testResult = flight.printSeatingChart();
         // Counts how many rows there should be.
         int newLineCount = 0;

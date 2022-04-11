@@ -144,5 +144,62 @@ class DataLoaderTester {
 		userList = DataLoader.loadUsers();
 		assertEquals("asmith", userList.get(0).getUserName());
 	}
+
+	@Test
+	void testGetFlightsSize() {
+		flightList = DataLoader.loadFlights();
+		assertEquals(2, flightList.size());
+	}
+
+	@Test
+	void testGetFlightsSizeZero() {
+		AllFlights.getInstance().getFlights().clear();
+		DataWriter.saveFlights();
+		assertEquals(0, flightList.size());
+	}
+	
+	@Test
+	void testGetFlightFirstFlightID() {
+		flightList = DataLoader.loadFlights();
+		assertEquals("jshf45743t890", flightList.get(0).getFlightID());
+	}
+
+	@Test
+	void testGetLuggagesSize() {
+		luggageList = DataLoader.loadLuggage();
+		assertEquals(2, luggageList.size());
+	}
+
+	@Test
+	void testGetLuggagesSizeZero() {
+		AllLuggages.getInstance().getLuggages().clear();
+		DataWriter.saveLuggages();
+		assertEquals(0, luggageList.size());
+	}
+	
+	@Test
+	void testGetLuggageFirstFlightID() {
+		luggageList = DataLoader.loadLuggage();
+		assertEquals("dhjsghhj6597659", luggageList.get(0).getFlightID());
+	}
+
+	@Test
+	void testGetHotelsSize() {
+		hotelList = DataLoader.loadHotels();
+		assertEquals(2, hotelList.size());
+	}
+
+	@Test
+	void testGetHotelsSizeZero() {
+		AllHotels.getInstance().getHotels().clear();
+		DataWriter.saveHotels();
+		assertEquals(0, hotelList.size());
+	}
+	
+	@Test
+	void testGetHotelFirstHotelName() {
+		hotelList = DataLoader.loadHotels();
+		assertEquals("Hilton Hotel", hotelList.get(0).getHotelName());
+	}
 }
 

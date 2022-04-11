@@ -27,7 +27,7 @@ public class LocationTester {
 
     @Test
     public void testAnyEqualsNull() {
-        Location location = new Location(null, null, null, null, null);
+        Location location = new Location("", null, "", "", "");
         assertTrue(location.anyEquals(null));
     }
 }
