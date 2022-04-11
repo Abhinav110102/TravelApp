@@ -130,11 +130,11 @@ class DataWriterTester {
         Address1_1.add("33333");
         Address1_1.add("United States");
         ArrayList<String> Address1_2 = new ArrayList<String> ();
-        Address1_1.add("Los Angeles International Airport");
-        Address1_1.add("Los Angeles");
-        Address1_1.add("California");
-        Address1_1.add("45776");
-        Address1_1.add("United States");
+        Address1_2.add("Los Angeles International Airport");
+        Address1_2.add("Los Angeles");
+        Address1_2.add("California");
+        Address1_2.add("45776");
+        Address1_2.add("United States");
         ArrayList<Seat> seating1 = new ArrayList<Seat> ();
         for (int i = 0; i < 4; i++) {
             for (int j = 0; i < 10; i++) {
@@ -157,11 +157,11 @@ class DataWriterTester {
         Address1_1.add("33333");
         Address1_1.add("United States");
         ArrayList<String> Address1_2 = new ArrayList<String> ();
-        Address1_1.add("Los Angeles International Airport");
-        Address1_1.add("Los Angeles");
-        Address1_1.add("California");
-        Address1_1.add("45776");
-        Address1_1.add("United States");
+        Address1_2.add("Los Angeles International Airport");
+        Address1_2.add("Los Angeles");
+        Address1_2.add("California");
+        Address1_2.add("45776");
+        Address1_2.add("United States");
         ArrayList<Seat> seating1 = new ArrayList<Seat> ();
         for (int i = 0; i < 4; i++) {
             for (int j = 0; i < 10; i++) {
@@ -169,17 +169,17 @@ class DataWriterTester {
             }
         }
 		ArrayList<String> Address2_1 = new ArrayList<String> ();
-		Address1_1.add("New Jersey International Airport");
-		Address1_1.add("New Jersey");
-		Address1_1.add("New Jersey");
-		Address1_1.add("66666");
-		Address1_1.add("United States");
+		Address2_1.add("New Jersey International Airport");
+		Address2_1.add("New Jersey");
+		Address2_1.add("New Jersey");
+		Address2_1.add("66666");
+		Address2_1.add("United States");
 		ArrayList<String> Address2_2 = new ArrayList<String> ();
-		Address1_1.add("Miami International Airport");
-		Address1_1.add("Miami");
-		Address1_1.add("Florida");
-		Address1_1.add("55555");
-		Address1_1.add("United States");
+		Address2_2.add("Miami International Airport");
+		Address2_2.add("Miami");
+		Address2_2.add("Florida");
+		Address2_2.add("55555");
+		Address2_2.add("United States");
 		ArrayList<Seat> seating2 = new ArrayList<Seat> ();
         for (int i = 0; i < 4; i++) {
             for (int j = 0; i < 10; i++) {
@@ -214,11 +214,11 @@ class DataWriterTester {
         Address1_1.add("");
         Address1_1.add("");
         ArrayList<String> Address1_2 = new ArrayList<String> ();
-        Address1_1.add("");
-        Address1_1.add("");
-        Address1_1.add("");
-        Address1_1.add("");
-        Address1_1.add("");
+        Address1_2.add("");
+        Address1_2.add("");
+        Address1_2.add("");
+        Address1_2.add("");
+        Address1_2.add("");
         ArrayList<Seat> seating1 = new ArrayList<Seat> ();
         for (int i = 0; i < 1; i++) {
             for (int j = 0; i < 1; i++) {
@@ -241,11 +241,11 @@ class DataWriterTester {
         Address1_1.add("");
         Address1_1.add("");
         ArrayList<String> Address1_2 = new ArrayList<String> ();
-        Address1_1.add("");
-        Address1_1.add("");
-        Address1_1.add("");
-        Address1_1.add("");
-        Address1_1.add("");
+        Address1_2.add("");
+        Address1_2.add("");
+        Address1_2.add("");
+        Address1_2.add("");
+        Address1_2.add("");
         ArrayList<Seat> seating1 = new ArrayList<Seat> ();
         for (int i = 0; i < 4; i++) {
             for (int j = 0; i < 10; i++) {
