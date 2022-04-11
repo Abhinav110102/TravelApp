@@ -1,3 +1,5 @@
+import static org.junit.jupiter.api.Assertions.*;
+
 public class PetTest {
     public void testPetTicketNeeded() {
         Pet pet = new Pet("Lance", 37, 12);
