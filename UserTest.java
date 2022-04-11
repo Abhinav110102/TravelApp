@@ -50,8 +50,7 @@ public class UserTest {
         Rating rating = new Rating("a", 1, false);
         ArrayList<Rating> ratings = new ArrayList<Rating>();
         ratings.add(rating);
-		Location locationTwo = new Location("a", "a", "a", "a", "a");
-        UserTicket userTicket = new HotelTicket("a", "a", locationTwo, ratings, 1, "a", "a", 1);
+        UserTicket userTicket = new HotelTicket("a", "a", location, ratings, 1, "a", "a", 1);
         user.requestRefund(userTicket);
 		File file = new File("ticket.txt");
 		try (Scanner sc = new Scanner(file)) {
