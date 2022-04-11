@@ -25,13 +25,14 @@ public class FlightTest {
                 seating.add(new Seat(j, k, false));
             }
         }
-        Flight flight = new Flight("a", "a", "a", address, "a",
+        flight = new Flight("a", "a", "a", address, "a",
             address, 40, "a", "a", "a", "a", "a", seating);
 	}
 	
 
 	@Test
 	public void printSeatingChartTest() {
+        setup();
         String testResult = flight.printSeatingChart();
         // Counts how many rows there should be.
         int newLineCount = 0;
