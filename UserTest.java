@@ -12,45 +12,31 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class UserTest {
-    
-    @BeforeClass
-	public static void oneTimeSetup() {
-		
-	}
-	
-	@AfterClass
-	public static void oneTimeTearDown() {
-		
-	}
+    private Location location;
+	private UserTicket userTicket;
+	private Rating rating;
+	private User user;
 	
 	@BeforeEach
-	public static void setup() {
-		//runs before each test
-	}
-	
-	@AfterEach
-	public static void tearDown() {
-		//runs after each test
+	public void setup() {
+		ArrayList<Rating> ratings = new ArrayList<Rating>();
+		rating = new Rating("a", 1, false);
+        ratings.add(rating);
+		location = new Location("a", "a", "a", "a", "a");
+		userTicket = new HotelTicket("a", "a", location, ratings, 1, "a", "a", 1);
+		user = new User("a", "a", "a", "a", "a", "a", "a", location, -1, false);
 	}
 
 	@Test
 	public void calCostTest(){
-		// In User.java
-        Location location = new Location("a", "a", "a", "a", "a");
-        User user = new User("a", "a", "a", "a", "a", "a", "a", location, -1, false);
+		setup();
         double cost = user.calCost();
-		assertEquals(0, 0, "a person with negative age should not exist or be charged.");
+		assertEquals(0, cost, "a person with negative age should not exist or be charged.");
 	}
 
     @Test
 	public void requestRefundTest(){
-		// In User.java
-        Location location = new Location("a", "a", "a", "a", "a");
-        User user = new User("a", "a", "a", "a", "a", "a", "a", location, 20, false);
-        Rating rating = new Rating("a", 1, false);
-        ArrayList<Rating> ratings = new ArrayList<Rating>();
-        ratings.add(rating);
-        UserTicket userTicket = new HotelTicket("a", "a", location, ratings, 1, "a", "a", 1);
+		setup();
         user.requestRefund(userTicket);
 		File file = new File("ticket.txt");
 		try (Scanner sc = new Scanner(file)) {
