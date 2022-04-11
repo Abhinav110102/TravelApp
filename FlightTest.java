@@ -12,7 +12,7 @@ public class FlightTest {
     private Flight flight;
 	
 	@BeforeEach
-	public static void setup() {
+	public void setup() {
         ArrayList<String> address = new ArrayList<String>();
         address.add("a");
         address.add("a");
